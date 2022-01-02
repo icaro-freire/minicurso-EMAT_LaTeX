@@ -1,30 +1,8 @@
-%% NotesTeX.sty
-%% A package modified from NotesTeX.sty from 
-%%        https://jhep.sissa.it/jhep/help/JHEP_TeXclass.jsp 
-%% by Aditya Dhumuntarao. 
-%% ------------------------------- Legal -------------------------------
-%% Adity Dhumuntarao does not own the copyright to the original package,
-%% jheppub.sty. All modification have been approved by the Jhep Editori-
-%% al committee, and permission has been attributed to Aditya to distri-
-%% bute freely the modified version of jheppub.sty, known as NotesTeX.sty
-%% 
-%% This work may be distributed and/or modified under the conditions of 
-%% the LaTeX Project Public License, either version 1.3 of this license
-%% or (at your option) any later version. The latest version of this 
-%% license is in 
-%%        http://www.latex-project.org/lppl.txt
-%% and version 1.3 or later is part of all distributions of LaTeX version
-%% 2005/12/01 or later.
-%% The Current Maintainer of this work is 
-%%        Aditya Dhumuntarao <adhumunt@gmail.com>
-%% --------------------------------------------------------------------
-
-% ----------------------------------------------------------------------
-%           Jhep Master Presets 
-% ----------------------------------------------------------------------
+% minicursoUFRB.csl
+% Classe baseada na classe NotesTeX.cls
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{NotesTeX}[2017/03/21 r1]
+\ProvidesClass{minicursoUFRB}[2022/01/01 v.0.1.0 'Classe (não oficial) para apostila voltada a minicursos']
 
 \gdef\@fpheader{\ }
 \gdef\@journal{jhep}
@@ -36,15 +14,16 @@
 
 \DeclareOption{no-natbib-sort}{\natbibsortfalse}
 \ProcessOptions\relax
+\LoadClass[10pt]{article}
 
 % Pacotes carregados ==========================================================
 \RequirePackage{Alegreya, AlegreyaSans}
 \RequirePackage{fontspec}
   \setmonofont{UbuntuMono}
   [
-    Path          = fonts/ubuntu-mono/,
-    Extension     = .ttf,
-    UprightFont   = *-Regular
+    Path        = fonts/ubuntu-mono/,
+    Extension   = .ttf,
+    UprightFont = *-Regular
   ]
 
 \RequirePackage{mathtools}
