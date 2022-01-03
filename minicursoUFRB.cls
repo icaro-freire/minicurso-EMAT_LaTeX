@@ -5,7 +5,7 @@
 \ProvidesClass{minicursoUFRB}[2022/01/01 v.0.1.0 'Classe (não oficial) para apostila voltada a minicursos']
 
 \ProcessOptions\relax
-\LoadClass[10pt]{article}
+\LoadClass[12pt]{article}
 
 % Pacotes carregados ==========================================================
 \RequirePackage{Alegreya, AlegreyaSans}
@@ -67,12 +67,14 @@
 \RequirePackage{multicol}
 
 \RequirePackage{tikz}
+  \definecolor[named]{color01}{rgb}{.2,.4,.6}
 \RequirePackage{physics}
 \RequirePackage{cancel}
 
 \RequirePackage{microtype}
 
 \RequirePackage{lipsum}
+
 % ----------------------------------------------------------------------
 %           User Page Prefrences 
 % ----------------------------------------------------------------------
@@ -128,6 +130,29 @@
 ,pdfa=true
 ]{hyperref}
 
+% capa ------------------------------------------------------------------------
+% comandos iniciais
+\newcommand{\titulo}{\textsf{Uma Introdução (a jato)}\\ \textsf{ao} \LaTeX}
+\newcommand{\autor}{Ícaro Vidal Freire}
+\newcommand{\mini}{Minicurso}
+
+\newcommand{\capa}{
+\thispagestyle{empty} % limpa formatação da página
+
+% colocando imagem de fundo
+\tikz[remember picture, overlay] \node[opacity=1,inner sep=0pt] at (current page.center){\includegraphics[width=1.25\paperwidth,height=1.18\paperheight]{ink.jpg}};
+
+% retângulo com os itens internos
+\begin{tikzpicture}[remember picture,overlay]
+  \node[rectangle, rounded corners, fill=white, opacity=0.75, anchor=south west, minimum width=8cm, minimum height=9cm] (box) at (0,-10) (box){};
+  \node[anchor=west, color01, xshift=-3.0cm, yshift=-1.0cm, text width=5.9cm, font=\sffamily\Large] at (box.north){\mini}; 
+  \node[anchor=west, color01, xshift=-3.0cm, yshift=-4.5cm, text width=5.9cm, font=\bfseries\Huge] at (box.north){\titulo};
+  \node[anchor=west, color01, xshift=-3.0cm, yshift=-8.0cm, text width=5.9cm, font=\sffamily\LARGE] at (box.north){\autor};
+\end{tikzpicture}
+
+% nova página
+\newpage
+}
 
 
 % Page layout
