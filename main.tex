@@ -1,8 +1,12 @@
 % arara: lualatex: {options: ['--output-directory=docs_saida']}
 %% arara: lualatex: {options: ['--output-directory=docs_saida']}
 
+% classe com as customizações -------------------------------------------------
 \documentclass{minicursoUFRB}
 
+%==============================================================================
+% Início do Documento 
+%------------------------------------------------------------------------------
 \begin{document}
 %
   \capa
@@ -12,7 +16,10 @@
 %
 	\flushbottom
 	\newpage
-	\pagestyle{fancynotes}
+%
+	\input{tex/bate-papo.tex}
+%
+  \pagestyle{fancynotes}
 %
 	\part{Introduction}	
 	\section{Primeiro Teste }
@@ -27,4 +34,6 @@
 	%\part{Advanced Page Formatting}
   %\input{tex/03_adv.tex}
 
+%------------------------------------------------------------------------------
 \end{document}
+%==============================================================================

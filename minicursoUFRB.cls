@@ -1,6 +1,7 @@
 % minicursoUFRB.csl
 % Classe baseada no pacote NotesTeX.sty
 
+% Estruturações Iniciais da Classe ============================================
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{minicursoUFRB}[2022/01/01 v.0.1.0 'Classe (não oficial) para apostila voltada a minicursos']
 
@@ -50,6 +51,8 @@
   \definecolor{douradoUFRB}{rgb}{0.929411765, 0.603921569, 0.066666667}
   \definecolor{azulUFRB}{rgb}{0.160784314, 0.08627451, 0.435294118}
 \RequirePackage[many]{tcolorbox}
+  \tcbuselibrary{most}
+
 
 \RequirePackage[shortlabels]{enumitem}
 
@@ -68,8 +71,11 @@
 
 \RequirePackage{tikz}
   \definecolor[named]{color01}{rgb}{.2,.4,.6}
+
 \RequirePackage{physics}
+\RequirePackage{siunitx}
 \RequirePackage{cancel}
+
 
 \RequirePackage{microtype}
 
@@ -126,7 +132,12 @@
 ,linkcolor=blue
 ,menucolor=blue
 ,linktocpage=true
-,pdfproducer=medialab
+,pdfproducer={LuaLaTeX}
+,pdfcreator={VSCode, arara}
+,pdftitle={Uma Introdução (a jato) ao LaTeX}
+,pdfauthor={Ícaro Vidal Freire}
+,pdfsubject={Minicurso ofertado no EMAT do CFP/UFRB}
+,pdfkeywords={latex, lualatex, arara, math, minicurso, ufrb}
 ,pdfa=true
 ]{hyperref}
 
@@ -153,6 +164,81 @@
 % nova página
 \newpage
 }
+
+% configurações de códigos ====================================================
+% criando uma caixa de avisos -------------------------------------------------
+\newtcolorbox[auto counter,number within=section]{aviso}[1][]{
+   enhanced jigsaw,
+   colback   = white,
+   colframe  = red,
+   coltitle  = red,
+   fonttitle = \bfseries\sffamily,
+   sharp corners,
+   detach title,
+   leftrule  = 22mm,
+   underlay unbroken and first={%
+     \node[below,text=black,anchor=east] at ([xshift=-22.5pt]interior.base west) {\Huge  \textbf{!}};
+    }, 
+   breakable,
+   pad at break = 1mm,
+   #1,
+   code={\ifdefempty{\tcbtitletext}{}{\tcbset{before upper={\tcbtitle\par\medskip}}}},
+  }
+
+% Configurando caixa para códigos ---------------------------------------------
+%% icone do lapis
+\newcommand{\lapis}[1]{%
+  \begin{scope}[
+    y=0.80pt,
+    x=0.80pt,
+    yscale=-1.000000,
+    xscale=1.000000,
+    inner sep=0pt,
+    outer sep=0pt,
+    shift={([xshift=0.35em, yshift=0.31em]frame.north west)},
+    scale=.11
+  ]
+
+    \path[fill=#1!5] (104.4280,104.4280) circle (2.9472cm);
+    \begin{scope}[shift={(-46.08801,-45.37)}]
+      \path[fill=#1] (113.9190,187.9100) -- (127.1980,200.4160) --
+        (109.7220,205.6600) -- (92.2560,210.9060) -- (96.4470,193.1470) --
+        (100.6380,175.3930) -- cycle;
+      \path[fill=#1] (133.3760,194.1100) -- (106.7160,169.1000) --
+        (182.1210,88.6910) -- (208.7790,113.7040) -- cycle;
+    \end{scope}
+  \end{scope}%
+}
+
+%% caixa de código
+% 1 -> título
+% 2 -> icone do lápis
+\newtcblisting{codigo}[2]{
+  adjusted title=#1,
+  adjusted title after break={\centering #1 (cont.)},
+  halign title=center,
+  fonttitle=\bfseries\sffamily,
+  enhanced,
+  drop lifted shadow,
+  colback=blue!5,
+  colframe=blue,
+  breakable,
+  overlay={#2{blue}},
+  toptitle=0.2em,
+  bottomtitle=.2em,
+  coltitle=white,
+  before skip=1em,
+  left=5mm,  
+  listing only,
+  listing options={
+    numbers=left,
+    numberstyle=\tiny\sffamily\color{blue},
+    basicstyle=\scriptsize\ttfamily,
+  },
+  after skip=1em
+}
+
+
 
 
 % Page layout

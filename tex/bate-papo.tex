@@ -1,0 +1,57 @@
+%==============================================================================
+% Introdução ao texto
+%==============================================================================
+\thispagestyle{empty}
+
+\section*{Bate-papo Inicial}
+
+\begin{marginfigure}
+  \centering
+  \includegraphics[width = \linewidth]{ctan_lion_350x350}
+\end{marginfigure}
+
+Se você optou por ler esse material, vá até o fim!
+O \LaTeX\ pode ser para você uma ferramenta extremamente agradável para produção
+tipográfica, a nível profissional, de suas futuras notas de aula; monografias,
+dissetações ou teses; listas de atividades; partituras; marcações no xadrez; etc.
+
+Não pretendo abordar muita coisa, confesso.
+
+Fui incumbido de ministrar, em pouco mais de 3\unit{\hour}, uma introdução ao 
+\LaTeX.
+
+\begin{codigo}{Exemplo de preâmbulo}{\lapis}
+% arara: lualatex: {options: ['--output-directory=docs_saida']}
+
+% classe do documento -------------------------------------------------------
+\documentclass[12pt]{article}
+
+% pacotes carregados --------------------------------------------------------
+\usepackage{mathtools, amsfonts, amsthm}
+
+% configurações do título ---------------------------------------------------
+\title{\textbf{Título}}
+\author{Ícaro Vidal Freire}
+\date{\today}
+
+%============================================================================
+% Início do Documento
+%----------------------------------------------------------------------------
+\begin{document}
+%
+  \maketitle % produz a saída do título
+%
+\begin{abstract}
+  Pequeno resumo.
+\end{abstract}
+%
+\section{Primeira Seção}
+
+Olá \LaTeX!
+%---------------------------------------------------------------------------- 
+\end{document}
+%============================================================================
+\end{codigo}
+
+%------------------------------------------------------------------------------
+\newpage
