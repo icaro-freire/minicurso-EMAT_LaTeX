@@ -76,6 +76,8 @@
 \RequirePackage{siunitx}
 \RequirePackage{cancel}
 
+\RequirePackage[style=abnt]{biblatex} %-------------------------> para bibliografia
+  \addbibresource{bib/biblatex-abnt.bib} %-> adiciona o arquivo da bibliografia
 
 \RequirePackage{microtype}
 
@@ -104,7 +106,7 @@
   \fancyhf{}%
   \fancyfootoffset[rh]{\myoddoffset}%
   \renewcommand{\headrulewidth}{0pt}
-  \fancyfoot[L]{\footnotesize \thepage}%
+  \fancyfoot[L]{\footnotesize \thepage}% ---------------------------------------> black!75!white
 }%
 
 \titleformat{\part}[hang]{{\thispagestyle{fancypart}}\Huge\bfseries}{\marginnote{
@@ -156,9 +158,9 @@
 % retângulo com os itens internos
 \begin{tikzpicture}[remember picture,overlay]
   \node[rectangle, rounded corners, fill=white, opacity=0.75, anchor=south west, minimum width=8cm, minimum height=9cm] (box) at (0,-10) (box){};
-  \node[anchor=west, color01, xshift=-3.0cm, yshift=-1.0cm, text width=5.9cm, font=\sffamily\Large] at (box.north){\mini}; 
-  \node[anchor=west, color01, xshift=-3.0cm, yshift=-4.5cm, text width=5.9cm, font=\bfseries\Huge] at (box.north){\titulo};
-  \node[anchor=west, color01, xshift=-3.0cm, yshift=-8.0cm, text width=5.9cm, font=\sffamily\LARGE] at (box.north){\autor};
+  \node[anchor=west, azulUFRB, xshift=-3.0cm, yshift=-1.0cm, text width=5.9cm, font=\sffamily\Large] at (box.north){\mini}; 
+  \node[anchor=west, azulUFRB, xshift=-3.0cm, yshift=-4.5cm, text width=5.9cm, font=\bfseries\Huge] at (box.north){\titulo};
+  \node[anchor=west, azulUFRB, xshift=-3.0cm, yshift=-8.0cm, text width=5.9cm, font=\sffamily\LARGE] at (box.north){\autor};
 \end{tikzpicture}
 
 % nova página
@@ -220,10 +222,10 @@
   fonttitle=\bfseries\sffamily,
   enhanced,
   drop lifted shadow,
-  colback=blue!5,
-  colframe=blue,
+  colback=azulUFRB!5,
+  colframe=azulUFRB,
   breakable,
-  overlay={#2{blue}},
+  overlay={#2{azulUFRB}},
   toptitle=0.2em,
   bottomtitle=.2em,
   coltitle=white,
@@ -232,7 +234,7 @@
   listing only,
   listing options={
     numbers=left,
-    numberstyle=\tiny\sffamily\color{blue},
+    numberstyle=\tiny\sffamily\color{azulUFRB},
     basicstyle=\scriptsize\ttfamily,
   },
   after skip=1em
