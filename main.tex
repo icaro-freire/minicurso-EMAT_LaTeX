@@ -1,5 +1,9 @@
 % arara: lualatex: {options: ['--output-directory=docs_saida']}
+% arara: lualatex: {options: ['--output-directory=docs_saida']}
+%% arara: biber:    {options: ['--output-directory=docs_saida']}
 %% arara: lualatex: {options: ['--output-directory=docs_saida']}
+
+
 
 % classe com as customizações -------------------------------------------------
 \documentclass{minicursoUFRB}
@@ -21,19 +25,17 @@
 %
   \pagestyle{fancynotes}
 %
-	\part{Introduction}	
-	\section{Primeiro Teste }
-	\lipsum[1]
-	\section{Segundo Teste}
-	\lipsum[2-3]
-  %\input{tex/01_intro.tex}
+	\part{A arte de nomear as coisas}	
 %
+  \input{tex/01_nomes.tex}
+	%
 	%\part{Modifications}\label{Part:Modification}
   %\input{tex/02_mod.tex}
-%	
-	%\part{Advanced Page Formatting}
-  %\input{tex/03_adv.tex}
 
+  %\clearpage
+	%\thispagestyle{empty}
+  %\nocite{*}
+  %\printbibliography
 %------------------------------------------------------------------------------
 \end{document}
 %==============================================================================

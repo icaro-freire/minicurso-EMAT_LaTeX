@@ -76,10 +76,14 @@
 \RequirePackage{siunitx}
 \RequirePackage{cancel}
 
+\RequirePackage[style=abnt]{biblatex} %-------------------------> para bibliografia
+  \addbibresource{bib/biblatex-abnt.bib} %-> adiciona o arquivo da bibliografia
 
 \RequirePackage{microtype}
 
 \RequirePackage{lipsum}
+
+\RequirePackage{indentfirst}
 
 % ----------------------------------------------------------------------
 %           User Page Prefrences 
@@ -104,16 +108,16 @@
   \fancyhf{}%
   \fancyfootoffset[rh]{\myoddoffset}%
   \renewcommand{\headrulewidth}{0pt}
-  \fancyfoot[L]{\footnotesize \thepage}%
+  \fancyfoot[L]{\footnotesize \thepage}% ---------------------------------------> black!75!white
 }%
 
 \titleformat{\part}[hang]{{\thispagestyle{fancypart}}\Huge\bfseries}{\marginnote{
-\begin{tcolorbox}[width=\marginparwidth,height=\marginparwidth/2,colback=douradoUFRB,colframe=black!75!white,center title,fonttitle=\bfseries\normalsize,title=PARTE,text fill]
+\begin{tcolorbox}[width=\marginparwidth,height=\marginparwidth/2,colback=douradoUFRB,colframe=azulUFRB,center title,fonttitle=\bfseries\normalsize,title=PARTE,text fill]
   \begin{center}
   {\color{white}\thepart}
   \end{center}
 \end{tcolorbox}
-}[-1.25in]}{0pt}{\sffamily\Huge\bfseries}
+}[-1.25in]}{0pt}{\sffamily\Huge\bfseries\color{azulUFRB}}
 
 \newenvironment{fullpage}
     {\smallskip\noindent\begin{minipage}
@@ -156,9 +160,9 @@
 % retângulo com os itens internos
 \begin{tikzpicture}[remember picture,overlay]
   \node[rectangle, rounded corners, fill=white, opacity=0.75, anchor=south west, minimum width=8cm, minimum height=9cm] (box) at (0,-10) (box){};
-  \node[anchor=west, color01, xshift=-3.0cm, yshift=-1.0cm, text width=5.9cm, font=\sffamily\Large] at (box.north){\mini}; 
-  \node[anchor=west, color01, xshift=-3.0cm, yshift=-4.5cm, text width=5.9cm, font=\bfseries\Huge] at (box.north){\titulo};
-  \node[anchor=west, color01, xshift=-3.0cm, yshift=-8.0cm, text width=5.9cm, font=\sffamily\LARGE] at (box.north){\autor};
+  \node[anchor=west, azulUFRB, xshift=-3.0cm, yshift=-1.0cm, text width=5.9cm, font=\sffamily\Large] at (box.north){\mini}; 
+  \node[anchor=west, azulUFRB, xshift=-3.0cm, yshift=-4.5cm, text width=5.9cm, font=\bfseries\Huge] at (box.north){\titulo};
+  \node[anchor=west, azulUFRB, xshift=-3.0cm, yshift=-8.0cm, text width=5.9cm, font=\sffamily\LARGE] at (box.north){\autor};
 \end{tikzpicture}
 
 % nova página
@@ -220,10 +224,10 @@
   fonttitle=\bfseries\sffamily,
   enhanced,
   drop lifted shadow,
-  colback=blue!5,
-  colframe=blue,
+  colback=azulUFRB!5,
+  colframe=azulUFRB,
   breakable,
-  overlay={#2{blue}},
+  overlay={#2{azulUFRB}},
   toptitle=0.2em,
   bottomtitle=.2em,
   coltitle=white,
@@ -232,7 +236,7 @@
   listing only,
   listing options={
     numbers=left,
-    numberstyle=\tiny\sffamily\color{blue},
+    numberstyle=\tiny\sffamily\color{azulUFRB},
     basicstyle=\scriptsize\ttfamily,
   },
   after skip=1em
@@ -303,7 +307,7 @@
 \renewcommand\section{\@startsection{section}{1}{\z@}%
                                    {-3.5ex \@plus -1.3ex \@minus -.7ex}%
                                    {2.3ex \@plus.4ex \@minus .4ex}%
-                                   {\sffamily\Large\bfseries}}
+                                   {\sffamily\Large\bfseries\color{azulUFRB}}}
 \renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
                                    {-2.3ex\@plus -1ex \@minus -.5ex}%
                                    {1.2ex \@plus .3ex \@minus .3ex}%
