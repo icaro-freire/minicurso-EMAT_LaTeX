@@ -83,6 +83,8 @@
 
 \RequirePackage{lipsum}
 
+\RequirePackage{indentfirst}
+
 % ----------------------------------------------------------------------
 %           User Page Prefrences 
 % ----------------------------------------------------------------------
@@ -110,12 +112,12 @@
 }%
 
 \titleformat{\part}[hang]{{\thispagestyle{fancypart}}\Huge\bfseries}{\marginnote{
-\begin{tcolorbox}[width=\marginparwidth,height=\marginparwidth/2,colback=douradoUFRB,colframe=black!75!white,center title,fonttitle=\bfseries\normalsize,title=PARTE,text fill]
+\begin{tcolorbox}[width=\marginparwidth,height=\marginparwidth/2,colback=douradoUFRB,colframe=azulUFRB,center title,fonttitle=\bfseries\normalsize,title=PARTE,text fill]
   \begin{center}
   {\color{white}\thepart}
   \end{center}
 \end{tcolorbox}
-}[-1.25in]}{0pt}{\sffamily\Huge\bfseries}
+}[-1.25in]}{0pt}{\sffamily\Huge\bfseries\color{azulUFRB}}
 
 \newenvironment{fullpage}
     {\smallskip\noindent\begin{minipage}
@@ -305,7 +307,7 @@
 \renewcommand\section{\@startsection{section}{1}{\z@}%
                                    {-3.5ex \@plus -1.3ex \@minus -.7ex}%
                                    {2.3ex \@plus.4ex \@minus .4ex}%
-                                   {\sffamily\Large\bfseries}}
+                                   {\sffamily\Large\bfseries\color{azulUFRB}}}
 \renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
                                    {-2.3ex\@plus -1ex \@minus -.5ex}%
                                    {1.2ex \@plus .3ex \@minus .3ex}%
