@@ -46,6 +46,16 @@
     textheight     = 0.84\paperheight,
     textwidth      = 0.64\paperwidth
   }
+\RequirePackage{quoting}
+
+\newenvironment{cita}{
+  \begin{quoting}[rightmargin=0cm,leftmargin=0.4\linewidth]
+  \begin{singlespace}
+    \small
+}{
+  \end{singlespace}
+  \end{quoting}
+}
 
 \RequirePackage[dvipsnames]{xcolor}
   \definecolor{douradoUFRB}{rgb}{0.929411765, 0.603921569, 0.066666667}
@@ -53,12 +63,12 @@
 \RequirePackage[many]{tcolorbox}
   \tcbuselibrary{most}
 
-
 \RequirePackage[shortlabels]{enumitem}
 
 \RequirePackage{array}
 \RequirePackage{tabularx}
 \RequirePackage{booktabs}
+\RequirePackage{fancybox}
 
 \RequirePackage{wrapfig}
 \RequirePackage{float}
@@ -75,6 +85,7 @@
 \RequirePackage{physics}
 \RequirePackage{siunitx}
 \RequirePackage{cancel}
+\RequirePackage{ulem}
 
 \RequirePackage[style=abnt]{biblatex} %-------------------------> para bibliografia
   \addbibresource{bib/biblatex-abnt.bib} %-> adiciona o arquivo da bibliografia
@@ -129,12 +140,12 @@
 \newcommand{\sn}[1]{\sidenote{\itshape\footnotesize #1}}
 
 \RequirePackage[colorlinks=true
-,urlcolor=blue
-,anchorcolor=blue
-,citecolor=blue
-,filecolor=blue
-,linkcolor=blue
-,menucolor=blue
+,urlcolor=douradoUFRB
+,anchorcolor=azulUFRB
+,citecolor=azulUFRB
+,filecolor=azulUFRB
+,linkcolor=azulUFRB
+,menucolor=azulUFRB
 ,linktocpage=true
 ,pdfproducer={LuaLaTeX}
 ,pdfcreator={VSCode, arara}
@@ -242,8 +253,29 @@
   after skip=1em
 }
 
+% notas marginais -------------------------------------------------------------
+\newcounter{mynote}%~\thetcbcounter
+\newtcolorbox[use counter=mynote]
+  {mynote}[1][]
+  {title=Saiba mais,
+   width=5cm,
+   left=0pt,
+   right=0pt,
+   fonttitle=\bfseries\color{black},
+   colframe=douradoUFRB,
+   colback=douradoUFRB!50,
+   #1
+}    
 
+\newcommand\nota[2][]{%
+  \marginnote[\footnotesize #1]{%
+    \makebox[0pt][l]{\begin{mynote}%[label=#3]
+    \footnotesize #2
+    \end{mynote}}}%
+}
 
+% novos comandos ==============================================================
+\newcommand{\lualatex}{\texttt{lualatex}}
 
 % Page layout
 \renewcommand{\baselinestretch}{1.15}\normalsize
@@ -311,11 +343,11 @@
 \renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
                                    {-2.3ex\@plus -1ex \@minus -.5ex}%
                                    {1.2ex \@plus .3ex \@minus .3ex}%
-                                   {\sffamily\large\bfseries}}
+                                   {\sffamily\large\bfseries\color{azulUFRB}}}
 \renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
                                    {-2.3ex\@plus -1ex \@minus -.5ex}%
                                    {1ex \@plus .2ex \@minus .2ex}%
-                                   {\sffamily\normalsize\bfseries}}
+                                   {\sffamily\normalsize\bfseries\color{azulUFRB}}}
 \renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
                                    {1.75ex \@plus1ex \@minus.2ex}%
                                    {-1em}%

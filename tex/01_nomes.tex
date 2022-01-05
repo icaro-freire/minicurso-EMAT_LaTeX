@@ -40,21 +40,193 @@ algumas plantas (seringueira, por exemplo)!
 Então, vamos deixar as coisas claras: não estamos falando de látex, mas de \LaTeX.
 
 \begin{aviso}
-  Aliás, como se pronuncia a palavra \LaTeX?
-  Existem, pelo menos, duas maneiras de se pronunciar corretamente essa palavra:
-  "\textit{LeiTéc}" ou "\textit{LaTéc}",ou seja, o som de \TeX{} ("Téc") é o 
-  mesmo que em "\textbf{tec}nologia". 
+  Aliás, como se pronuncia a palavra \LaTeX?\\
+  Existem, pelo menos, duas maneiras de pronunciarmos, corretamente, essa palavra:
+  "\textit{LeiTéc}" ou "\textit{LaTéc}", ou seja, o som de \TeX{} ("Téc") é o 
+  mesmo que na palavra "\textit{tec}nologia". 
   Particularmente, adoto a segunda opção.
   Evite, por amor a Deus, falar "\textit{Látecks}".
 \end{aviso}
 
-Falando nisso, a palavra \TeX, foi idealizada como sendo a junção de três letras
-gregas: $\tau\epsilon\chi$.\footnote{%
-  $\tau$ (tau), $\epsilon$ (épsilon) e $\chi$ (chi)
+Falando nisso, essa palavra \TeX{} não está destacada de forma aleatória! 
+Ela foi idealizada como sendo a junção de três letras gregas: $\tau\epsilon\chi$.
+\sidenote{%
+  \footnotesize $\tau$ (tau), $\epsilon$ (épsilon) e $\chi$ (chi)
 }
 Esse núcleo grego gera palavras como \textit{arte} ($\small\tau\epsilon\chi\nu\eta$) 
 ou mesmo \textit{tecnologia} ($\small\tau\epsilon\chi\nu o \lambda o \gamma\iota\alpha$).
 Daí vem o espírito da palavra \TeX: unir uma arte (a tipografia) com a 
 tecnologia (programação) para produzir documentos com uma beleza realmente ímpar.
 
+Na realidade, para falarmos sobre \LaTeX, precisamos tangenciar o \TeX.
+
+\subsection{Diferenciando os nomes} %------------------------------------------
+
+Tudo começou quando \href{https://pt.wikipedia.org/wiki/Donald_Knuth}{Donald Ervin Knuth} 
+queria qualidade nos elementos tipográficos de seus livros, principalmente na 
+escrita matemática. 
+Ele então criou, em meados da década dos anos 70, um sofisticado programa para a 
+composição tipográfica de textos científicos e uma alternativa quase necessária 
+para edição de textos com conteúdo matemático. 
+Nasceu o \TeX. 
+Em suas próprias palavras:
+
+\begin{cita}
+  \TeX{} é destinado para a criação de belos livros - e, especialmente, para os 
+  livros que contêm grande quantidade de matemática.
+\end{cita}
+
+Todavia, ao que parece, essa linguagem de programação não era tão acessível 
+\sout{a meros mortais como nós}, por conter diversos parâmetros relativos ao 
+formato final do texto \ldots
+Bom, vamos falar a verdade: dava muito trabalho para digitar o que você queria 
+simplificar.
+Isso porque o \TeX{} era formado por objetos denominados "primitivos".
+O próprio Knuth criou um conjunto de macros\nota{
+  Uma \textit{macro} (abreviação para macroinstrução), em ciência da computação, 
+  é uma regra ou padrão que especifica como uma certa “sequência de entrada” 
+  deve ser mapeada para uma substituição de “sequência de saída” de acordo com 
+  um procedimento definido.
+}, ou seja, um mapeamento de sequências de comandos primitivos, frequentemente 
+utilizados, para simplificar a escrita de comandos \TeX{} em seus livros.
+A esse conjunto de macros ele deu o nome de \textit{Plain \TeX}.
+
+Obviamente, o \textit{Plain \TeX} é um conjunto de macros bem simples e que 
+poderia ser expandido.
+E foi isso que aconteceu.
+
+\subsection{O surgimento do \LaTeX} %------------------------------------------
+
+\href{https://pt.wikipedia.org/wiki/Leslie_Lamport}{Leslie B. Lamport}, facilitou 
+nossa vida! 
+Por volta dos anos 80, ele criou um conjunto de macros para o \TeX, muito bem 
+estruturado, e com ideias interessantes (classes e pacotes, por exemplo)que 
+somaram substanciamente à causa do \TeX{}, formando assim o \LaTeX.
+Inclusive, o "La", de \LaTeX{}; vem do "La", de \textit{\textbf{La}mport}.\sidenote{
+  $\text{\LaTeX} = \text{\textbf{La}mport} + \text{\TeX}$
+}
+
+Logo, nunca se esqueça disso:
+
+\begin{center}
+  \Ovalbox{
+    \large  \textsf{O} \LaTeX\ \textsf{veio para facilitar sua vida}!
+  }
+\end{center}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width = 0.8\linewidth]{lamport-knuth}
+  \caption{Os culpados!}
+\end{figure}
+
+\subsection{Mais e mais nomes} %-----------------------------------------------
+
+Bom \ldots já sabemos que  \TeX{} e \LaTeX{} são coisas diferentes, entretanto,
+interrelacionadas: o segundo é a forma mais utilizada, atualmente, para 
+interagir com o primeiro.
+
+Nesse ponto, seria interessante diferenciarmos \textit{engines} (motores/interpretadotes) 
+de \textit{formats} (formatos).
+
+O \TeX\ é um interpretador (\textit{engine}); o \LaTeX, um formato (\textit{format}).
+
+\nota{
+  Um outro formato que vimos é o \textit{Plain \TeX}; e, atualmente, um formato 
+  que se destaca é o \href{https://en.wikipedia.org/wiki/ConTeXt}{\textcolor{azulUFRB}{Con\TeX t}}.
+}
+
+Os \textit{interpretadores} são os arquivos binários executáveis (ou seja, o 
+programa em si); já os \textit{formatos} são macros (comandos ou instruções) ou 
+linguagens/atalhos baseadas em \TeX{} que usamos para escrever nossos documentos.
+
+Não é difícil perceber que o interpretador \TeX\ é bem antigo e que outros tenham
+surgido ao longo desses anos.
+De fato, à época do \TeX, nem existia ainda arquivos com extensão  \texttt{.pdf} 
+-- a saída dos documentos era em DVI.
+Quando surgiu o PDF, um interpretador ficou bem conhecido: pdf\TeX{} -- cuja saída
+poderia ser em DVI que poderia ser convertida em PDF. 
+O pdf\TeX{} talvez seja o mais usado dentre os interpretadores que vamos falar, 
+pois já vem selecionado, por padrão, em muitos editores dedicados ao \LaTeX\mn{
+  falaremos sobre editores para \LaTeX\ mais abaixo.
+}; as pessoas, simplesmente, não mudam a configuração padrão se realmente não 
+for necessário.
+Nosso sistema relaciona o \LaTeX\ com o pdf\LaTeX\ usando um "atalho", denominado
+pdf\LaTeX.
+
+Portanto, o pdf\LaTeX\ (que geralmente é o nome que aparecerá em nossos editores) 
+é o \textit{interpretador} pdf\TeX\ com o \textit{formato} \LaTeX. 
+
+Atualmente, dois interpretadores que se destacam são Xe\TeX\ e Lua\TeX.
+Além de serem mais rápidos, trazem implementações notáveis como seleção de fontes 
+do próprio sistema (o pdf\TeX\ não faz isso) ou interação com a linguagem de 
+programação (brasileira) Lua.
+A saída de cada um deles é o PDF, diretamente.
+
+\begin{marginfigure}
+  \centering
+  \href
+  {
+    https://www.lua.org/portugues.html
+  }
+  {
+    \includegraphics[width = 0.6\linewidth]{logo_lua.png}
+  }
+  \caption{Poderosa linguagem de programação (clique na imagem para saber mais)}
+\end{marginfigure}
+ 
+Em nossos sistemas, ao usarmos Xe\TeX\ com \LaTeX\ usamos o atalho Xe\LaTeX.
+Da mesma forma, Lua\TeX\ com \LaTeX é simplificado por Lua\LaTeX.
+
+Geralmente chamamos esses "atalhos" de \textbf{compiladores}.
+Veja a Tabela~\ref{tab:compiladores}.
+
+\begin{table}[!htbp]
+  \centering
+  \begin{tabular}{llc}
+    \toprule
+      \textbf{Compilador} & \textbf{Interpretador} & \textbf{Formato}\\
+    \midrule
+      \texttt{pdflatex} & pdf\TeX & \LaTeX\\
+      \texttt{xelatex}  & Xe\TeX  & \LaTeX\\
+      \texttt{lualatex} & Lua\TeX & \LaTeX\\
+    \bottomrule
+  \end{tabular}
+  \caption{Dando "nome aos bois"}
+  \label{tab:compiladores}
+\end{table}
+
+Obviamente, nesse minicurso, estamos interessados apenas no formato \LaTeX.
+Também usaremos como interpretador o lua\TeX.
+Portanto, compilaremos nossos arquivos com \texttt{lualatex}.
+
+Isso pode mudar algumas coisas para quem é acostumado a usar \texttt{pdflatex}, 
+mas explicaremos as diferenças ao longo desse minicurso.
+
+Obtamos por usar \lualatex, pois é o sucessor natural do \texttt{pdflatex}. \sidenote{
+  \footnotesize
+  Confira essa informação no site \href{http://www.luatex.org/}{http://www.luatex.org/}
+}
+
+Para encerramos essa subseção, é importante destacar a estabilidade do \LaTeX.
+Basicamente temos duas versões: uma antes de 1993, a saber \textit{LaTeX~2.09}; e,
+a de 1994 até HOJE, a saber \textit{LaTeX~2e}.
+Isso é interessante, pois os códigos são praticamente preservados ao longo do 
+tempo: você poderia rodar um código em \LaTeX\ de 30 anos atrás sem muitos 
+problemas.
+
+Todavia, quando falamos em \LaTeX{}, hoje, estamos nos referindo às 
+funcionalidades trazidas na versão \textit{\LaTeX2e}.
+
+As atualizações são constantes, mas sem muitas mudanças estruturais.
+Todavia, está em desenvolvimento uma terceira versão do \LaTeX: \textit{LaTeX3}.
+Você pode saber mais no link abaixo:
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width = 0.7\linewidth]{logo_latex}
+  \caption{\href{https://www.latex-project.org/latex3/}{\textcolor{azulUFRB}{https://www.latex-project.org/latex3/}}}
+\end{figure}
+
+ 
 
