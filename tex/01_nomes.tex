@@ -137,8 +137,9 @@ O \TeX\ é um interpretador (\textit{engine}); o \LaTeX, um formato (\textit{for
 }
 
 Os \textit{interpretadores} são os arquivos binários executáveis (ou seja, o 
-programa em si); já os \textit{formatos} são macros (comandos ou instruções) ou 
-linguagens/atalhos baseadas em \TeX{} que usamos para escrever nossos documentos.
+programa em si); já os \textit{formatos} são macros (comandos ou instruções), 
+baseadas em \TeX, que usamos para escrever nossos documentos (a grosso modo, são
+linguagens ou atalhos para sequências de comandos ou estruturas em \TeX).
 
 Não é difícil perceber que o interpretador \TeX\ é bem antigo e que outros tenham
 surgido ao longo desses anos.
@@ -197,29 +198,32 @@ Veja a Tabela~\ref{tab:compiladores}.
 \end{table}
 
 Obviamente, nesse minicurso, estamos interessados apenas no formato \LaTeX.
-Também usaremos como interpretador o lua\TeX.
-Portanto, compilaremos nossos arquivos com \texttt{lualatex}.
+Também, por mera preferência, usaremos como interpretador o Lua\TeX.
+Portanto, "compilaremos" (ou seja, a composição tipográfica) nossos arquivos 
+com \texttt{lualatex}.
 
-Isso pode mudar algumas coisas para quem é acostumado a usar \texttt{pdflatex}, 
-mas explicaremos as diferenças ao longo desse minicurso.
+\begin{aviso}
+  Isso pode mudar algumas coisas para quem é acostumado a usar \texttt{pdflatex}, 
+  mas explicaremos as diferenças ao longo desse minicurso.  
+\end{aviso}
 
 Obtamos por usar \lualatex, pois é o sucessor natural do \texttt{pdflatex}. \sidenote{
   \footnotesize
-  Confira essa informação no site \href{http://www.luatex.org/}{http://www.luatex.org/}
+  Confira essa informação no site \href{http://www.luatex.org/}{\textbf{http://www.luatex.org/}}
 }
 
 Para encerramos essa subseção, é importante destacar a estabilidade do \LaTeX.
-Basicamente temos duas versões: uma antes de 1993, a saber \textit{LaTeX~2.09}; e,
-a de 1994 até HOJE, a saber \textit{LaTeX~2e}.
+Basicamente temos duas versões: uma antes de 1993, a saber \LaTeX~2.09; e,
+a de 1994 até HOJE, a saber \LaTeX$2\varepsilon$.
 Isso é interessante, pois os códigos são praticamente preservados ao longo do 
 tempo: você poderia rodar um código em \LaTeX\ de 30 anos atrás sem muitos 
 problemas.
 
 Todavia, quando falamos em \LaTeX{}, hoje, estamos nos referindo às 
-funcionalidades trazidas na versão \textit{\LaTeX2e}.
+funcionalidades trazidas na versão \LaTeX$2\varepsilon$.
 
 As atualizações são constantes, mas sem muitas mudanças estruturais.
-Todavia, está em desenvolvimento uma terceira versão do \LaTeX: \textit{LaTeX3}.
+Todavia, está em desenvolvimento uma terceira versão do \LaTeX, a saber, \LaTeX3.
 Você pode saber mais no link abaixo:
 
 \begin{figure}[!htbp]
