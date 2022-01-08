@@ -291,8 +291,8 @@
   \end{scope}%
 }
 
-% 1 -> title
-% 2 -> icon description
+% 1 -> titulo
+% 2 -> icone de exclamação
 \newtcolorbox{atencao}[2]{
   adjusted title=#1,
   adjusted title after break={\centering #1 (cont.)},
@@ -309,6 +309,18 @@
   coltitle=white,
   before skip=1em,
   after skip=1.4em
+}
+
+% configuração para código LaTeX ----------------------------------------------
+
+\newtcblisting{codeLaTeX}{%
+  colback=azulUFRB!5!white,
+  colframe=azulUFRB,
+  listing options={
+    numbers=left,
+    numberstyle=\tiny\sffamily\color{azulUFRB},
+    basicstyle=\scriptsize\ttfamily
+  }
 }
 
 % notas marginais -------------------------------------------------------------
