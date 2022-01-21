@@ -87,8 +87,8 @@
 \RequirePackage{cancel}
 \RequirePackage{ulem}
 
-\RequirePackage[style=abnt]{biblatex} %-------------------------> para bibliografia
-  \addbibresource{bib/biblatex-abnt.bib} %-> adiciona o arquivo da bibliografia
+\RequirePackage[style=abnt, justify]{biblatex} %-------------------------> para bibliografia
+  \addbibresource{bib/minicurso-latex.bib} %-> adiciona o arquivo da bibliografia
 
 \RequirePackage{microtype}
 

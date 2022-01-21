@@ -1,9 +1,7 @@
 % arara: lualatex: {options: ['--output-directory=docs_saida']}
 % arara: lualatex: {options: ['--output-directory=docs_saida']}
-%% arara: biber:    {options: ['--output-directory=docs_saida']}
-%% arara: lualatex: {options: ['--output-directory=docs_saida']}
-
-
+% arara: biber:    {options: ['--output-directory=docs_saida']}
+% arara: lualatex: {options: ['--output-directory=docs_saida']}
 
 % classe com as customizações -------------------------------------------------
 \documentclass{minicursoUFRB}
@@ -32,10 +30,10 @@
 	%\part{Modifications}\label{Part:Modification}
   %\input{tex/02_mod.tex}
 
-  %\clearpage
-	%\thispagestyle{empty}
-  %\nocite{*}
-  %\printbibliography
+  \clearpage
+	\thispagestyle{empty}
+  \nocite{*}
+  \printbibliography
 %------------------------------------------------------------------------------
 \end{document}
 %==============================================================================
