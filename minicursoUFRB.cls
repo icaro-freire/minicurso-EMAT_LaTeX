@@ -86,6 +86,7 @@
 \RequirePackage{siunitx}
 \RequirePackage{cancel}
 \RequirePackage{ulem}
+\RequirePackage{hologo}
 
 \RequirePackage[style=abnt, justify]{biblatex} %-------------------------> para bibliografia
   \addbibresource{bib/minicurso-latex.bib} %-> adiciona o arquivo da bibliografia

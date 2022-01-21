@@ -158,10 +158,10 @@ pdf\LaTeX.
 Portanto, o pdf\LaTeX\ (que geralmente é o nome que aparecerá em nossos editores) 
 é o \textit{interpretador} pdf\TeX\ com o \textit{formato} \LaTeX. 
 
-Atualmente, dois interpretadores que se destacam são Xe\TeX\ e Lua\TeX.
+Atualmente, dois interpretadores que se destacam são \hologo{XeTeX} e \hologo{LuaTeX}.
 Além de serem mais rápidos, trazem implementações notáveis como seleção de fontes 
-do próprio sistema (o pdf\TeX\ não faz isso) ou interação com a linguagem de 
-programação (brasileira) Lua.
+do próprio sistema (o \hologo{pdfTeX} não faz isso) ou interação com a linguagem 
+de programação (brasileira) Lua.
 A saída de cada um deles é o PDF, diretamente.
 
 \begin{marginfigure}
@@ -176,8 +176,8 @@ A saída de cada um deles é o PDF, diretamente.
   \caption{Poderosa linguagem de programação (clique na imagem para saber mais)}
 \end{marginfigure}
  
-Em nossos sistemas, ao usarmos Xe\TeX\ com \LaTeX\ usamos o atalho Xe\LaTeX.
-Da mesma forma, Lua\TeX\ com \LaTeX é simplificado por Lua\LaTeX.
+Em nossos sistemas, ao usarmos \hologo{XeTeX} com \LaTeX\ usamos o atalho \hologo{XeLaTeX}.
+Da mesma forma, \hologo{LuaTeX} com \LaTeX é simplificado por \hologo{LuaLaTeX}.
 
 Geralmente chamamos esses "atalhos" de \textbf{compiladores}.
 Veja a Tabela~\ref{tab:compiladores}.
@@ -188,9 +188,9 @@ Veja a Tabela~\ref{tab:compiladores}.
     \toprule
       \textbf{Compilador} & \textbf{Interpretador} & \textbf{Formato}\\
     \midrule
-      \texttt{pdflatex} & pdf\TeX & \LaTeX\\
-      \texttt{xelatex}  & Xe\TeX  & \LaTeX\\
-      \texttt{lualatex} & Lua\TeX & \LaTeX\\
+      \texttt{pdflatex} & \hologo{pdfTeX} & \LaTeX\\
+      \texttt{xelatex}  & \hologo{XeTeX}  & \LaTeX\\
+      \texttt{lualatex} & \hologo{LuaTeX} & \LaTeX\\
     \bottomrule
   \end{tabular}
   \caption{Dando "nome aos bois"}
@@ -198,7 +198,7 @@ Veja a Tabela~\ref{tab:compiladores}.
 \end{table}
 
 Obviamente, nesse minicurso, estamos interessados apenas no formato \LaTeX.
-Também, por mera preferência, usaremos como interpretador o Lua\TeX.
+Também, por mera preferência, usaremos como interpretador o \hologo{LuaTeX}.
 Portanto, "compilaremos" (ou seja, a composição tipográfica) nossos arquivos 
 com \texttt{lualatex}.
 
@@ -214,16 +214,16 @@ Obtamos por usar \lualatex, pois é o sucessor natural do \texttt{pdflatex}. \si
 
 Para encerramos essa subseção, é importante destacar a estabilidade do \LaTeX.
 Basicamente temos duas versões: uma antes de 1993, a saber \LaTeX~2.09; e,
-a de 1994 até HOJE, a saber \LaTeX$2\varepsilon$.
+a de 1994 até HOJE, a saber \hologo{LaTeX2e}.
 Isso é interessante, pois os códigos são praticamente preservados ao longo do 
 tempo: você poderia rodar um código em \LaTeX\ de 30 anos atrás sem muitos 
 problemas.
 
 Todavia, quando falamos em \LaTeX{}, hoje, estamos nos referindo às 
-funcionalidades trazidas na versão \LaTeX$2\varepsilon$.
+funcionalidades trazidas na versão \hologo{LaTeX2e}.
 
 As atualizações são constantes, mas sem muitas mudanças estruturais.
-Todavia, está em desenvolvimento uma terceira versão do \LaTeX, a saber, \LaTeX3.
+Todavia, está em desenvolvimento uma terceira versão do \LaTeX, a saber, \hologo{LaTeX3}.
 Você pode saber mais no link abaixo:
 
 \begin{figure}[!htbp]
