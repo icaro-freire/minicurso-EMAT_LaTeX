@@ -8,7 +8,7 @@
   \end{tabularx}
 \end{margintable}
 
-Lembro-me da primeira vez que vi o nome \LaTeX\ \ldots
+Lembro-me da primeira vez que vi o nome \LaTeX{} \ldots
 
 Foi em uma chamada de um minicurso de alguma "semana de matemática" da 
 universidade que fiz graduação.
@@ -55,10 +55,11 @@ Ela foi idealizada como sendo a junção de três letras gregas: $\tau\epsilon\c
 }
 Esse núcleo grego gera palavras como \textit{arte} ($\small\tau\epsilon\chi\nu\eta$) 
 ou mesmo \textit{tecnologia} ($\small\tau\epsilon\chi\nu o \lambda o \gamma\iota\alpha$).
-Daí vem o espírito da palavra \TeX: unir uma arte (a tipografia) com a 
-tecnologia (programação) para produzir documentos com uma beleza realmente ímpar.
+Daí vem o espírito da palavra \TeX: unir uma arte (a tipografia) com a tecnologia 
+(programação) para produzir documentos com uma beleza realmente ímpar.
 
-Na realidade, para falarmos sobre \LaTeX, precisamos tangenciar o \TeX.
+Na realidade, para falarmos com propriedade sobre \LaTeX, precisamos tangenciar 
+o \TeX.
 
 \subsection{Diferenciando os nomes} %------------------------------------------
 
@@ -81,7 +82,8 @@ Todavia, ao que parece, essa linguagem de programação não era tão acessível
 formato final do texto \ldots
 Bom, vamos falar a verdade: dava muito trabalho para digitar o que você queria 
 simplificar.
-Isso porque o \TeX{} era formado por objetos denominados "primitivos".
+Isso porque o \TeX{} era formado por objetos denominados "primitivos" e toda 
+estruturação do texto deveria ser feita por meio deles.
 O próprio Knuth criou um conjunto de macros\nota{
   Uma \textit{macro} (abreviação para macroinstrução), em ciência da computação, 
   é uma regra ou padrão que especifica como uma certa “sequência de entrada” 
@@ -89,9 +91,9 @@ O próprio Knuth criou um conjunto de macros\nota{
   um procedimento definido.
 }, ou seja, um mapeamento de sequências de comandos primitivos, frequentemente 
 utilizados, para simplificar a escrita de comandos \TeX{} em seus livros.
-A esse conjunto de macros ele deu o nome de \textit{Plain \TeX}.
+A esse conjunto de macros ele deu o nome de \textit{Plain}~\TeX.
 
-Obviamente, o \textit{Plain \TeX} é um conjunto de macros bem simples e que 
+Obviamente, o \textit{Plain}~\TeX{} é um conjunto de macros bem simples e que 
 poderia ser expandido.
 E foi isso que aconteceu.
 
@@ -100,9 +102,10 @@ E foi isso que aconteceu.
 \href{https://pt.wikipedia.org/wiki/Leslie_Lamport}{Leslie B. Lamport}, facilitou 
 nossa vida! 
 Por volta dos anos 80, ele criou um conjunto de macros para o \TeX, muito bem 
-estruturado, e com ideias interessantes (classes e pacotes, por exemplo)que 
+estruturado, e com ideias interessantes (classes e pacotes, por exemplo) que 
 somaram substanciamente à causa do \TeX{}, formando assim o \LaTeX.
-Inclusive, o "La", de \LaTeX{}; vem do "La", de \textit{\textbf{La}mport}.\sidenote{
+Inclusive, o "La", de \LaTeX{}; vem do "La", de \textit{\textbf{La}mport}.
+\sidenote{
   $\text{\LaTeX} = \text{\textbf{La}mport} + \text{\TeX}$
 }
 
@@ -120,7 +123,7 @@ Logo, nunca se esqueça disso:
   \caption{Os culpados!}
 \end{figure}
 
-\subsection{Mais e mais nomes} %-----------------------------------------------
+\subsection{Mais e mais nomes: compiladores, interpretadores e formatos} %-----
 
 Bom \ldots já sabemos que  \TeX{} e \LaTeX{} são coisas diferentes, entretanto,
 interrelacionadas: o segundo é a forma mais utilizada, atualmente, para 
@@ -129,11 +132,11 @@ interagir com o primeiro.
 Nesse ponto, seria interessante diferenciarmos \textit{engines} (motores/interpretadotes) 
 de \textit{formats} (formatos).
 
-O \TeX\ é um interpretador (\textit{engine}); o \LaTeX, um formato (\textit{format}).
+O \TeX{} é um interpretador (\textit{engine}); o \LaTeX, um formato (\textit{format}).
 
 \nota{
-  Um outro formato que vimos é o \textit{Plain \TeX}; e, atualmente, um formato 
-  que se destaca é o \href{https://en.wikipedia.org/wiki/ConTeXt}{\textcolor{azulUFRB}{Con\TeX t}}.
+  Um outro formato que vimos é o \textit{Plain}~\TeX; e, atualmente, um formato 
+  que se destaca é o \href{https://en.wikipedia.org/wiki/ConTeXt}{\textcolor{azulUFRB}{\hologo{ConTeXt}}}.
 }
 
 Os \textit{interpretadores} são os arquivos binários executáveis (ou seja, o 
@@ -141,29 +144,7 @@ programa em si); já os \textit{formatos} são macros (comandos ou instruções)
 baseadas em \TeX, que usamos para escrever nossos documentos (a grosso modo, são
 linguagens ou atalhos para sequências de comandos ou estruturas em \TeX).
 
-Não é difícil perceber que o interpretador \TeX\ é bem antigo e que outros tenham
-surgido ao longo desses anos.
-De fato, à época do \TeX, nem existia ainda arquivos com extensão  \texttt{.pdf} 
--- a saída dos documentos era em DVI.
-Quando surgiu o PDF, um interpretador ficou bem conhecido: pdf\TeX{} -- cuja saída
-poderia ser em DVI que poderia ser convertida em PDF. 
-O pdf\TeX{} talvez seja o mais usado dentre os interpretadores que vamos falar, 
-pois já vem selecionado, por padrão, em muitos editores dedicados ao \LaTeX\mn{
-  falaremos sobre editores para \LaTeX\ mais abaixo.
-}; as pessoas, simplesmente, não mudam a configuração padrão se realmente não 
-for necessário.
-Nosso sistema relaciona o \LaTeX\ com o pdf\LaTeX\ usando um "atalho", denominado
-pdf\LaTeX.
-
-Portanto, o pdf\LaTeX\ (que geralmente é o nome que aparecerá em nossos editores) 
-é o \textit{interpretador} pdf\TeX\ com o \textit{formato} \LaTeX. 
-
-Atualmente, dois interpretadores que se destacam são \hologo{XeTeX} e \hologo{LuaTeX}.
-Além de serem mais rápidos, trazem implementações notáveis como seleção de fontes 
-do próprio sistema (o \hologo{pdfTeX} não faz isso) ou interação com a linguagem 
-de programação (brasileira) Lua.
-A saída de cada um deles é o PDF, diretamente.
-
+Não
 \begin{marginfigure}
   \centering
   \href
@@ -174,64 +155,157 @@ A saída de cada um deles é o PDF, diretamente.
     \includegraphics[width = 0.6\linewidth]{logo_lua.png}
   }
   \caption{Poderosa linguagem de programação (clique na imagem para saber mais)}
+  \label{fig:lua}
 \end{marginfigure}
- 
-Em nossos sistemas, ao usarmos \hologo{XeTeX} com \LaTeX\ usamos o atalho \hologo{XeLaTeX}.
-Da mesma forma, \hologo{LuaTeX} com \LaTeX é simplificado por \hologo{LuaLaTeX}.
+é difícil perceber que o interpretador \TeX{} é bem antigo e que outros tenham
+surgido ao longo desses anos.
+De fato, à época do \TeX, nem existia ainda arquivos com extensão  \texttt{.pdf} 
+-- a saída dos documentos era em DVI.
+Quando surgiu o PDF, um interpretador ficou bem conhecido: \hologo{pdfTeX} -- cuja 
+saída poderia ser em DVI que poderia ser convertida em PDF. 
+O \hologo{pdfTeX} talvez seja o mais usado dentre os interpretadores que vamos 
+falar, pois já vem selecionado, por padrão, em muitos editores dedicados ao 
+\LaTeX \mn{%
+  falaremos sobre editores para \LaTeX{} mais abaixo.}; 
+as pessoas, simplesmente, não mudam a configuração padrão se realmente não 
+for necessário.
+Aliás, nosso sistema relaciona o \LaTeX{} com o \hologo{pdfTeX} usando um "atalho", 
+denominado \hologo{pdfLaTeX}.
 
-Geralmente chamamos esses "atalhos" de \textbf{compiladores}.
-Veja a Tabela~\ref{tab:compiladores}.
+Portanto, o \hologo{pdfLaTeX} (que geralmente é o nome que aparecerá em nossos 
+editores) é o \textit{interpretador} pdf\TeX\ com o \textit{formato} \LaTeX. 
 
-\begin{table}[!htbp]
-  \centering
-  \begin{tabular}{llc}
-    \toprule
-      \textbf{Compilador} & \textbf{Interpretador} & \textbf{Formato}\\
-    \midrule
-      \texttt{pdflatex} & \hologo{pdfTeX} & \LaTeX\\
-      \texttt{xelatex}  & \hologo{XeTeX}  & \LaTeX\\
-      \texttt{lualatex} & \hologo{LuaTeX} & \LaTeX\\
-    \bottomrule
-  \end{tabular}
-  \caption{Dando "nome aos bois"}
-  \label{tab:compiladores}
-\end{table}
+Atualmente, dois interpretadores que se destacam são \hologo{XeTeX} e \hologo{LuaTeX}.
+Além de serem mais rápidos, trazem implementações notáveis como seleção de fontes 
+do próprio sistema (o \hologo{pdfTeX} não faz isso) ou interação com a linguagem 
+de programação (brasileira) Lua (veja a Figura~\ref{fig:lua}). 
+\nota{
+  De acordo com Joseph Wright, usamos a palavra "compilação" herdada da computação,
+  mas, uma palavra mais adequada seria "composição tipográfica" \cite{learnlatex}.
+}
+A saída de cada um deles é o PDF, diretamente.
+
+Em nossos sistemas, ao usarmos \hologo{XeTeX} com \LaTeX{} usamos o atalho 
+\hologo{XeLaTeX}.
+Da mesma forma, \hologo{LuaTeX} com \LaTeX{} é simplificado por \hologo{LuaLaTeX}.
 
 Obviamente, nesse minicurso, estamos interessados apenas no formato \LaTeX.
 Também, por mera preferência, usaremos como interpretador o \hologo{LuaTeX}.
-Portanto, "compilaremos" (ou seja, a composição tipográfica) nossos arquivos 
-com \texttt{lualatex}.
+Portanto, "compilaremos" \, nossos arquivos com \texttt{lualatex}.
+
+Obtamos por usar \lualatex, pois é o sucessor natural do \texttt{pdflatex}. 
+\sidenote{
+  \footnotesize
+  Confira essa informação no site \href{http://www.luatex.org/}{\textbf{http://www.luatex.org/}}
+}
 
 \begin{atencao}{Mudanças à vista \ldots}{\exclamacao}
   Isso pode mudar algumas coisas para quem é acostumado a usar \texttt{pdflatex}, 
   mas explicaremos as diferenças ao longo desse minicurso.  
 \end{atencao}
 
-Obtamos por usar \lualatex, pois é o sucessor natural do \texttt{pdflatex}. \sidenote{
-  \footnotesize
-  Confira essa informação no site \href{http://www.luatex.org/}{\textbf{http://www.luatex.org/}}
-}
+Geralmente chamamos esses "atalhos" de \textbf{compiladores}
+\mn{
+  Para mais detalhes, veja \textcite{lualatex-doc}.
+}.
+
+Veja a Tabela~\ref{tab:compiladores} para comparação entre \textit{compiladores}, 
+\textit{engine} e \textit{format}.
+
+\begin{table}[!htbp]
+  \centering
+  \begin{tabular}{llc}
+    \toprule
+      \textbf{Compilador} & \textbf{Interpretador} & \textbf{Formato} \\
+    \midrule
+      \texttt{tex}           & \hologo{TeX}    & \hologo{plainTeX}       \\
+      \texttt{pdftex}        & \hologo{pdfTeX} & \hologo{plainTeX}       \\
+      \texttt{xetex}         & \hologo{XeTeX}  & \hologo{plainTeX}       \\
+      \texttt{latex}         & \hologo{pdfTeX} & \LaTeX                  \\
+      \texttt{pdflatex}      & \hologo{pdfTeX} & \LaTeX                  \\
+      \texttt{xelatex}       & \hologo{XeTeX}  & \LaTeX                  \\
+      \texttt{lualatex}      & \hologo{LuaTeX} & \LaTeX                  \\
+      \texttt{texexec}       & \hologo{pdfTeX} & \hologo{ConTeXt}        \\
+      \texttt{texexec --xtx} & \hologo{XeTeX}  & \hologo{ConTeXt}        \\
+      \texttt{context}       & \hologo{LuaTeX} & \hologo{ConTeXt}        \\
+    \bottomrule
+  \end{tabular}
+  \caption{Dando "nome aos bois"}
+  \label{tab:compiladores}
+\end{table}
+
+Como 
+\begin{marginfigure}
+  \centering
+  \href
+  {
+    http://www.luatex.org/
+  }
+  {
+    \includegraphics[width = 0.9 \linewidth]{logo_luatex.png}
+  }
+  \caption{
+    Saiba mais sobre o \hologo{LuaTeX} acessando o link: 
+    \href{http://www.luatex.org}{http://www.luatex.org}
+  }
+  \label{fig:lua}
+\end{marginfigure}
+esse texto é uma \sout{tentativa de} introdução ao \LaTeX, não chegaremos 
+nem perto do que gostaríamos de expor sobre essa simbiose entre uma linguagem de 
+\textit{programação} (Lua) integrada harmoniosamente com uma linguagem de 
+\textit{marcação} (\LaTeX).
+Basicamente, o código do \TeX{} foi reescrito em Lua (uma linguagem de programação
+com muita relevância internacional, desenvolvida por brasileiros, na PUC-RJ), 
+formando assim o \hologo{LuaTeX}.
+Houve, intencionalmente, a projeção para que esse \textit{interpretador} fosse 
+compatível com versões anteriores do \hologo{pdfTeX}, tornando o \hologo{LuaTeX} 
+seu substituto natural, visto que é mais rápido e moderno.
 
 Para encerramos essa subseção, é importante destacar a estabilidade do \LaTeX.
 Basicamente temos duas versões: uma antes de 1993, a saber \LaTeX~2.09; e,
 a de 1994 até HOJE, a saber \hologo{LaTeX2e}.
 Isso é interessante, pois os códigos são praticamente preservados ao longo do 
-tempo: você poderia rodar um código em \LaTeX\ de 30 anos atrás sem muitos 
+tempo: você poderia rodar um código em \LaTeX\ de 20 anos atrás sem muitos 
 problemas.
 
 Todavia, quando falamos em \LaTeX{}, hoje, estamos nos referindo às 
 funcionalidades trazidas na versão \hologo{LaTeX2e}.
 
-As atualizações são constantes, mas sem muitas mudanças estruturais.
-Todavia, está em desenvolvimento uma terceira versão do \LaTeX, a saber, \hologo{LaTeX3}.
-Você pode saber mais no link abaixo:
-
-\begin{figure}[!htbp]
+\begin{marginfigure}
   \centering
-  \includegraphics[width = 0.7\linewidth]{logo_latex}
-  \caption{\href{https://www.latex-project.org/latex3/}{\textcolor{azulUFRB}{https://www.latex-project.org/latex3/}}}
-\end{figure}
+  \includegraphics[width = \linewidth]{logo_latex}
+  \caption{
+    Saiba mais sobre esse fantástico projeto no link:
+    \href{https://www.latex-project.org}{https://www.latex-project.org}
+  }
+  \label{fig:latexiii}
+\end{marginfigure}
 
+As atualizações são constantes, mas sem muitas mudanças estruturais.
+Todavia, está em desenvolvimento uma terceira versão do \LaTeX, a saber, 
+\hologo{LaTeX3} (veja a Figura~\ref{fig:latexiii}).
+
+%------------------------------------------------------------------------------
+\subsection{Como colocar o \hologo{LaTeX} em meu computador: as Distribuições}
+%------------------------------------------------------------------------------ 
+
+Para instalar localmente (em nosso computador) os \textit{interpretadotes}, 
+precisamos das \textbf{distribuições}.
+
+As principais são:
+
+\begin{table}[!htbp]
+  \centering
+  \begin{tabular}{lll}
+    \toprule
+      \textbf{Distribuições} & \textbf{Sistema} & \textbf{\textit{Download}/Instalação}\\
+    \midrule
+      \hologo{MiKTeX}   & Windows ou Linux  & \href{https://miktex.org/download}{https://miktex.org/download} \\ 
+      \TeX{} Live       & Linux ou Windows  & \href{https://www.tug.org/texlive/acquire-netinstall.html}{https://www.tug.org/texlive/acquire-netinstall.html}\\
+      Mac\TeX           & Mac OS            & \href{https://www.tug.org/mactex/}{https://www.tug.org/mactex/}  \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 \begin{codeLaTeX}
 Essa é uma bonita equação:
