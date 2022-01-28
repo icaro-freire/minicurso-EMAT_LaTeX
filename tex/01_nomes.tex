@@ -300,16 +300,62 @@ As principais são:
     \toprule
       \textbf{Distribuições} & \textbf{Sistema} & \textbf{\textit{Download}/Instalação}\\
     \midrule
-      \hologo{MiKTeX}   & Windows ou Linux  & \href{https://miktex.org/download}{https://miktex.org/download} \\ 
-      \TeX{} Live       & Linux ou Windows  & \href{https://www.tug.org/texlive/acquire-netinstall.html}{https://www.tug.org/texlive/acquire-netinstall.html}\\
-      Mac\TeX           & Mac OS            & \href{https://www.tug.org/mactex/}{https://www.tug.org/mactex/}  \\
+      \hologo{MiKTeX}   & Windows ou GNU/Linux ou Mac OS & \href{https://miktex.org/download}{https://miktex.org/download} \\ 
+      \TeX{} Live       & GNU/Linux ou Windows  & \href{https://www.tug.org/texlive/acquire-netinstall.html}{https://www.tug.org/texlive/acquire-netinstall.html}\\
+      Mac\TeX           & Mac OS                & \href{https://www.tug.org/mactex/}{https://www.tug.org/mactex/}  \\
     \bottomrule
   \end{tabular}
 \end{table}
 
-\begin{codeLaTeX}
-Essa é uma bonita equação:
-\[
-  f(z_0) = \frac{1}{2 \pi i} \int_{\Gamma} \frac{f(z)}{z - z_0} \mathrm{d}z  
-\]
-\end{codeLaTeX}
+A distribuição Mac\TeX{} contém todo o \TeX{} Live e adições específicas para 
+Mac~OS.
+\nota{
+  Para GNU/Linux existem outras opções de instalação que economizam espaço.
+  Tudo dependerá da necessidade de cada um:\\
+  \texttt{texlive-latex-base}\\
+  \texttt{texlive-latex-recommended}\\
+  \texttt{texlive-pictures}\\
+  \texttt{texlive-fonts-recommended}\\
+  \texttt{texlive}\\
+  \texttt{texlive-plain-generic}\\
+  \texttt{texlive-latex-extra}\\
+  Para mais informações veja essa discussão no \href{https://tex.stackexchange.com/questions/245982/differences-between-texlive-packages-in-linux}{\textcolor{azulUFRB}{TeX SE}}
+}
+
+O \TeX{} Live completo precisa de, aproximadamente, 5GB de espaço em disco.
+Ele instala TODOS os pacotes disponíveis para \hologo{LaTeX}.
+Como hoje em dia a capacidade de disco é relativamente grande, a instalação 
+completa pode ser interessante, caso você não queira depender mais da internet 
+para instalação de futuros pacotes.
+
+Mas, se você quiser usar apenas o necessário e manter uma distribuição mínima em
+seu computador, instalando futuros pacotes à medida que for precisando deles, 
+talvez a distribuição \hologo{MiKTeX} seja a mais adequada.
+
+\begin{atencao}{Atenção!}{\exclamacao}
+  O processo de instalação depende do sistema operacioal e não será tratado nesse 
+  texto, visto que usaremos distribuições ONLINE dos instrepretadores de \TeX{}.  
+\end{atencao}
+
+\section{Sim \ldots mas como eu uso?} %----------------------------------------
+
+Certo \ldots já temos uma distribuição \TeX{}, e agora?
+Basicamente, precisamos:
+
+\begin{itemize}
+  \item \textit{escrever}, usando o formato \hologo{LaTeX}, o que desejamos num 
+    arquivo de texto com extensão \texttt|.tex|;
+  \item \textit{compilar}, ou seja, compor tipograficamente o arquivo, produzindo
+    um arquivo \texttt{.pdf}; e, nesse ponto, usaremos o compilador 
+    \texttt{lualatex};
+  \item \textit{visualizar} o arquivo \texttt{.pdf} com algum visualizador da 
+    preferência de vocês.  
+\end{itemize}
+
+É uma boa prática salvar os arquivos \texttt{.tex} com nomes \textbf{sem acentuação}
+ou \textbf{caracteres especiais} do teclado (\%, \$, *, etc.).
+E, se o nome do arquivo for composto por mais de uma palavra, é aconselhável 
+também \textbf{não deixar espaço entre elas}.
+você pode usar o \texttt{camelCase}, ou \texttt{snake\_case} ou separarar as 
+\texttt{palavras-com-\textit{traço}}.
+
