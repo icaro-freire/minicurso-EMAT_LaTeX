@@ -345,17 +345,149 @@ Basicamente, precisamos:
 \begin{itemize}
   \item \textit{escrever}, usando o formato \hologo{LaTeX}, o que desejamos num 
     arquivo de texto com extensão \texttt|.tex|;
-  \item \textit{compilar}, ou seja, compor tipograficamente o arquivo, produzindo
-    um arquivo \texttt{.pdf}; e, nesse ponto, usaremos o compilador 
+  \item \textit{compilar}, ou seja, compor tipograficamente o arquivo \texttt{.tex}, 
+    produzindo um arquivo \texttt{.pdf}; e, nesse ponto, usaremos o compilador 
     \texttt{lualatex};
-  \item \textit{visualizar} o arquivo \texttt{.pdf} com algum visualizador da 
-    preferência de vocês.  
+  \item \textit{visualizar} o arquivo \texttt{.pdf}; nesse ponto, o visualizador
+    de PDF é de escolha pessoal.
 \end{itemize}
 
 É uma boa prática salvar os arquivos \texttt{.tex} com nomes \textbf{sem acentuação}
 ou \textbf{caracteres especiais} do teclado (\%, \$, *, etc.).
 E, se o nome do arquivo for composto por mais de uma palavra, é aconselhável 
 também \textbf{não deixar espaço entre elas}.
-você pode usar o \texttt{camelCase}, ou \texttt{snake\_case} ou separarar as 
-\texttt{palavras-com-\textit{traço}}.
 
+Por exemplo, suponha que você esteja escrevendo um artigo sobre \textit{números complexos}.
+Seu arquivo principal não deve ser nomeado assim: 
+
+\begin{center}
+  \texttt{Artigo! Números Complexos.tex},
+\end{center}
+
+Você deve retirar o \textit{ponto de exclamação} e o \textit{acento agudo}, bem 
+como retirar os espaços entre as palavras.
+Nesse último ponto, pode-se usar o \texttt{camelCase}, ou \texttt{snake\_case} 
+ou separarar as \texttt{palavras-com-\textit{traço}}.
+São aceitáveis qualquer das seguintes possibilidades (note que há uma preferência
+por letras minúsculas):
+
+\begin{center}
+  \texttt{artigoNumerosComplexos.tex}\\
+  \texttt{artigo-numeros-complexos.tex}\\
+  \texttt{artigo\_numeros\_complexos.tex}\\
+  \texttt{artigo\_numeros-complexos.tex}
+\end{center}
+
+Particularmente, prefiro essa última opção: onde se mistura o \textit{snake\_case}
+com os traços.
+Tento manter algum padrão antes do \textit{underline} e o nome do documento que 
+estou escrevendo, separo por traços, caso seja necessário.
+Essa abordagem pode ser interessante se você estiver trabalhando com um arquivo
+principal (onde geralmente ocorre a compilação final) e muitos outros arquivos 
+que serão incluídos no principal.
+
+É uma forma de escrever \ldots
+Há quem prefira escrever tudo em um único arquivo \texttt{.tex}!
+
+Falaremos sobre manipulação de vários arquivos mais à frente, porém, apenas para
+exemplificar a ideia, suponha que esse meu artigo (\texttt{artigo\_numeros-complexos.tex}) 
+sobre números complexos seja composto de cinco seções:
+\nota{
+  Uma forma de nomear esses arquivos seria, respectivamente:\\
+  \texttt{01\_intro-historica.tex}; \\
+  \texttt{02\_representacoes.tex}; \\
+  \texttt{03\_raizes.tex}; \\
+  \texttt{04\_teo-fundamental.tex};\\
+  \texttt{05\_conclusao.tex}.\\
+  Notem que deixei a numeração no início, separando-a com \textit{underline} e 
+  nomeei os arquivos de maneira que lembre-me a seção onde me encontro.
+} 
+introdução histórica; formas de representar um número complexo; raízes de um 
+número complexo; o Teorema Fundamental da Álgebra; e, conclusões.
+Então, desejamos escrever essas seções em arquivos separados e "incluí-los" no
+arquivo principal, paulatinamente, por meio de compilações SOMENTE no arquivo
+principal.
+
+\begin{atencao}{Fica a dica!}{\exclamacao}
+  Muitos nomeiam esses "arquivos principais", ou seja, onde ocorre a compilação, 
+  de \texttt{main.tex} (ou \texttt{master.tex}), que significa, em inglês, 
+  "principal", "importante", etc. ("senhor", "dominador", etc., para \textit{master}).
+\end{atencao}
+
+Para esse minicurso, à jato, começaremos com um arquivo principal, nomeado por
+"\texttt{main.tex}", no qual escreveremos o conteúdo desejado inserindo as partes 
+que o compõem, aos poucos.
+
+\subsection{Como fazemos a "compilação"?} %------------------------------------
+
+Bom \ldots ainda aprenderemos como escrever em \hologo{LaTeX}, não se preocupem,
+mas, antes, vamos aprender como compomos tipograficamente o texto.
+
+Já vimos que precisamos escrever o conteúdo do texto em um arquivo de extensão
+\texttt{.tex} e compilarmos com \texttt{lualatex} \ldots 
+Mas, como fazemos isso?
+
+Ora, a escrita do texto pode ser feita em qualquer \textbf{editor de texto} de 
+sua preferência.
+Pode-se usar um "bloco de notas" (para usuários de Windows), ou o "evince" (para
+usuários de GNU/Linux), por exemplo.
+Apenas deve-se lembrar em salvar o arquivo com extensão \texttt{.tex}.
+
+Também é aconselhável manter o arquivo \texttt{main.tex} em algum diretório (pasta) 
+nomeado adequadamente.
+Isso se deve ao fato de que, ao compilarmos, arquivos secundários são gerados (
+.aux, .log, etc.), o qu epode gerar certa "bagunça".
+
+Então, suponha que você tenha escrito um belo texto, cheio de equações matemáticas,
+num arquivo denominado \texttt{main.tex}, salvo em um diretório por nome 
+"\texttt{artigo\_tcc/}".
+\begin{marginfigure}
+  \centering
+  \includegraphics[width = 0.9\linewidth]{dir_lualatex.png}
+  \caption{Arquivos gerados numa compilação simples}
+\end{marginfigure}
+Feito isso, abra o \textbf{terminal} (no Windows seria o "Prompt de Comando") 
+dentro do diretório "\texttt{artigo\_tcc/}" e digite o seguinte comando:
+
+\begin{codigo}{Usando o terminal para compilar}{\lapis}
+  lualatex main.tex
+\end{codigo}
+
+Pelo menos três arquivos serão produzidos: um arquivo em \texttt[.pdf], que é a 
+saída desejada; um arquivo \texttt{.aux}, essencial em referências cruzadas, por 
+exemplo; e, um arquivo \texttt{.log}, o qual é um registro detalhado de tudo o que
+ocorreu na compilação, inclusive possíveis erros.
+Pode aparecer mais arquivos durante a compilação!
+Tudo dependerá de quão complexo é seu texto (se possui sumário; index; lista de tabela;
+lista de figura; glossário; etc).
+A Tabela\ref{tab:aux} nos mostra alguns desses arquivos:
+
+\begin{table}[!htbp]
+  \centering
+  \caption{Alguns dos possíveis arquivos gerados durante a compilação}  
+  \label{tab:aux}
+  \begin{tabular}{ll}
+    \toprule
+    \textbf{Extensão} & \textbf{Descrição}\\
+    \midrule
+    \texttt{.log} & registro detalhado sobre a compilação, inclusive erros \\
+    \texttt{.aux} & registra processos intermediários, como referências cruzadas \\
+    \texttt{.toc} & serve para produção do índice\\
+    \texttt{.lof} & serve para produção da lista de figuras\\
+    \texttt{.lot} & serve para produção da lista de tabelas\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Não tenha medo do terminal!
+Ele é seu amigo!
+Trabalhar usando "linha de comando", pelo terminal, é uma maneira de você 
+comunicar-se com o computador de maneira rápida, direta e livre de distrações.
+O comando \texttt{lualatex main.tex} é simplesmente diz: "Olha \ldots componha
+tipograficamente meu texto que está no arquivo \texttt{main.tex}, usando o 
+interpretador \hologo{LuaTeX}, no formato \hologo{LaTeX}".
+
+Mas, se você quiser mais funcionalidades na digitação (autocomplete, identação
+automática, etc.) que um "bloco de texto" não oferece; bem como compilar sem 
+usar o terminal, você precisará de um \textbf{editor de texto} especializado ou
+uma IDE ()
