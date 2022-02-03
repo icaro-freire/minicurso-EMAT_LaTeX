@@ -344,7 +344,7 @@ Basicamente, precisamos:
 
 \begin{itemize}
   \item \textit{escrever}, usando o formato \hologo{LaTeX}, o que desejamos num 
-    arquivo de texto com extensão \texttt|.tex|;
+    arquivo de texto com extensão \texttt{.tex};
   \item \textit{compilar}, ou seja, compor tipograficamente o arquivo \texttt{.tex}, 
     produzindo um arquivo \texttt{.pdf}; e, nesse ponto, usaremos o compilador 
     \texttt{lualatex};
@@ -483,11 +483,94 @@ Não tenha medo do terminal!
 Ele é seu amigo!
 Trabalhar usando "linha de comando", pelo terminal, é uma maneira de você 
 comunicar-se com o computador de maneira rápida, direta e livre de distrações.
-O comando \texttt{lualatex main.tex} é simplesmente diz: "Olha \ldots componha
+O comando \texttt{lualatex main.tex} simplesmente diz: "Olha \ldots componha
 tipograficamente meu texto que está no arquivo \texttt{main.tex}, usando o 
 interpretador \hologo{LuaTeX}, no formato \hologo{LaTeX}".
 
 Mas, se você quiser mais funcionalidades na digitação (autocomplete, identação
 automática, etc.) que um "bloco de texto" não oferece; bem como compilar sem 
 usar o terminal, você precisará de um \textbf{editor de texto} especializado ou
-uma IDE ()
+uma IDE (\textit{Integrated Development Environment}).
+
+\subsection{Editores para \LaTeX} %--------------------------------------------
+
+\subsubsection{O \LaTeX\ é outro Word?} %--------------------------------------
+
+Um detalhe que precisamos ter em mente: a natureza dos editores para \LaTeX{}
+é geralmente diferente dos editores de texto como \textit{Microsoft Word} ou 
+\textit{LibreOffice Writer}.
+Esses últimos editores são denominados WYSIWYG (acrônimo para a frase 
+\textit{
+  \textbf{W}hat \textbf{Y}ou \textbf{S}ee \textbf{I}s \textbf{W}hat \textbf{Y}ou \textbf{G}et
+}).
+\nota{
+  "WYSIWYG \ldots O termo é usado para classificar ferramentas de edição e 
+  desenvolvimento que permitem visualizar, em tempo real, exatamente aquilo que 
+  será publicado ou impresso" (\href{https://www.tecmundo.com.br/institucional/2057-o-que-e-wysiwyg-.htm}{\textcolor{azulUFRB}{TECMUNDO}}, 
+  acesso em 03/02/2022).\\
+  Se você quiser saber como pronunciar corretamente essa sigla, acesse:
+  \href{https://youtu.be/GZuZxwIjh4I}{\textcolor{azulUFRB}{How to pronounce WYSIWYG}}.
+} 
+Em uma tradução literal livre significa "O que você vê é o que você tem", ou 
+seja, o que você vê na tela de seu editor, é o que aparecerá na impressão. 
+No \LaTeX{} não é bem assim \ldots 
+Você vê comandos misturados com texto normal, porém o resultado sairá diferente 
+daquilo que estará vendo em seu editor! 
+Ficará mais bonito o resultado, não se preocupe. =)
+
+Poderíamos listar argumentos sobre a superioridade do \LaTeX{}, comparando-o ao 
+\textit{Word} (por exemplo), mas isso não será feito. 
+Cada um tem suas peculiaridades: vantajosas ou não. 
+Tudo dependerá da finalidade do uso!
+Particularmente, tenho encontrado no \LaTeX{} um ambiente próprio para escrita 
+matemática de forma rápida, bonita e gratuita! 
+Textos longos, cheios de capítulos, ou documentos personalizados --- como esse 
+texto, exigiria um esforço e tempo tais, que nem passa por minha mente 
+escrevê-los no Word (você já tentou criar um simples sumário no Word? 
+Ou uma simples equação como esta: $\sum\limits_{n = 0}^{\infty} x^n = \frac{1}{1 - x}$, 
+em menos de 10 segundos?)
+
+Com isso em mente, é importante a aquisição de uma linguagem básica, mas, antes 
+disso, vamos falar um pouco sobre os editores para \LaTeX.
+
+\subsubsection{Indicações de editores para \LaTeX} %---------------------------
+
+As possibilidades de editores são realmente vastas.
+Você pode olhar uma comparação entre eles nesse link:
+
+\begin{center}
+  \textbf{
+    \url{https://en.wikipedia.org/wiki/Comparison\_of\_TeX\_editors}
+  }
+\end{center}
+
+Podemos usar editores \textbf{dedicados} ao \hologo{LaTeX} ou editores mais 
+\textbf{genéricos}.
+
+No que se refere aos editores dedicados, listamos:
+
+\begin{itemize}
+  \item \href{https://www.texstudio.org/}{\textbf{TeXstudio}}; se destaca por 
+  ser multiplataforma e com muitos recursos.
+  \item \href{https://www.texniccenter.org/}{\textbf{TeXnicCenter}}; é voltado 
+  para usuários de Windows. Integra-se muito naturalmente ao sistema (e ainda 
+  indica o \href{https://www.sumatrapdfreader.org/free-pdf-reader}{Sumatra} para 
+  visualização do PDF).
+  \item \href{https://www.lyx.org/}{\textbf{LyX}}; esse é um editor diferente 
+  dos citados anteriormente; pois  renderiza as equações e estruturas do texto 
+  de forma quase imediata. É o mais próximo, para \LaTeX{}, de editores  WYSIWYG.
+\end{itemize}
+
+Agora, no que se refere aos editores mais genéricos, ou seja, não dedicados ao 
+\LaTeX, mas que com o uso de \textit{plugins} essa realidade muda, destacam-se:
+
+\begin{itemize}
+  \item \href{https://www.gnu.org/software/emacs/emacs.html}{\bfseries GNU Emacs}, junto com \href{https://www.gnu.org/software/auctex/}{AUC \TeX};
+  \item \href{https://atom.io/}{\bfseries Atom}, junto com \href{https://atom.io/packages/atom-latex}{atom-latex};
+  \item \href{https://neovim.io/}{\bfseries Neovim}, com \href{https://github.com/lervag/vimtex}{VimTeX};
+  \item \href{https://code.visualstudio.com/}{\bfseries VSCode} com \href{https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop}{\LaTeX\ Workshop};
+\end{itemize}
+
+Obviamente, para o iniciante, é indicado um editor dedicado ao \hologo{LaTeX}.
+
+Particularmente, uso o VSCode com o \textit{plugin} do \LaTeX{} Workshop.
