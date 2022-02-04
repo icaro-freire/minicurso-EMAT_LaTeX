@@ -572,5 +572,34 @@ Agora, no que se refere aos editores mais genéricos, ou seja, não dedicados ao
 \end{itemize}
 
 Obviamente, para o iniciante, é indicado um editor dedicado ao \hologo{LaTeX}.
+\sidenote{
+  Particularmente, uso o VSCode com o \textit{plugin} do \LaTeX{} Workshop.
+}
 
-Particularmente, uso o VSCode com o \textit{plugin} do \LaTeX{} Workshop.
+O \textit{plugin}  do \hologo{LaTeX} Workshop faz o processo de compilação de uma
+forma um pouco diferente: ele usa uma ferramenta chamada \textbf{latexmk} que 
+nada mais é que um \textit{script} que automatiza muitos processos.
+Por exemplo, quando o documento é complexo; com referências cruzadas; sumário; 
+glossário; lista de tabelas; lista de figuras; etc. é necessário mais de um processo
+de compilação. 
+Esse \textit{plugin} faz isso tudo parecer mágica.
+Ele vem, por padrão, configurado para \texttt{pdflatex}, mas pode ser modificado
+o interpretador de maneira bem simples.
+
+Uma ferramenta parecida com o \texttt{latexmk}, mas que precisa de diretivas (
+você precisa "dizer" para ele os passos que deseja executar) é o \textbf{arara}.
+Ele foi desenvolvido por um brasileiro, Paulo Cereda e possui ferramentas de 
+\begin{marginfigure}
+  \centering
+  \href
+  {
+    https://gitlab.com/islandoftex/arara
+  }
+  {
+    \includegraphics[width = \linewidth]{logo_arara.pdf}
+  }
+\end{marginfigure}
+limpeza de arquivos auxiliares; rapidez na segunda compilação; produção de arquivo 
+\textit{draft} (um rascunho que não gera o pdf, o que torna as coisas muito mais 
+rápidas); etc.
+Falaremos sobre ele no Apêndice, pois vale muito a pena conhecer essa ferramenta!
