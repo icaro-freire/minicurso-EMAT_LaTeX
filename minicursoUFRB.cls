@@ -60,8 +60,7 @@
 \RequirePackage[dvipsnames]{xcolor}
   \definecolor{douradoUFRB}{rgb}{0.929411765, 0.603921569, 0.066666667}
   \definecolor{azulUFRB}{rgb}{0.160784314, 0.08627451, 0.435294118}
-\RequirePackage[many]{tcolorbox}
-  \tcbuselibrary{most}
+  \definecolor{darkgreen}{rgb}{0.33, 0.42, 0.18}
 
 \RequirePackage[shortlabels]{enumitem}
 
@@ -81,12 +80,17 @@
 
 \RequirePackage{tikz}
   \definecolor[named]{color01}{rgb}{.2,.4,.6}
+\RequirePackage[many]{tcolorbox}
+  \tcbuselibrary{most}
 
 \RequirePackage{physics}
 \RequirePackage{siunitx}
 \RequirePackage{cancel}
 \RequirePackage{ulem}
 \RequirePackage{hologo}
+
+\RequirePackage{emoji}
+\RequirePackage{pifont}
 
 \RequirePackage[style=abnt, justify]{biblatex} %-------------------------> para bibliografia
   \addbibresource{bib/minicurso-latex.bib} %-> adiciona o arquivo da bibliografia
@@ -324,6 +328,22 @@
   }
 }
 
+% configuração para escrita simples de código destacado -----------------------
+
+\tcbset{
+  colframe  = azulUFRB,
+  colback   = white,
+  colupper  = black, 
+  fonttitle = \bfseries,
+  center title
+}
+
+\newcommand{\tcboxC}[1]{
+  \begin{center}
+    \tcbox[before skip = -0.5em, after skip = 1.2em]{#1}
+  \end{center}
+}
+
 % notas marginais -------------------------------------------------------------
 \newcounter{mynote}%~\thetcbcounter
 \newtcolorbox[use counter=mynote]
@@ -347,6 +367,7 @@
 
 % novos comandos ==============================================================
 \newcommand{\lualatex}{\texttt{lualatex}}
+\newcommand{\Overleaf}{\textcolor{darkgreen}{\bfseries \sffamily Overleaf}}
 
 % Page layout
 \renewcommand{\baselinestretch}{1.15}\normalsize

@@ -1,12 +1,12 @@
 \section{A Seiva da Árvore \ldots}\label{sec:seiva} %==========================
 
-\begin{margintable}\vspace{.8in}\footnotesize
-  \begin{tabularx}{\marginparwidth}{|X}
-    Seção~\ref{sec:seiva}. A seiva da árvore\\
-    Seção~\ref{sec:seiva}. A seiva da árvore\\
-    Seção~\ref{sec:seiva}. A seiva da árvore\\
-  \end{tabularx}
-\end{margintable}
+%\begin{margintable}\vspace{.8in}\footnotesize
+%  \begin{tabularx}{\marginparwidth}{|X}
+%    Seção~\ref{sec:seiva}. A seiva da árvore\\
+%    Seção~\ref{sec:usando}. Sim\ldots mas como eu uso?\\
+%    Seção~\ref{sec:overleaf}. Overleaf: um editor online notável\\
+%  \end{tabularx}
+%\end{margintable}
 
 Lembro-me da primeira vez que vi o nome \LaTeX{} \ldots
 
@@ -21,6 +21,12 @@ Eu estava a um semestre de concluir a graduação e pensei:
   Isso está mais para Geografia."
 }
 
+Sim! 
+Eu pensei que estavam falando daquela substância espessa e branca que sai de 
+algumas plantas (seringueira, por exemplo)!
+
+Então, vamos deixar as coisas claras: não estamos falando de látex, mas de \LaTeX.
+
 \begin{marginfigure}
   \centering
   \href
@@ -32,12 +38,6 @@ Eu estava a um semestre de concluir a graduação e pensei:
   }
   \caption{Isso é látex, não \LaTeX}
 \end{marginfigure}
-
-Sim! 
-Eu pensei que estavam falando daquela substância espessa e branca que sai de 
-algumas plantas (seringueira, por exemplo)!
-
-Então, vamos deixar as coisas claras: não estamos falando de látex, mas de \LaTeX.
 
 \begin{atencao}{Como pronunciar corretamente?}{\exclamacao}
   Aliás, como se pronuncia a palavra \LaTeX?\\
@@ -111,11 +111,9 @@ Inclusive, o "La", de \LaTeX{}; vem do "La", de \textit{\textbf{La}mport}.
 
 Logo, nunca se esqueça disso:
 
-\begin{center}
-  \Ovalbox{
-    \large  \textsf{O} \LaTeX\ \textsf{veio para facilitar sua vida}!
-  }
-\end{center}
+\tcboxC{
+  \large  \textsf{O} \LaTeX\ \textsf{veio para facilitar sua vida}!
+}
 
 \begin{figure}[!ht]
   \centering
@@ -338,6 +336,7 @@ talvez a distribuição \hologo{MiKTeX} seja a mais adequada.
 \end{atencao}
 
 \section{Sim \ldots mas como eu uso?} %----------------------------------------
+\label{sec:usando}
 
 Certo \ldots já temos uma distribuição \TeX{}, e agora?
 Basicamente, precisamos:
@@ -360,9 +359,9 @@ também \textbf{não deixar espaço entre elas}.
 Por exemplo, suponha que você esteja escrevendo um artigo sobre \textit{números complexos}.
 Seu arquivo principal não deve ser nomeado assim: 
 
-\begin{center}
-  \texttt{Artigo! Números Complexos.tex},
-\end{center}
+\tcboxC{
+  \texttt{Artigo! Números Complexos.tex}
+}
 
 Você deve retirar o \textit{ponto de exclamação} e o \textit{acento agudo}, bem 
 como retirar os espaços entre as palavras.
@@ -371,15 +370,14 @@ ou separarar as \texttt{palavras-com-\textit{traço}}.
 São aceitáveis qualquer das seguintes possibilidades (note que há uma preferência
 por letras minúsculas):
 
-\begin{table}[!h]
-  \centering
+\begin{tcolorbox}
   \begin{tabular}{l}
     \texttt{artigoNumerosComplexos.tex}\\
     \texttt{artigo-numeros-complexos.tex}\\
     \texttt{artigo\_numeros\_complexos.tex}\\
     \texttt{artigo\_numeros-complexos.tex}  
   \end{tabular}
-\end{table}
+\end{tcolorbox}
 
 Particularmente, prefiro essa última opção: onde se mistura o \textit{snake\_case}
 com os traços.
@@ -552,17 +550,18 @@ Podemos usar editores \textbf{dedicados} ao \hologo{LaTeX} ou editores mais
 
 No que se refere aos editores dedicados, listamos:
 
-\begin{itemize}
-  \item \href{https://www.texstudio.org/}{\textbf{TeXstudio}}; se destaca por 
-  ser multiplataforma e com muitos recursos.
-  \item \href{https://www.texniccenter.org/}{\textbf{TeXnicCenter}}; é voltado 
-  para usuários de Windows. Integra-se muito naturalmente ao sistema (e ainda 
-  indica o \href{https://www.sumatrapdfreader.org/free-pdf-reader}{Sumatra} para 
-  visualização do PDF).
-  \item \href{https://www.lyx.org/}{\textbf{LyX}}; esse é um editor diferente 
-  dos citados anteriormente; pois  renderiza as equações e estruturas do texto 
-  de forma quase imediata. É o mais próximo, para \LaTeX{}, de editores  WYSIWYG.
-\end{itemize}
+\begin{table}[!h]
+  \centering
+  \begin{tabular}{ll}
+    \toprule
+    \multicolumn{1}{p{2cm}}{\centering\textbf{Editor}}              & \multicolumn{1}{p{9.5cm}}{\centering\textbf{Algumas características}}\\
+    \midrule
+      \href{https://www.texstudio.org/}{\textbf{\TeX studio}}       & \multicolumn{1}{p{9.5cm}}{Destaca-se por ser multiplataforma e com muitos recursos.}\\
+      \href{https://www.texniccenter.org/}{\textbf{\TeX nicCenter}} & \multicolumn{1}{p{9.5cm}}{É voltado para usuários de Windows. Integra-se muito naturalmente ao sistema (e ainda indica o Sumatra para visualização do PDF).}\\
+      \href{https://www.lyx.org/}{\textbf{LyX}}                     & \multicolumn{1}{p{9.5cm}}{Esse é um editor diferente dos citados anteriormente; pois renderiza as equações e estruturas do texto de forma quase imediata. É o mais próximo, para \LaTeX, de editores WYSIWYG.}\\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 Agora, no que se refere aos editores mais genéricos, ou seja, não dedicados ao 
 \LaTeX, mas que com o uso de \textit{plugins} essa realidade muda, destacam-se:
@@ -591,7 +590,7 @@ o interpretador de maneira bem simples.
 
 Uma ferramenta parecida com o \texttt{latexmk}, mas que precisa de diretivas (
 você precisa "dizer" para ele os passos que deseja executar) é o \textbf{arara}.
-Ele foi desenvolvido por um brasileiro, Paulo Cereda e possui ferramentas de 
+Ele foi desenvolvido por um brasileiro (Paulo Cereda) e possui ferramentas de 
 \begin{marginfigure}
   \centering
   \href
@@ -603,30 +602,31 @@ Ele foi desenvolvido por um brasileiro, Paulo Cereda e possui ferramentas de
   }
 \end{marginfigure}
 limpeza de arquivos auxiliares; rapidez na segunda compilação; produção de arquivo 
-\textit{draft} (um rascunho que não gera o pdf, o que torna as coisas muito mais 
-rápidas); etc.
+\textit{draft} (um rascunho que não gera o conteúdo pdf, mas apenas verifica a 
+sintaxe do documento -- o que torna as coisas muito mais rápidas); etc.
 Falaremos sobre ele no Apêndice~\ref{apend-A:arara}, pois vale muito a pena 
 conhecer essa ferramenta!
 
-\subsubsection{Overleaf: um editor \textit{online} notável} %------------------
+\section{Overleaf: um editor \textit{online} notável} %------------------
+\label{sec:overleaf}
 
-Como nosso minicurso é online e possui tão curto tempo, não seria possível um 
-auxílio na instalação de uma distribuição \TeX{}, editor dedicado, nem tampouco
-um visualizador de PDF de cada um de vocês, localmente.
+Como nosso minicurso é \textit{online} e possui tão curto tempo, não seria 
+possível um auxílio na instalação de uma distribuição \TeX{}, editor dedicado, 
+nem tampouco um visualizador de PDF de cada um de vocês, localmente.
 
 Usaremos, então, uma plataforma que reúne tudo isso de forma \textit{online} e 
-gratuita (para aquilo que desejamos): \textcolor{red}{\bfseries Overleaf}.
+gratuita (para aquilo que desejamos): \Overleaf.
 \nota{
   Exitem outros editores online que poderíamos usar:
   \href{https://papeeria.com/}{\textcolor{azulUFRB}{Papeeria}} ou
-  \href{https://www.authorea.com/}{Authorea}, por exemplo.
+  \href{https://www.authorea.com/}{\textcolor{azulUFRB}{Authorea}}, por exemplo.
 }
-Vamos conhecer alguns recursos disponíveis do Overleaf, antes de iniciarmos a
+Vamos conhecer alguns recursos disponíveis do \Overleaf, antes de iniciarmos a
 aquisição da linguagem \hologo{LaTeX}.
 
 O primeiro passo é acessar o \textit{link} e fazer um registro (\textit{Register}) 
 de uma conta (é possível fazer o \textit{login} com uma conta Google), logando na
-plataforma online (Veja Figura~\ref{fig:overleaf_inicio}):
+plataforma \textit{online} (Veja Figura~\ref{fig:overleaf_inicio}):
 
 \begin{figure}[!htbp]
   \centering
@@ -635,17 +635,17 @@ plataforma online (Veja Figura~\ref{fig:overleaf_inicio}):
     https://www.overleaf.com/
   }
   {
-    \includegraphics[width = 0.7\linewidth]{overleaf_inicio}
+    \includegraphics[width = 0.9\linewidth]{overleaf_inicio}
   }
   \caption{\url{https://www.overleaf.com/}}
   \label{fig:overleaf_inicio}
 \end{figure}
 
-Ao entrar no Overleaf, aparecrá uma tela como é mostrado na Figura~\ref{fig:overleaf_panorama-EN}
+Ao entrar no \Overleaf, aparecrá uma tela como é mostrado na Figura~\ref{fig:overleaf_panorama-EN}
 
 \begin{figure}[!htbp]
   \centering
-  \includegraphics[width = 0.7\linewidth]{overleaf_panorama-EN}
+  \includegraphics[width = 0.9\linewidth]{overleaf_panorama-EN}
   \caption{Visão inicial do Overleaf}
   \label{fig:overleaf_panorama-EN}
 \end{figure}
@@ -654,21 +654,81 @@ Vamos explicar o que significa cada nicho destacado:
 
 \begin{enumerate}
   \item Aqui é onde iniciaremos um \textbf{Novo Projeto} (\textit{New project}),
-    que poderá ser em Branco; ou de algum modelo que o próprio Overleaf 
-    disponibiliza; ou do GitHub; etc.;
+        que poderá ser em Branco; ou de algum modelo que o próprio \Overleaf{} 
+        disponibiliza; ou do GitHub; etc.;
   \item Nesse nicho aparecerão todos os seus projetos (no meu caso, tenho 2 em 
-    andamento);
+        andamento);
   \item Você pode modificar o idioma por aqui;
   \item Também é possível fazermos a modificação do idioma por aqui;
-  \item Você pode sair do Overleaf clicando nesse botão e, em seguida, "Sair" (\textit{LogOut})
+  \item Você pode sair do \Overleaf{} clicando nesse botão e, em seguida, 
+        \textsf{Sair} (\textit{LogOut})
 \end{enumerate}
 
-Escolha o item "3" ou "4" para modificar o idioma para "Portugues".
+Escolha o item "3" ou "4" para modificar o idioma para \textsf{Portugues}.
 Em seguida, abra um projeto em branco, seguindo o caminho:
 
 \begin{center}
-  "Novo Projeto" $\longrightarrow$ "Projeto em Branco"
+  \textsf{Novo Projeto} $\quad \longrightarrow \quad$ \textsf{Projeto em Branco}
 \end{center}
 
 Aparecerá uma janela para que você coloque o título do projeto.
-Escreva \textbf{minicurso-EMAT\_LaTeX}.
+Escreva:
+
+\tcboxC{\sffamily \bfseries minicurso-EMAT\_LaTeX}
+
+Entraremos naquilo que vamos denominar {\sffamily Área de Trabalho do Overleaf}
+(algo como a Figura~\ref{fig:overleaf_desktop}).
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width = 0.9\linewidth]{overleaf_area-trabalho}
+  \caption{Visão da Área de Trabalho dos Projetos, no Overleaf}
+  \label{fig:overleaf_desktop}
+\end{figure}
+
+Vamos modificar o compilador (lembrem-se que usaremos o \lualatex, não o 
+\texttt{pdflatex} -- que é o padrão do \Overleaf), mas, antes, vamos connhecer 
+um pouco essa área de trabalho:
+
+\begin{enumerate}
+  \item Digitamos os códigos nesse espaço! 
+        Aqui é onde escreveremos a lingugem do \hologo{LaTeX}.
+        Notem que o \Overleaf{} já usou o seu nome e o nome do projeto para 
+        preencher algumas coisas nessa linguagem;
+  \item A saída do \texttt{pdf} é mostrada aqui.
+        A renderização é automática, o que facilita muito o aprendizado para 
+        iniciantes;
+  \item Nesse espaço modificamos muita coisa no \Overleaf{}, especificamente, 
+        modificamos algumas congigurações, inclusive o \textsf{compilador}.
+        Também podemos fazer o \textit{download} do PDF ou do Código por aqui.
+  \item No botão \textit{Recompile} existem muitas opções para renderizar o 
+        documento.
+  \item É aqui que você pode configurar para compilação automática; ou produzir
+        um documento \textit{draft} (rascunho); ou para checagem das sintaxes;
+  \item Por fim, aqui mostra mensagens de erros ou alertas. 
+        Inclusive, há três mensagens de erros por lá! 
+        Veremos que a mensagem, na realidade, resume-se a um único problema: 
+        Ao aproveitar o título de nosso projeto e escrevê-lo no título do 
+        documento, o \Overleaf{} usou um \textbf{caractere especial} no modo 
+        \textsf{Texto}, mas que é exclusivamente reservado ao 
+        \textsf{Modo Matemático} \emoji{man-shrugging-light-skin-tone}.
+\end{enumerate}
+
+\begin{atencao}{Atenção!}{\exclamacao}
+  Em \textsf{Menu} (ver item 3 da Figura~\ref{fig:overleaf_desktop}), altere o
+  compilador modificando na seção \textit{Settings}, item \textit{Compiler}, de
+  \textsf{pdfLaTeX} para \textsf{LuaLaTeX}.
+\end{atencao}
+
+O nosso fluxo de trabalho será:
+
+\begin{enumerate}[\ding{226}]
+  \item \textbf{\textsf{escrever}} o texto e os códigos na área adequada;
+  \item \textbf{\textsf{compilar}} (compor tipograficamente) o documento;
+  \item \textbf{\textsf{depurar}} possíveis erros;
+  \item \textbf{\textsf{admirar}} o resultado \emoji{relieved-face}.
+\end{enumerate}
+
+Algumas outras peculiaridades do \Overleaf{} veremos quando estivermos praticando
+a linguagem do \LaTeX{} nos exercíos!
+Então, agora, resta-nos aprender a linguagem propriamente dita!
