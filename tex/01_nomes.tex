@@ -2,13 +2,13 @@
 
 \begin{margintable}\vspace{.8in}\footnotesize
   \begin{tabularx}{\marginparwidth}{|X}
-    Seção~\ref{sec:seiva}. A seiva da árvore\\
-    Seção~\ref{sec:seiva}. A seiva da árvore\\
-    Seção~\ref{sec:seiva}. A seiva da árvore\\
+    \textbf{\sffamily \textcolor{azulUFRB}{Seção}~\ref{sec:seiva}}.    {\sffamily A seiva da árvore}                  \\
+    \textbf{\sffamily \textcolor{azulUFRB}{Seção}~\ref{sec:usando}}.   {\sffamily Sim\ldots mas como eu uso?}         \\
+    \textbf{\sffamily \textcolor{azulUFRB}{Seção}~\ref{sec:overleaf}}. {\sffamily Overleaf: um editor online notável} \\
   \end{tabularx}
 \end{margintable}
 
-Lembro-me da primeira vez que vi o nome \LaTeX\ \ldots
+Lembro-me da primeira vez que vi o nome \LaTeX{} \ldots
 
 Foi em uma chamada de um minicurso de alguma "semana de matemática" da 
 universidade que fiz graduação.
@@ -20,6 +20,21 @@ Eu estava a um semestre de concluir a graduação e pensei:
   Pra quê estudar látex em Matemática? 
   Isso está mais para Geografia."
 }
+
+Sim! 
+Eu pensei que estavam falando daquela substância espessa e branca que sai de 
+algumas plantas (seringueira, por exemplo)!
+
+Então, vamos deixar as coisas claras: não estamos falando de látex, mas de \LaTeX.
+
+\begin{atencao}{Como pronunciar corretamente?}{\exclamacao}
+  Aliás, como se pronuncia a palavra \LaTeX?\\
+  Existem, pelo menos, duas maneiras de pronunciarmos, corretamente, essa palavra:
+  "\textit{LeiTéc}" ou "\textit{LaTéc}", ou seja, o som de \TeX{} ("Téc") é o 
+  mesmo que na palavra "\textit{tec}nologia". 
+  Particularmente, adoto a segunda opção.
+  Evite, por amor a Deus, falar "\textit{Látecks}".
+\end{atencao}
 
 \begin{marginfigure}
   \centering
@@ -33,28 +48,698 @@ Eu estava a um semestre de concluir a graduação e pensei:
   \caption{Isso é látex, não \LaTeX}
 \end{marginfigure}
 
-Sim! 
-Eu pensei que estavam falando daquela substância espessa e branca que sai de 
-algumas plantas (seringueira, por exemplo)!
-
-Então, vamos deixar as coisas claras: não estamos falando de látex, mas de \LaTeX.
-
-\begin{aviso}
-  Aliás, como se pronuncia a palavra \LaTeX?
-  Existem, pelo menos, duas maneiras de se pronunciar corretamente essa palavra:
-  "\textit{LeiTéc}" ou "\textit{LaTéc}",ou seja, o som de \TeX{} ("Téc") é o 
-  mesmo que em "\textbf{tec}nologia". 
-  Particularmente, adoto a segunda opção.
-  Evite, por amor a Deus, falar "\textit{Látecks}".
-\end{aviso}
-
-Falando nisso, a palavra \TeX, foi idealizada como sendo a junção de três letras
-gregas: $\tau\epsilon\chi$.\footnote{%
+Falando nisso, essa palavra \TeX{} não está destacada de forma aleatória! 
+Ela foi idealizada como sendo a junção de três letras gregas: $\tau\epsilon\chi$.
+\footnote{%
   $\tau$ (tau), $\epsilon$ (épsilon) e $\chi$ (chi)
 }
 Esse núcleo grego gera palavras como \textit{arte} ($\small\tau\epsilon\chi\nu\eta$) 
 ou mesmo \textit{tecnologia} ($\small\tau\epsilon\chi\nu o \lambda o \gamma\iota\alpha$).
-Daí vem o espírito da palavra \TeX: unir uma arte (a tipografia) com a 
-tecnologia (programação) para produzir documentos com uma beleza realmente ímpar.
+Daí vem o espírito da palavra \TeX: unir uma arte (a tipografia) com a tecnologia 
+(programação) para produzir documentos com uma beleza realmente ímpar.
 
+Na realidade, para falarmos com propriedade sobre \LaTeX, precisamos tangenciar 
+o \TeX.
 
+\subsection{Diferenciando os nomes} %------------------------------------------
+
+Tudo começou quando \href{https://pt.wikipedia.org/wiki/Donald_Knuth}{Donald Ervin Knuth} 
+queria qualidade nos elementos tipográficos de seus livros, principalmente na 
+escrita matemática. 
+Ele então criou, em meados da década dos anos 70, um sofisticado programa para a 
+composição tipográfica de textos científicos e uma alternativa quase necessária 
+para edição de textos com conteúdo matemático. 
+Nasceu o \TeX. 
+Em suas próprias palavras:
+
+\begin{cita}
+  \TeX{} é destinado para a criação de belos livros - e, especialmente, para os 
+  livros que contêm grande quantidade de matemática.
+\end{cita}
+
+Todavia, ao que parece, essa linguagem de programação não era tão acessível 
+\sout{a meros mortais como nós}, por conter diversos parâmetros relativos ao 
+formato final do texto \ldots
+Bom, vamos falar a verdade: dava muito trabalho para digitar o que você queria 
+simplificar.
+Isso porque o \TeX{} era formado por objetos denominados "primitivos" e toda 
+estruturação do texto deveria ser feita por meio deles.
+O próprio Knuth criou um conjunto de macros\nota{
+  Uma \textit{macro} (abreviação para macroinstrução), em ciência da computação, 
+  é uma regra ou padrão que especifica como uma certa “sequência de entrada” 
+  deve ser mapeada para uma substituição de “sequência de saída” de acordo com 
+  um procedimento definido.
+}, ou seja, um mapeamento de sequências de comandos primitivos, frequentemente 
+utilizados, para simplificar a escrita de comandos \TeX{} em seus livros.
+A esse conjunto de macros ele deu o nome de \textit{Plain}~\TeX.
+
+Obviamente, o \textit{Plain}~\TeX{} é um conjunto de macros bem simples e que 
+poderia ser expandido.
+E foi isso que aconteceu.
+
+\subsection{O surgimento do \LaTeX} %------------------------------------------
+
+\href{https://pt.wikipedia.org/wiki/Leslie_Lamport}{Leslie B. Lamport}, facilitou 
+nossa vida! 
+Por volta dos anos 80, ele criou um conjunto de macros para o \TeX, muito bem 
+estruturado, e com ideias interessantes (classes e pacotes, por exemplo) que 
+somaram substanciamente à causa do \TeX{}, formando assim o \LaTeX.
+Inclusive, o "La", de \LaTeX{}; vem do "La", de \textit{\textbf{La}mport}.
+\sidenote{
+  $\text{\LaTeX} = \text{\textbf{La}mport} + \text{\TeX}$
+}
+
+Logo, nunca se esqueça disso:
+
+\tcboxC{
+  \large  \textsf{O} \LaTeX\ \textsf{veio para facilitar sua vida}!
+}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width = 0.8\linewidth]{lamport-knuth}
+  \caption{Os culpados!}
+\end{figure}
+
+\subsection{Mais e mais nomes: compiladores, interpretadores e formatos} %-----
+
+Bom \ldots já sabemos que  \TeX{} e \LaTeX{} são coisas diferentes, entretanto,
+interrelacionadas: o segundo é a forma mais utilizada, atualmente, para 
+interagir com o primeiro.
+
+Nesse ponto, seria interessante diferenciarmos \textit{engines} (motores/interpretadotes) 
+de \textit{formats} (formatos).
+
+O \TeX{} é um interpretador (\textit{engine}); o \LaTeX, um formato (\textit{format}).
+
+\nota{
+  Um outro formato que vimos é o \textit{Plain}~\TeX; e, atualmente, um formato 
+  que se destaca é o \hrefA{https://en.wikipedia.org/wiki/ConTeXt}{\hologo{ConTeXt}}.
+}
+
+Os \textit{interpretadores} são os arquivos binários executáveis (ou seja, o 
+programa em si); já os \textit{formatos} são macros (comandos ou instruções), 
+baseadas em \TeX, que usamos para escrever nossos documentos (a grosso modo, são
+linguagens ou atalhos para sequências de comandos ou estruturas em \TeX).
+
+Não
+\begin{marginfigure}
+  \centering
+  \href
+  {
+    https://www.lua.org/portugues.html
+  }
+  {
+    \includegraphics[width = 0.6\linewidth]{logo_lua.png}
+  }
+  \caption{Poderosa linguagem de programação (clique na imagem para saber mais)}
+  \label{fig:lua}
+\end{marginfigure}
+é difícil perceber que o interpretador \TeX{} é bem antigo e que outros tenham
+surgido ao longo desses anos.
+De fato, à época do \TeX, nem existia ainda arquivos com extensão  \texttt{.pdf} 
+-- a saída dos documentos era em DVI.
+Quando surgiu o PDF, um interpretador ficou bem conhecido: \hologo{pdfTeX} -- cuja 
+saída poderia ser em DVI que poderia ser convertida em PDF. 
+O \hologo{pdfTeX} talvez seja o mais usado dentre os interpretadores que vamos 
+falar, pois já vem selecionado, por padrão, em muitos editores dedicados ao 
+\LaTeX \mn{%
+  falaremos sobre editores para \LaTeX{} mais abaixo.}; 
+as pessoas, simplesmente, não mudam a configuração padrão se realmente não 
+for necessário.
+Aliás, nosso sistema relaciona o \LaTeX{} com o \hologo{pdfTeX} usando um "atalho", 
+denominado \hologo{pdfLaTeX}.
+
+Portanto, o \hologo{pdfLaTeX} (que geralmente é o nome que aparecerá em nossos 
+editores) é o \textit{interpretador} pdf\TeX\ com o \textit{formato} \LaTeX. 
+
+Atualmente, dois interpretadores que se destacam são \hologo{XeTeX} e \hologo{LuaTeX}.
+Além de serem mais rápidos, trazem implementações notáveis como seleção de fontes 
+do próprio sistema (o \hologo{pdfTeX} não faz isso) ou interação com a linguagem 
+de programação (brasileira) Lua (veja a Figura~\ref{fig:lua}). 
+\nota{
+  De acordo com Joseph Wright, usamos a palavra "compilação" herdada da computação,
+  mas, uma palavra mais adequada seria "composição tipográfica" \cite{learnlatex}.
+}
+A saída de cada um deles é o PDF, diretamente.
+
+Em nossos sistemas, ao usarmos \hologo{XeTeX} com \LaTeX{} usamos o atalho 
+\hologo{XeLaTeX}.
+Da mesma forma, \hologo{LuaTeX} com \LaTeX{} é simplificado por \hologo{LuaLaTeX}.
+
+Obviamente, nesse minicurso, estamos interessados apenas no formato \LaTeX.
+Também, por mera preferência, usaremos como interpretador o \hologo{LuaTeX}.
+Portanto, "compilaremos" \, nossos arquivos com \texttt{lualatex}.
+
+Obtamos por usar \lualatex, pois é o sucessor natural do \pdflatex. 
+\sidenote{
+  \footnotesize
+  Confira essa informação no site \hrefB{http://www.luatex.org/}{http://www.luatex.org/}
+}
+
+\begin{atencao}{Mudanças à vista \ldots}{\exclamacao}
+  Isso pode mudar algumas coisas para quem é acostumado a usar \pdflatex, 
+  mas explicaremos as diferenças ao longo desse minicurso.  
+\end{atencao}
+
+Geralmente chamamos esses "atalhos" de \textbf{compiladores}
+\mn{
+  Para mais detalhes, veja \textcite{lualatex-doc}.
+}.
+
+Veja a Tabela~\ref{tab:compiladores} para comparação entre \textit{compiladores}, 
+\textit{engine} e \textit{format}.
+
+\begin{table}[!htbp]
+  \centering
+  \begin{tabular}{llc}
+    \toprule
+      \textbf{Compilador} & \textbf{Interpretador} & \textbf{Formato} \\
+    \midrule
+      \texttt{tex}           & \hologo{TeX}    & \hologo{plainTeX}       \\
+      \texttt{pdftex}        & \hologo{pdfTeX} & \hologo{plainTeX}       \\
+      \texttt{xetex}         & \hologo{XeTeX}  & \hologo{plainTeX}       \\
+      \texttt{latex}         & \hologo{pdfTeX} & \LaTeX                  \\
+      \texttt{pdflatex}      & \hologo{pdfTeX} & \LaTeX                  \\
+      \texttt{xelatex}       & \hologo{XeTeX}  & \LaTeX                  \\
+      \texttt{lualatex}      & \hologo{LuaTeX} & \LaTeX                  \\
+      \texttt{texexec}       & \hologo{pdfTeX} & \hologo{ConTeXt}        \\
+      \texttt{texexec --xtx} & \hologo{XeTeX}  & \hologo{ConTeXt}        \\
+      \texttt{context}       & \hologo{LuaTeX} & \hologo{ConTeXt}        \\
+    \bottomrule
+  \end{tabular}
+  \caption{Dando "nome aos bois"}
+  \label{tab:compiladores}
+\end{table}
+
+Como 
+\begin{marginfigure}
+  \centering
+  \href
+  {
+    http://www.luatex.org/
+  }
+  {
+    \includegraphics[width = 0.9 \linewidth]{logo_luatex.png}
+  }
+  \caption{
+    Saiba mais sobre o \hologo{LuaTeX} acessando o link: 
+    \href{http://www.luatex.org}{http://www.luatex.org}
+  }
+  \label{fig:lua}
+\end{marginfigure}
+esse texto é uma \sout{tentativa de} introdução ao \LaTeX, não chegaremos 
+nem perto do que gostaríamos de expor sobre essa simbiose entre uma linguagem de 
+\textit{programação} (Lua) integrada harmoniosamente com uma linguagem de 
+\textit{marcação} (\LaTeX).
+Basicamente, o código do \TeX{} foi reescrito em Lua (uma linguagem de programação
+com muita relevância internacional, desenvolvida por brasileiros, na PUC-RJ), 
+formando assim o \hologo{LuaTeX}.
+Houve, intencionalmente, a projeção para que esse \textit{interpretador} fosse 
+compatível com versões anteriores do \hologo{pdfTeX}, tornando o \hologo{LuaTeX} 
+seu substituto natural, visto que é mais rápido e moderno.
+
+Para encerramos essa subseção, é importante destacar a estabilidade do \LaTeX.
+Basicamente temos duas versões: uma antes de 1993, a saber \LaTeX~2.09; e,
+a de 1994 até HOJE, a saber \hologo{LaTeX2e}.
+Isso é interessante, pois os códigos são praticamente preservados ao longo do 
+tempo: você poderia rodar um código em \LaTeX\ de 20 anos atrás sem muitos 
+problemas.
+
+Todavia, quando falamos em \LaTeX{}, hoje, estamos nos referindo às 
+funcionalidades trazidas na versão \hologo{LaTeX2e}.
+
+\begin{marginfigure}
+  \centering
+  \includegraphics[width = \linewidth]{logo_latex}
+  \caption{
+    Saiba mais sobre esse fantástico projeto no link:
+    \href{https://www.latex-project.org}{https://www.latex-project.org}
+  }
+  \label{fig:latexiii}
+\end{marginfigure}
+
+As atualizações são constantes, mas sem muitas mudanças estruturais.
+Todavia, está em desenvolvimento uma terceira versão do \LaTeX, a saber, 
+\hologo{LaTeX3} (veja a Figura~\ref{fig:latexiii}).
+
+%------------------------------------------------------------------------------
+\subsection{Como colocar o \hologo{LaTeX} em meu computador: as Distribuições}
+%------------------------------------------------------------------------------ 
+
+Para instalar localmente (em nosso computador) os \textit{interpretadotes}, 
+precisamos das \textbf{distribuições}.
+
+As principais são:
+
+\begin{table}[!htbp]
+  \centering
+  \begin{tabular}{lll}
+    \toprule
+      \textbf{\sffamily Distribuições} & \textbf{\sffamily Sistema} & \textbf{\sffamily \textit{Download}/Instalação}\\
+    \midrule
+      \hologo{MiKTeX}   & Windows ou GNU/Linux ou Mac OS & \href{https://miktex.org/download}{https://miktex.org/download} \\ 
+      \TeX{} Live       & GNU/Linux ou Windows           & \href{https://www.tug.org/texlive/acquire-netinstall.html}{https://www.tug.org/texlive/acquire-netinstall.html}\\
+      Mac\TeX           & Mac OS                         & \href{https://www.tug.org/mactex/}{https://www.tug.org/mactex/}  \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+A distribuição Mac\TeX{} contém todo o \TeX{} Live e adições específicas para 
+Mac~OS.
+\nota{
+  Para GNU/Linux existem outras opções de instalação que economizam espaço.
+  Tudo dependerá da necessidade de cada um:\\
+  \texttt{texlive-latex-base}\\
+  \texttt{texlive-latex-recommended}\\
+  \texttt{texlive-pictures}\\
+  \texttt{texlive-fonts-recommended}\\
+  \texttt{texlive}\\
+  \texttt{texlive-plain-generic}\\
+  \texttt{texlive-latex-extra}\\
+  Para mais informações veja essa discussão no \hrefA{https://tex.stackexchange.com/questions/245982/differences-between-texlive-packages-in-linux}{TeX SE}
+}
+
+O \TeX{} Live completo precisa de, aproximadamente, 5GB de espaço em disco.
+Ele instala TODOS os pacotes disponíveis para \hologo{LaTeX}.
+Como hoje em dia a capacidade de disco é relativamente grande, a instalação 
+completa pode ser interessante, caso você não queira depender mais da internet 
+para instalação de futuros pacotes.
+
+Mas, se você quiser usar apenas o necessário e manter uma distribuição mínima em
+seu computador, instalando futuros pacotes à medida que for precisando deles, 
+talvez a distribuição \hologo{MiKTeX} seja a mais adequada.
+
+\begin{atencao}{Atenção!}{\exclamacao}
+  O processo de instalação depende do sistema operacioal e não será tratado nesse 
+  texto, visto que usaremos distribuições ONLINE dos instrepretadores de \TeX{}.  
+\end{atencao}
+
+\section{Sim \ldots mas como eu uso?} %----------------------------------------
+\label{sec:usando}
+
+Certo \ldots já temos uma distribuição \TeX{}, e agora?
+Basicamente, precisamos:
+
+\begin{itemize}
+  \item \textit{escrever}, usando o formato \hologo{LaTeX}, o que desejamos num 
+    arquivo de texto com extensão \texttt{.tex};
+  \item \textit{compilar}, ou seja, compor tipograficamente o arquivo \texttt{.tex}, 
+    produzindo um arquivo \texttt{.pdf}; e, nesse ponto, usaremos o compilador 
+    \texttt{lualatex};
+  \item \textit{visualizar} o arquivo \texttt{.pdf}; nesse ponto, o visualizador
+    de PDF é de escolha pessoal.
+\end{itemize}
+
+É uma boa prática salvar os arquivos \texttt{.tex} com nomes \textbf{sem acentuação}
+ou \textbf{caracteres especiais} do teclado (\%, \$, *, etc.).
+E, se o nome do arquivo for composto por mais de uma palavra, é aconselhável 
+também \textbf{não deixar espaço entre elas}.
+
+Por exemplo, suponha que você esteja escrevendo um artigo sobre \textit{números complexos}.
+Seu arquivo principal não deve ser nomeado assim: 
+
+\tcboxC{
+  \texttt{Artigo! Números Complexos.tex}
+}
+
+Você deve retirar o \textit{ponto de exclamação} e o \textit{acento agudo}, bem 
+como retirar os espaços entre as palavras.
+Nesse último ponto, pode-se usar o \texttt{camelCase}, ou \texttt{snake\_case} 
+ou separarar as \texttt{palavras-com-\textit{traço}}.
+São aceitáveis qualquer das seguintes possibilidades (note que há uma preferência
+por letras minúsculas):
+
+%\begin{tcolorbox}
+\tcboxC{
+  \centering
+  \begin{tabular}{l}
+    \texttt{artigoNumerosComplexos.tex}\\
+    \texttt{artigo-numeros-complexos.tex}\\
+    \texttt{artigo\_numeros\_complexos.tex}\\
+    \texttt{artigo\_numeros-complexos.tex}  
+  \end{tabular}
+}
+%\end{tcolorbox}
+
+Particularmente, prefiro essa última opção: onde se mistura o \textit{snake\_case}
+com os traços.
+Tento manter algum padrão antes do \textit{underline} e o nome do documento que 
+estou escrevendo, separo por traços, caso seja necessário.
+Essa abordagem pode ser interessante se você estiver trabalhando com um arquivo
+principal (onde geralmente ocorre a compilação final) e muitos outros arquivos 
+que serão incluídos no principal.
+
+É uma forma de escrever \ldots
+Há quem prefira escrever tudo em um único arquivo \texttt{.tex}!
+
+Falaremos sobre manipulação de vários arquivos mais à frente, porém, apenas para
+exemplificar a ideia, suponha que esse meu artigo (\texttt{artigo\_numeros-complexos.tex}) 
+sobre números complexos seja composto de cinco seções:
+\nota{
+  Uma forma de nomear esses arquivos seria, respectivamente:\\
+  \texttt{01\_intro-historica.tex}; \\
+  \texttt{02\_representacoes.tex}; \\
+  \texttt{03\_raizes.tex}; \\
+  \texttt{04\_teo-fundamental.tex};\\
+  \texttt{05\_conclusao.tex}.\\
+  Notem que deixei a numeração no início, separando-a com \textit{underline} e 
+  nomeei os arquivos de maneira que lembre-me a seção onde me encontro.
+} 
+introdução histórica; formas de representar um número complexo; raízes de um 
+número complexo; o Teorema Fundamental da Álgebra; e, conclusões.
+Então, desejamos escrever essas seções em arquivos separados e "incluí-los" no
+arquivo principal, paulatinamente, por meio de compilações SOMENTE no arquivo
+principal.
+
+\begin{atencao}{Fica a dica!}{\exclamacao}
+  Muitos nomeiam esses "arquivos principais", ou seja, onde ocorre a compilação, 
+  de \texttt{main.tex} (ou \texttt{master.tex}), que significa, em inglês, 
+  "principal", "importante", etc. ("senhor", "dominador", etc., para \textit{master}).
+\end{atencao}
+
+Para esse minicurso, à jato, começaremos com um arquivo principal, nomeado por
+"\texttt{main.tex}", no qual escreveremos o conteúdo desejado inserindo as partes 
+que o compõem, aos poucos.
+
+\subsection{Como fazemos a "compilação"?} %------------------------------------
+
+Bom \ldots ainda aprenderemos como escrever em \hologo{LaTeX}, não se preocupem,
+mas, antes, vamos aprender como compomos tipograficamente o texto.
+
+Já vimos que precisamos escrever o conteúdo do texto em um arquivo de extensão
+\texttt{.tex} e compilarmos com \texttt{lualatex} \ldots 
+Mas, como fazemos isso?
+
+Ora, a escrita do texto pode ser feita em qualquer \textbf{editor de texto} de 
+sua preferência.
+Pode-se usar um "bloco de notas" (para usuários de Windows), ou o "evince" (para
+usuários de GNU/Linux), por exemplo.
+Apenas deve-se lembrar em salvar o arquivo com extensão \texttt{.tex}.
+
+Também é aconselhável manter o arquivo \texttt{main.tex} em algum diretório (pasta) 
+nomeado adequadamente.
+Isso se deve ao fato de que, ao compilarmos, arquivos secundários são gerados (
+.aux, .log, etc.), o qu epode gerar certa "bagunça".
+
+Então, suponha que você tenha escrito um belo texto, cheio de equações matemáticas,
+num arquivo denominado \texttt{main.tex}, salvo em um diretório por nome 
+"\texttt{artigo\_tcc/}".
+\begin{marginfigure}
+  \centering
+  \includegraphics[width = 0.9\linewidth]{dir_lualatex.png}
+  \caption{Arquivos gerados numa compilação simples}
+\end{marginfigure}
+Feito isso, abra o \textbf{terminal} (no Windows seria o "Prompt de Comando") 
+dentro do diretório "\texttt{artigo\_tcc/}" e digite o seguinte comando:
+
+\begin{codigo}{Usando o terminal para compilar}{\lapis}
+  lualatex main.tex
+\end{codigo}
+
+Pelo menos três arquivos serão produzidos: um arquivo em \texttt[.pdf], que é a 
+saída desejada; um arquivo \texttt{.aux}, essencial em referências cruzadas, por 
+exemplo; e, um arquivo \texttt{.log}, o qual é um registro detalhado de tudo o que
+ocorreu na compilação, inclusive possíveis erros.
+Pode aparecer mais arquivos durante a compilação!
+Tudo dependerá de quão complexo é seu texto (se possui sumário; index; lista de tabela;
+lista de figura; glossário; etc).
+A Tabela\ref{tab:aux} nos mostra alguns desses arquivos:
+
+\begin{table}[!htbp]
+  \centering
+  \caption{Alguns dos possíveis arquivos gerados durante a compilação}  
+  \label{tab:aux}
+  \begin{tabular}{ll}
+    \toprule
+    \textbf{\sffamily Extensão} & \textbf{\sffamily Descrição}\\
+    \midrule
+    \texttt{.log} & registro detalhado sobre a compilação, inclusive erros \\
+    \texttt{.aux} & registra processos intermediários, como referências cruzadas \\
+    \texttt{.toc} & serve para produção do índice\\
+    \texttt{.lof} & serve para produção da lista de figuras\\
+    \texttt{.lot} & serve para produção da lista de tabelas\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Não tenha medo do terminal!
+Ele é seu amigo!
+Trabalhar usando "linha de comando", pelo terminal, é uma maneira de você 
+comunicar-se com o computador de maneira rápida, direta e livre de distrações.
+O comando \texttt{lualatex main.tex} simplesmente diz: "Olha \ldots componha
+tipograficamente meu texto que está no arquivo \texttt{main.tex}, usando o 
+interpretador \hologo{LuaTeX}, no formato \hologo{LaTeX}".
+
+Mas, se você quiser mais funcionalidades na digitação (autocomplete, identação
+automática, etc.) que um "bloco de texto" não oferece; bem como compilar sem 
+usar o terminal, você precisará de um \textbf{editor de texto} especializado ou
+uma IDE (\textit{Integrated Development Environment}).
+
+\subsection{Editores para \LaTeX} %--------------------------------------------
+
+\subsubsection{O \LaTeX\ é outro Word?} %--------------------------------------
+
+Um detalhe que precisamos ter em mente: a natureza dos editores para \LaTeX{}
+é geralmente diferente dos editores de texto como \textit{Microsoft Word} ou 
+\textit{LibreOffice Writer}.
+Esses últimos editores são denominados WYSIWYG (acrônimo para a frase 
+\textit{
+  \textbf{W}hat \textbf{Y}ou \textbf{S}ee \textbf{I}s \textbf{W}hat \textbf{Y}ou \textbf{G}et
+}).
+\nota{
+  "WYSIWYG \ldots O termo é usado para classificar ferramentas de edição e 
+  desenvolvimento que permitem visualizar, em tempo real, exatamente aquilo que 
+  será publicado ou impresso" (\hrefA{https://www.tecmundo.com.br/institucional/2057-o-que-e-wysiwyg-.htm}{TECMUNDO}, 
+  acesso em 03/02/2022).\\
+  Se você quiser saber como pronunciar corretamente essa sigla, acesse:
+  \hrefA{https://youtu.be/GZuZxwIjh4I}{How to pronounce WYSIWYG}.
+} 
+Em uma tradução literal livre significa "O que você vê é o que você tem", ou 
+seja, o que você vê na tela de seu editor, é o que aparecerá na impressão. 
+No \LaTeX{} não é bem assim \ldots 
+Você vê comandos misturados com texto normal, porém o resultado sairá diferente 
+daquilo que estará vendo em seu editor! 
+Ficará mais bonito o resultado, não se preocupe. =)
+
+Poderíamos listar argumentos sobre a superioridade do \LaTeX{}, comparando-o ao 
+\textit{Word} (por exemplo), mas isso não será feito. 
+Cada um tem suas peculiaridades: vantajosas ou não. 
+Tudo dependerá da finalidade do uso!
+Particularmente, tenho encontrado no \LaTeX{} um ambiente próprio para escrita 
+matemática de forma rápida, bonita e gratuita! 
+Textos longos, cheios de capítulos, ou documentos personalizados --- como esse 
+texto, exigiria um esforço e tempo tais, que nem passa por minha mente 
+escrevê-los no Word (você já tentou criar um simples sumário no Word? 
+Ou uma simples equação como esta: $\sum\limits_{n = 0}^{\infty} x^n = \frac{1}{1 - x}$, 
+em menos de 10 segundos?)
+
+Com isso em mente, é importante a aquisição de uma linguagem básica, mas, antes 
+disso, vamos falar um pouco sobre os editores para \LaTeX.
+
+\subsubsection{Indicações de editores para \LaTeX} %---------------------------
+
+As possibilidades de editores são realmente vastas.
+Portanto, comparar as funcionalidades dos principais editores é algo fundamental.
+Você pode olhar uma comparação entre eles nesse link:
+
+\begin{center}
+  \textbf{
+    \url{https://en.wikipedia.org/wiki/Comparison\_of\_TeX\_editors}
+  }
+\end{center}
+
+Podemos usar editores \textbf{dedicados} ao \hologo{LaTeX} ou editores mais 
+\textbf{genéricos}.
+
+No que se refere aos editores dedicados, listamos:
+
+\begin{table}[!h]
+  \centering
+  \begin{tabular}{ll}
+    \toprule
+    \multicolumn{1}{p{2cm}}{\centering\textbf{\sffamily Editor}}              & \multicolumn{1}{p{9.5cm}}{\centering\textbf{\sffamily Algumas características}}\\
+    \midrule
+      \hrefB{https://www.texstudio.org/}{\TeX studio}       & \multicolumn{1}{p{9.5cm}}{Destaca-se por ser multiplataforma e com muitos recursos.}\\
+      \hrefB{https://www.texniccenter.org/}{\TeX nicCenter} & \multicolumn{1}{p{9.5cm}}{É voltado para usuários de Windows. Integra-se muito naturalmente ao sistema (e ainda indica o Sumatra para visualização do PDF).}\\
+      \hrefB{https://www.lyx.org/}{LyX}                     & \multicolumn{1}{p{9.5cm}}{Esse é um editor diferente dos citados anteriormente; pois renderiza as equações e estruturas do texto de forma quase imediata. É o mais próximo, para \LaTeX, de editores WYSIWYG.}\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Agora, no que se refere aos editores mais genéricos, ou seja, não dedicados ao 
+\LaTeX, mas que com o uso de \textit{plugins} essa realidade muda, destacam-se:
+
+\begin{table}[!h]
+  \centering
+  \begin{tabular}{lcl}
+    \toprule
+      \textbf{\sffamily Editor} && \textbf{\textit{\sffamily Plugin}} \\
+    \midrule
+      \hrefA{https://www.gnu.org/software/emacs/emacs.html}{\sffamily GNU Emacs} && \href{https://www.gnu.org/software/auctex/}{\sffamily AUC \TeX}  \\                                       
+      \hrefA{https://atom.io/}{\sffamily Atom}                                   && \href{https://atom.io/packages/atom-latex}{\sffamily atom-latex} \\
+      \hrefA{https://neovim.io/}{\sffamily Neovim}                               && \href{https://github.com/lervag/vimtex}{\sffamily VimTeX}        \\
+      \hrefA{https://code.visualstudio.com/}{\sffamily VSCode}                   && \href{https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop}{\sffamily \LaTeX\ Workshop}  \\  
+    \bottomrule
+  \end{tabular}  
+\end{table}
+
+Obviamente, para o iniciante, é indicado um editor dedicado ao \hologo{LaTeX}.
+\sidenote{
+  Particularmente, uso o VSCode com o \textit{plugin} do \LaTeX{} Workshop.
+}
+
+O \textit{plugin}  do \hologo{LaTeX} Workshop faz o processo de compilação de uma
+forma um pouco diferente: ele usa uma ferramenta chamada \textbf{latexmk} que 
+nada mais é que um \textit{script} que automatiza muitos processos.
+Por exemplo, quando o documento é complexo; com referências cruzadas; sumário; 
+glossário; lista de tabelas; lista de figuras; etc. é necessário mais de um processo
+de compilação. 
+Esse \textit{plugin} faz isso tudo parecer mágica.
+Ele vem, por padrão, configurado para \pdflatex, mas pode ser modificado
+o interpretador de maneira bem simples.
+
+Uma ferramenta parecida com o \texttt{latexmk}, mas que precisa de diretivas (
+você precisa "dizer" para ele os passos que deseja executar) é o \textbf{arara}.
+Ele foi desenvolvido por um brasileiro (Paulo Cereda) e possui ferramentas de 
+\begin{marginfigure}
+  \centering
+  \href
+  {
+    https://gitlab.com/islandoftex/arara
+  }
+  {
+    \includegraphics[width = \linewidth]{logo_arara.pdf}
+  }
+\end{marginfigure}
+limpeza de arquivos auxiliares; rapidez na segunda compilação; produção de arquivo 
+\textit{draft} (um rascunho que não gera o conteúdo pdf, mas apenas verifica a 
+sintaxe do documento -- o que torna as coisas muito mais rápidas); etc.
+Falaremos sobre ele no Apêndice~\ref{apend-A:arara}, pois vale muito a pena 
+conhecer essa ferramenta!
+
+\section{Overleaf: um editor \textit{online} notável} %------------------
+\label{sec:overleaf}
+
+Como nosso minicurso é \textit{online} e possui tão curto tempo, não seria 
+possível um auxílio na instalação de uma distribuição \TeX{}, editor dedicado, 
+nem tampouco um visualizador de PDF de cada um de vocês, localmente.
+
+Usaremos, então, uma plataforma que reúne tudo isso de forma \textit{online} e 
+gratuita (para aquilo que desejamos): \Overleaf.
+\nota{
+  Exitem outros editores online que poderíamos usar:
+  \hrefA{https://papeeria.com/}{Papeeria} ou
+  \hrefA{https://www.authorea.com/}{Authorea}, por exemplo.
+}
+Vamos conhecer alguns recursos disponíveis do \Overleaf, antes de iniciarmos a
+aquisição da linguagem \hologo{LaTeX}.
+
+O primeiro passo é acessar o \textit{link} e fazer um registro (\textit{Register}) 
+de uma conta (é possível fazer o \textit{login} com uma conta Google), logando na
+plataforma \textit{online} (Veja Figura~\ref{fig:overleaf_inicio}):
+
+\begin{figure}[!htbp]
+  \centering
+  \href
+  {
+    https://www.overleaf.com/
+  }
+  {
+    \includegraphics[width = 0.8\linewidth]{overleaf_inicio}
+  }
+  \caption{\url{https://www.overleaf.com/}}
+  \label{fig:overleaf_inicio}
+\end{figure}
+
+Ao entrar no \Overleaf, aparecrá uma tela como é mostrado na Figura~\ref{fig:overleaf_panorama-EN}
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width = 0.8\linewidth]{overleaf_panorama-EN}
+  \caption{Visão inicial do Overleaf}
+  \label{fig:overleaf_panorama-EN}
+\end{figure}
+
+Vamos explicar o que significa cada nicho destacado:
+
+\begin{enumerate}
+  \item Aqui é onde iniciaremos um \textbf{Novo Projeto} (\textit{New project}),
+        que poderá ser em Branco; ou de algum modelo que o próprio \Overleaf{} 
+        disponibiliza; ou do GitHub; etc.;
+  \item Nesse nicho aparecerão todos os seus projetos (no meu caso, tenho 2 em 
+        andamento);
+  \item Você pode modificar o idioma por aqui;
+  \item Também é possível fazermos a modificação do idioma por aqui;
+  \item Você pode sair do \Overleaf{} clicando nesse botão e, em seguida, 
+        \textsf{Sair} (\textit{LogOut})
+\end{enumerate}
+
+Escolha o item "3" ou "4" para modificar o idioma para \textsf{Portugues}.
+Em seguida, abra um projeto em branco, seguindo o caminho:
+
+\begin{center}
+  \textsf{Novo Projeto} $\quad \longrightarrow \quad$ \textsf{Projeto em Branco}
+\end{center}
+
+Aparecerá uma janela para que você coloque o título do projeto.
+Escreva:
+
+\tcboxC{\sffamily \bfseries minicurso-EMAT\_LaTeX}
+
+Entraremos naquilo que vamos denominar {\sffamily Área de Trabalho do Overleaf}
+(algo como a Figura~\ref{fig:overleaf_desktop}).
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width = 0.9\linewidth]{overleaf_area-trabalho}
+  \caption{Visão da Área de Trabalho dos Projetos, no Overleaf}
+  \label{fig:overleaf_desktop}
+\end{figure}
+
+Vamos modificar o compilador (lembrem-se que usaremos o \lualatex, não o 
+\pdflatex{} -- que é o padrão do \Overleaf), mas, antes, vamos connhecer 
+um pouco essa área de trabalho:
+
+\begin{enumerate}
+  \item Digitamos os códigos nesse espaço! 
+        Aqui é onde escreveremos a lingugem do \hologo{LaTeX}.
+        Notem que o \Overleaf{} já usou o seu nome e o nome do projeto para 
+        preencher algumas coisas nessa linguagem;
+  \item A saída do \texttt{pdf} é mostrada aqui.
+        A renderização é automática, o que facilita muito o aprendizado para 
+        iniciantes;
+  \item Nesse espaço modificamos muita coisa no \Overleaf{}, especificamente, 
+        modificamos algumas congigurações, inclusive o \textsf{compilador}.
+        Também podemos fazer o \textit{download} do PDF ou do Código por aqui.
+  \item No botão \textit{Recompile} existem muitas opções para renderizar o 
+        documento.
+  \item É aqui que você pode configurar para compilação automática; ou produzir
+        um documento \textit{draft} (rascunho); ou para checagem das sintaxes;
+  \item Por fim, aqui mostra mensagens de erros ou alertas. 
+        Inclusive, há três mensagens de erros por lá! 
+        Veremos que a mensagem, na realidade, resume-se a um único problema: 
+        Ao aproveitar o título de nosso projeto e escrevê-lo no título do 
+        documento, o \Overleaf{} usou um \textbf{caractere especial} no modo 
+        \textsf{Texto}, mas que é exclusivamente reservado ao 
+        \textsf{Modo Matemático} \emoji{man-shrugging-light-skin-tone}.
+\end{enumerate}
+
+\begin{atencao}{Atenção!}{\exclamacao}
+  Em \textsf{Menu} (ver item 3 da Figura~\ref{fig:overleaf_desktop}), altere o
+  compilador modificando na seção \textit{Settings}, item \textit{Compiler}, de
+  \textsf{pdfLaTeX} para \textsf{LuaLaTeX}.
+\end{atencao}
+
+O nosso fluxo de trabalho será:
+
+\begin{enumerate}[\ding{226}]
+  \item \textbf{\textsf{escrever}} o texto e os códigos na área adequada;
+  \item \textbf{\textsf{compilar}} (compor tipograficamente) o documento;
+  \item \textbf{\textsf{depurar}} possíveis erros;
+  \item \textbf{\textsf{admirar}} o resultado \emoji{relieved-face}.
+\end{enumerate}
+
+Algumas outras peculiaridades do \Overleaf{} veremos quando estivermos praticando
+a linguagem do \LaTeX{} nos exercíos!
+Então, agora, resta-nos aprender os rudimentos dessa linguagem.

@@ -1,13 +1,29 @@
-% arara: lualatex: {options: ['--output-directory=docs_saida']}
-% arara: lualatex: {options: ['--output-directory=docs_saida']}
-%% arara: biber:    {options: ['--output-directory=docs_saida']}
-%% arara: lualatex: {options: ['--output-directory=docs_saida']}
+%% arara: lualatex: {draft: yes}
 
+% arara: lualatex
+% arara: lualatex
 
+%% arara: biber
+%% arara: lualatex
+%% arara: lualatex
+%% arara: clean: { extensions: [ aux, log, bbl, bcf, blg, listing, out, run.xml, toc, upa, upb ] }
 
 % classe com as customizações -------------------------------------------------
 \documentclass{minicursoUFRB}
 
+% meus comandos ---------------------------------------------------------------
+% \begin{cita} ...
+% \begin{codigo}{titulo}{\lapis} ...
+% \begin{codeLaTeX} ...
+% \begin{atencao}{titulo}{\exclamacao} ...
+% \tcboxC{}
+% \nota{}{}
+% \lualatex
+% \pdflatex
+% \Overleaf
+% \mn{} --> texto normal
+% \em{} --> pequeno
+% \sn{} --> pequeno e itálico
 %==============================================================================
 % Início do Documento 
 %------------------------------------------------------------------------------
@@ -25,17 +41,21 @@
 %
   \pagestyle{fancynotes}
 %
-	\part{A arte de nomear as coisas}	
+	\part{A Arte de Nomear as Coisas}	
 %
   \input{tex/01_nomes.tex}
 	%
 	%\part{Modifications}\label{Part:Modification}
   %\input{tex/02_mod.tex}
 
-  %\clearpage
-	%\thispagestyle{empty}
-  %\nocite{*}
-  %\printbibliography
+  \clearpage
+	\thispagestyle{empty}
+  \nocite{*}
+  \printbibliography
+
+  \clearpage
+  \appendix
+  \input{tex/apend-A_arara.tex}
 %------------------------------------------------------------------------------
 \end{document}
 %==============================================================================
