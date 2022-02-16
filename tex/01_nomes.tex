@@ -1,12 +1,12 @@
 \section{A Seiva da Árvore \ldots}\label{sec:seiva} %==========================
 
-%\begin{margintable}\vspace{.8in}\footnotesize
-%  \begin{tabularx}{\marginparwidth}{|X}
-%    Seção~\ref{sec:seiva}. A seiva da árvore\\
-%    Seção~\ref{sec:usando}. Sim\ldots mas como eu uso?\\
-%    Seção~\ref{sec:overleaf}. Overleaf: um editor online notável\\
-%  \end{tabularx}
-%\end{margintable}
+\begin{margintable}\vspace{.8in}\footnotesize
+  \begin{tabularx}{\marginparwidth}{|X}
+    \textbf{\sffamily \textcolor{azulUFRB}{Seção}~\ref{sec:seiva}}.    {\sffamily A seiva da árvore}                  \\
+    \textbf{\sffamily \textcolor{azulUFRB}{Seção}~\ref{sec:usando}}.   {\sffamily Sim\ldots mas como eu uso?}         \\
+    \textbf{\sffamily \textcolor{azulUFRB}{Seção}~\ref{sec:overleaf}}. {\sffamily Overleaf: um editor online notável} \\
+  \end{tabularx}
+\end{margintable}
 
 Lembro-me da primeira vez que vi o nome \LaTeX{} \ldots
 
@@ -27,6 +27,15 @@ algumas plantas (seringueira, por exemplo)!
 
 Então, vamos deixar as coisas claras: não estamos falando de látex, mas de \LaTeX.
 
+\begin{atencao}{Como pronunciar corretamente?}{\exclamacao}
+  Aliás, como se pronuncia a palavra \LaTeX?\\
+  Existem, pelo menos, duas maneiras de pronunciarmos, corretamente, essa palavra:
+  "\textit{LeiTéc}" ou "\textit{LaTéc}", ou seja, o som de \TeX{} ("Téc") é o 
+  mesmo que na palavra "\textit{tec}nologia". 
+  Particularmente, adoto a segunda opção.
+  Evite, por amor a Deus, falar "\textit{Látecks}".
+\end{atencao}
+
 \begin{marginfigure}
   \centering
   \href
@@ -39,19 +48,10 @@ Então, vamos deixar as coisas claras: não estamos falando de látex, mas de \L
   \caption{Isso é látex, não \LaTeX}
 \end{marginfigure}
 
-\begin{atencao}{Como pronunciar corretamente?}{\exclamacao}
-  Aliás, como se pronuncia a palavra \LaTeX?\\
-  Existem, pelo menos, duas maneiras de pronunciarmos, corretamente, essa palavra:
-  "\textit{LeiTéc}" ou "\textit{LaTéc}", ou seja, o som de \TeX{} ("Téc") é o 
-  mesmo que na palavra "\textit{tec}nologia". 
-  Particularmente, adoto a segunda opção.
-  Evite, por amor a Deus, falar "\textit{Látecks}".
-\end{atencao}
-
 Falando nisso, essa palavra \TeX{} não está destacada de forma aleatória! 
 Ela foi idealizada como sendo a junção de três letras gregas: $\tau\epsilon\chi$.
-\sidenote{%
-  \footnotesize $\tau$ (tau), $\epsilon$ (épsilon) e $\chi$ (chi)
+\footnote{%
+  $\tau$ (tau), $\epsilon$ (épsilon) e $\chi$ (chi)
 }
 Esse núcleo grego gera palavras como \textit{arte} ($\small\tau\epsilon\chi\nu\eta$) 
 ou mesmo \textit{tecnologia} ($\small\tau\epsilon\chi\nu o \lambda o \gamma\iota\alpha$).
@@ -134,7 +134,7 @@ O \TeX{} é um interpretador (\textit{engine}); o \LaTeX, um formato (\textit{fo
 
 \nota{
   Um outro formato que vimos é o \textit{Plain}~\TeX; e, atualmente, um formato 
-  que se destaca é o \href{https://en.wikipedia.org/wiki/ConTeXt}{\textcolor{azulUFRB}{\hologo{ConTeXt}}}.
+  que se destaca é o \hrefA{https://en.wikipedia.org/wiki/ConTeXt}{\hologo{ConTeXt}}.
 }
 
 Os \textit{interpretadores} são os arquivos binários executáveis (ou seja, o 
@@ -191,14 +191,14 @@ Obviamente, nesse minicurso, estamos interessados apenas no formato \LaTeX.
 Também, por mera preferência, usaremos como interpretador o \hologo{LuaTeX}.
 Portanto, "compilaremos" \, nossos arquivos com \texttt{lualatex}.
 
-Obtamos por usar \lualatex, pois é o sucessor natural do \texttt{pdflatex}. 
+Obtamos por usar \lualatex, pois é o sucessor natural do \pdflatex. 
 \sidenote{
   \footnotesize
-  Confira essa informação no site \href{http://www.luatex.org/}{\textbf{http://www.luatex.org/}}
+  Confira essa informação no site \hrefB{http://www.luatex.org/}{http://www.luatex.org/}
 }
 
 \begin{atencao}{Mudanças à vista \ldots}{\exclamacao}
-  Isso pode mudar algumas coisas para quem é acostumado a usar \texttt{pdflatex}, 
+  Isso pode mudar algumas coisas para quem é acostumado a usar \pdflatex, 
   mas explicaremos as diferenças ao longo desse minicurso.  
 \end{atencao}
 
@@ -296,11 +296,11 @@ As principais são:
   \centering
   \begin{tabular}{lll}
     \toprule
-      \textbf{Distribuições} & \textbf{Sistema} & \textbf{\textit{Download}/Instalação}\\
+      \textbf{\sffamily Distribuições} & \textbf{\sffamily Sistema} & \textbf{\sffamily \textit{Download}/Instalação}\\
     \midrule
       \hologo{MiKTeX}   & Windows ou GNU/Linux ou Mac OS & \href{https://miktex.org/download}{https://miktex.org/download} \\ 
-      \TeX{} Live       & GNU/Linux ou Windows  & \href{https://www.tug.org/texlive/acquire-netinstall.html}{https://www.tug.org/texlive/acquire-netinstall.html}\\
-      Mac\TeX           & Mac OS                & \href{https://www.tug.org/mactex/}{https://www.tug.org/mactex/}  \\
+      \TeX{} Live       & GNU/Linux ou Windows           & \href{https://www.tug.org/texlive/acquire-netinstall.html}{https://www.tug.org/texlive/acquire-netinstall.html}\\
+      Mac\TeX           & Mac OS                         & \href{https://www.tug.org/mactex/}{https://www.tug.org/mactex/}  \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -317,7 +317,7 @@ Mac~OS.
   \texttt{texlive}\\
   \texttt{texlive-plain-generic}\\
   \texttt{texlive-latex-extra}\\
-  Para mais informações veja essa discussão no \href{https://tex.stackexchange.com/questions/245982/differences-between-texlive-packages-in-linux}{\textcolor{azulUFRB}{TeX SE}}
+  Para mais informações veja essa discussão no \hrefA{https://tex.stackexchange.com/questions/245982/differences-between-texlive-packages-in-linux}{TeX SE}
 }
 
 O \TeX{} Live completo precisa de, aproximadamente, 5GB de espaço em disco.
@@ -370,14 +370,17 @@ ou separarar as \texttt{palavras-com-\textit{traço}}.
 São aceitáveis qualquer das seguintes possibilidades (note que há uma preferência
 por letras minúsculas):
 
-\begin{tcolorbox}
+%\begin{tcolorbox}
+\tcboxC{
+  \centering
   \begin{tabular}{l}
     \texttt{artigoNumerosComplexos.tex}\\
     \texttt{artigo-numeros-complexos.tex}\\
     \texttt{artigo\_numeros\_complexos.tex}\\
     \texttt{artigo\_numeros-complexos.tex}  
   \end{tabular}
-\end{tcolorbox}
+}
+%\end{tcolorbox}
 
 Particularmente, prefiro essa última opção: onde se mistura o \textit{snake\_case}
 com os traços.
@@ -469,7 +472,7 @@ A Tabela\ref{tab:aux} nos mostra alguns desses arquivos:
   \label{tab:aux}
   \begin{tabular}{ll}
     \toprule
-    \textbf{Extensão} & \textbf{Descrição}\\
+    \textbf{\sffamily Extensão} & \textbf{\sffamily Descrição}\\
     \midrule
     \texttt{.log} & registro detalhado sobre a compilação, inclusive erros \\
     \texttt{.aux} & registra processos intermediários, como referências cruzadas \\
@@ -507,10 +510,10 @@ Esses últimos editores são denominados WYSIWYG (acrônimo para a frase
 \nota{
   "WYSIWYG \ldots O termo é usado para classificar ferramentas de edição e 
   desenvolvimento que permitem visualizar, em tempo real, exatamente aquilo que 
-  será publicado ou impresso" (\href{https://www.tecmundo.com.br/institucional/2057-o-que-e-wysiwyg-.htm}{\textcolor{azulUFRB}{TECMUNDO}}, 
+  será publicado ou impresso" (\hrefA{https://www.tecmundo.com.br/institucional/2057-o-que-e-wysiwyg-.htm}{TECMUNDO}, 
   acesso em 03/02/2022).\\
   Se você quiser saber como pronunciar corretamente essa sigla, acesse:
-  \href{https://youtu.be/GZuZxwIjh4I}{\textcolor{azulUFRB}{How to pronounce WYSIWYG}}.
+  \hrefA{https://youtu.be/GZuZxwIjh4I}{How to pronounce WYSIWYG}.
 } 
 Em uma tradução literal livre significa "O que você vê é o que você tem", ou 
 seja, o que você vê na tela de seu editor, é o que aparecerá na impressão. 
@@ -537,6 +540,7 @@ disso, vamos falar um pouco sobre os editores para \LaTeX.
 \subsubsection{Indicações de editores para \LaTeX} %---------------------------
 
 As possibilidades de editores são realmente vastas.
+Portanto, comparar as funcionalidades dos principais editores é algo fundamental.
 Você pode olhar uma comparação entre eles nesse link:
 
 \begin{center}
@@ -554,11 +558,11 @@ No que se refere aos editores dedicados, listamos:
   \centering
   \begin{tabular}{ll}
     \toprule
-    \multicolumn{1}{p{2cm}}{\centering\textbf{Editor}}              & \multicolumn{1}{p{9.5cm}}{\centering\textbf{Algumas características}}\\
+    \multicolumn{1}{p{2cm}}{\centering\textbf{\sffamily Editor}}              & \multicolumn{1}{p{9.5cm}}{\centering\textbf{\sffamily Algumas características}}\\
     \midrule
-      \href{https://www.texstudio.org/}{\textbf{\TeX studio}}       & \multicolumn{1}{p{9.5cm}}{Destaca-se por ser multiplataforma e com muitos recursos.}\\
-      \href{https://www.texniccenter.org/}{\textbf{\TeX nicCenter}} & \multicolumn{1}{p{9.5cm}}{É voltado para usuários de Windows. Integra-se muito naturalmente ao sistema (e ainda indica o Sumatra para visualização do PDF).}\\
-      \href{https://www.lyx.org/}{\textbf{LyX}}                     & \multicolumn{1}{p{9.5cm}}{Esse é um editor diferente dos citados anteriormente; pois renderiza as equações e estruturas do texto de forma quase imediata. É o mais próximo, para \LaTeX, de editores WYSIWYG.}\\
+      \hrefB{https://www.texstudio.org/}{\TeX studio}       & \multicolumn{1}{p{9.5cm}}{Destaca-se por ser multiplataforma e com muitos recursos.}\\
+      \hrefB{https://www.texniccenter.org/}{\TeX nicCenter} & \multicolumn{1}{p{9.5cm}}{É voltado para usuários de Windows. Integra-se muito naturalmente ao sistema (e ainda indica o Sumatra para visualização do PDF).}\\
+      \hrefB{https://www.lyx.org/}{LyX}                     & \multicolumn{1}{p{9.5cm}}{Esse é um editor diferente dos citados anteriormente; pois renderiza as equações e estruturas do texto de forma quase imediata. É o mais próximo, para \LaTeX, de editores WYSIWYG.}\\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -566,12 +570,19 @@ No que se refere aos editores dedicados, listamos:
 Agora, no que se refere aos editores mais genéricos, ou seja, não dedicados ao 
 \LaTeX, mas que com o uso de \textit{plugins} essa realidade muda, destacam-se:
 
-\begin{itemize}
-  \item \href{https://www.gnu.org/software/emacs/emacs.html}{\bfseries GNU Emacs}, junto com \href{https://www.gnu.org/software/auctex/}{AUC \TeX};
-  \item \href{https://atom.io/}{\bfseries Atom}, junto com \href{https://atom.io/packages/atom-latex}{atom-latex};
-  \item \href{https://neovim.io/}{\bfseries Neovim}, com \href{https://github.com/lervag/vimtex}{VimTeX};
-  \item \href{https://code.visualstudio.com/}{\bfseries VSCode} com \href{https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop}{\LaTeX\ Workshop};
-\end{itemize}
+\begin{table}[!h]
+  \centering
+  \begin{tabular}{lcl}
+    \toprule
+      \textbf{\sffamily Editor} && \textbf{\textit{\sffamily Plugin}} \\
+    \midrule
+      \hrefA{https://www.gnu.org/software/emacs/emacs.html}{\sffamily GNU Emacs} && \href{https://www.gnu.org/software/auctex/}{\sffamily AUC \TeX}  \\                                       
+      \hrefA{https://atom.io/}{\sffamily Atom}                                   && \href{https://atom.io/packages/atom-latex}{\sffamily atom-latex} \\
+      \hrefA{https://neovim.io/}{\sffamily Neovim}                               && \href{https://github.com/lervag/vimtex}{\sffamily VimTeX}        \\
+      \hrefA{https://code.visualstudio.com/}{\sffamily VSCode}                   && \href{https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop}{\sffamily \LaTeX\ Workshop}  \\  
+    \bottomrule
+  \end{tabular}  
+\end{table}
 
 Obviamente, para o iniciante, é indicado um editor dedicado ao \hologo{LaTeX}.
 \sidenote{
@@ -585,7 +596,7 @@ Por exemplo, quando o documento é complexo; com referências cruzadas; sumário
 glossário; lista de tabelas; lista de figuras; etc. é necessário mais de um processo
 de compilação. 
 Esse \textit{plugin} faz isso tudo parecer mágica.
-Ele vem, por padrão, configurado para \texttt{pdflatex}, mas pode ser modificado
+Ele vem, por padrão, configurado para \pdflatex, mas pode ser modificado
 o interpretador de maneira bem simples.
 
 Uma ferramenta parecida com o \texttt{latexmk}, mas que precisa de diretivas (
@@ -618,8 +629,8 @@ Usaremos, então, uma plataforma que reúne tudo isso de forma \textit{online} e
 gratuita (para aquilo que desejamos): \Overleaf.
 \nota{
   Exitem outros editores online que poderíamos usar:
-  \href{https://papeeria.com/}{\textcolor{azulUFRB}{Papeeria}} ou
-  \href{https://www.authorea.com/}{\textcolor{azulUFRB}{Authorea}}, por exemplo.
+  \hrefA{https://papeeria.com/}{Papeeria} ou
+  \hrefA{https://www.authorea.com/}{Authorea}, por exemplo.
 }
 Vamos conhecer alguns recursos disponíveis do \Overleaf, antes de iniciarmos a
 aquisição da linguagem \hologo{LaTeX}.
@@ -635,7 +646,7 @@ plataforma \textit{online} (Veja Figura~\ref{fig:overleaf_inicio}):
     https://www.overleaf.com/
   }
   {
-    \includegraphics[width = 0.9\linewidth]{overleaf_inicio}
+    \includegraphics[width = 0.8\linewidth]{overleaf_inicio}
   }
   \caption{\url{https://www.overleaf.com/}}
   \label{fig:overleaf_inicio}
@@ -643,9 +654,9 @@ plataforma \textit{online} (Veja Figura~\ref{fig:overleaf_inicio}):
 
 Ao entrar no \Overleaf, aparecrá uma tela como é mostrado na Figura~\ref{fig:overleaf_panorama-EN}
 
-\begin{figure}[!htbp]
+\begin{figure}[!h]
   \centering
-  \includegraphics[width = 0.9\linewidth]{overleaf_panorama-EN}
+  \includegraphics[width = 0.8\linewidth]{overleaf_panorama-EN}
   \caption{Visão inicial do Overleaf}
   \label{fig:overleaf_panorama-EN}
 \end{figure}
@@ -687,7 +698,7 @@ Entraremos naquilo que vamos denominar {\sffamily Área de Trabalho do Overleaf}
 \end{figure}
 
 Vamos modificar o compilador (lembrem-se que usaremos o \lualatex, não o 
-\texttt{pdflatex} -- que é o padrão do \Overleaf), mas, antes, vamos connhecer 
+\pdflatex{} -- que é o padrão do \Overleaf), mas, antes, vamos connhecer 
 um pouco essa área de trabalho:
 
 \begin{enumerate}
@@ -731,4 +742,4 @@ O nosso fluxo de trabalho será:
 
 Algumas outras peculiaridades do \Overleaf{} veremos quando estivermos praticando
 a linguagem do \LaTeX{} nos exercíos!
-Então, agora, resta-nos aprender a linguagem propriamente dita!
+Então, agora, resta-nos aprender os rudimentos dessa linguagem.

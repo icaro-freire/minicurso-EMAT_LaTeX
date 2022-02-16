@@ -3,7 +3,8 @@
 
 % Estruturações Iniciais da Classe ============================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{minicursoUFRB}[2022/01/01 v.0.1.0 'Classe (não oficial) para apostila voltada a minicursos']
+\ProvidesClass{minicursoUFRB}[2022/01/01 v.0.1.0 
+'Classe (não oficial) para apostila voltada a minicursos']
 
 \ProcessOptions\relax
 \LoadClass[12pt]{article}
@@ -156,7 +157,7 @@
 ,pdfcreator={VSCode, arara}
 ,pdftitle={Uma Introdução (a jato) ao LaTeX}
 ,pdfauthor={Ícaro Vidal Freire}
-,pdfsubject={Minicurso ofertado no EMAT do CFP/UFRB}
+,pdfsubject={Minicurso ofertado no V EMAT do CFP/UFRB}
 ,pdfkeywords={latex, lualatex, arara, math, minicurso, ufrb}
 ,pdfa=true
 ]{hyperref}
@@ -187,6 +188,7 @@
 
 % configurações de códigos ====================================================
 % criando uma caixa de avisos -------------------------------------------------
+%% foi substituída por uma arredondada
 \newtcolorbox[auto counter,number within=section]{aviso}[1][]{
    enhanced jigsaw,
    colback   = white,
@@ -367,7 +369,10 @@
 
 % novos comandos ==============================================================
 \newcommand{\lualatex}{\texttt{lualatex}}
+\newcommand{\pdflatex}{\texttt{pdflatex}}
 \newcommand{\Overleaf}{\textcolor{darkgreen}{\bfseries \sffamily Overleaf}}
+\newcommand{\hrefB}[2]{\href{#1}{\bfseries #2}}
+\newcommand{\hrefA}[2]{\href{#1}{\bfseries \textcolor{azulUFRB}{#2}}}
 
 % Page layout
 \renewcommand{\baselinestretch}{1.15}\normalsize
