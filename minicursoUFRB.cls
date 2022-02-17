@@ -141,7 +141,7 @@
     {\textwidth+\marginparwidth+\marginparsep}\hrule\smallskip\smallskip}
     {\hrule\end{minipage}\vspace{.1in}}
 
-\newcommand{\mn}[1]{\textsuperscript{\thesidenote}{}\marginnote{\textsuperscript{\thesidenote}{}~\itshape\footnotesize #1}\refstepcounter{sidenote}}
+\newcommand{\mn}[1]{\textsuperscript{\thesidenote}{}\marginnote{\textsuperscript{\thesidenote}{}~\footnotesize #1}\refstepcounter{sidenote}}
 \newcommand{\en}[1]{\marginnote{\footnotesize #1}}
 \newcommand{\sn}[1]{\sidenote{\itshape\footnotesize #1}}
 
@@ -373,6 +373,7 @@
 \newcommand{\Overleaf}{\textcolor{darkgreen}{\bfseries \sffamily Overleaf}}
 \newcommand{\hrefB}[2]{\href{#1}{\bfseries #2}}
 \newcommand{\hrefA}[2]{\href{#1}{\bfseries \textcolor{azulUFRB}{#2}}}
+\newcommand{\textbs}[1]{\sffamily \bfseries #1}
 
 % Page layout
 \renewcommand{\baselinestretch}{1.15}\normalsize

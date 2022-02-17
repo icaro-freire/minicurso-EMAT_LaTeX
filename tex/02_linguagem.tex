@@ -55,9 +55,8 @@ não necessariamente, quando o documento envolve equações matemáticas.
 Antes de aprendermos os símbolos perinentes dessa linguagem, é interessante 
 conhecermos um pouco de sua estruturação.
 
-Um comando no \LaTeX{} sempre começa com uma barra invertida: \textbackslash.
-Tal comando pode está inserido em \textsf{modo texto} ou em \textsf{modo matemático}.
-\sidenote{
+Um comando no \LaTeX{} sempre começa com uma barra invertida ("\textbackslash").
+Tal comando pode está inserido em \textsf{modo texto} ou em \textsf{modo matemático}.\mn{
   Existe toda uma sintaxe para o \textsf{modo matemático}, que vamos deixar para
   abordar em outra seção.
 }
@@ -71,8 +70,8 @@ que estamos conhecendo: ela é \textit{case sensitive}, ou seja, é sensível à
 letras maiúsculas e menúsculas.
 O comando \verb|\LaTeX| é difernete do comando \verb|\latex|, que é difernte do
 comando \verb|\Latex|.
-\sidenote{
-  \small \texttt{\textbackslash LaTeX} $\neq$ \texttt{\textbackslash Latex} $\neq$ \texttt{\textbackslash latex}
+\mn{
+  \texttt{\textbackslash LaTeX} $\neq$ \texttt{\textbackslash Latex} $\neq$ \texttt{\textbackslash latex}
 }
 
 \begin{atencao}{Atenção!}{\exclamacao}
@@ -80,12 +79,61 @@ comando \verb|\Latex|.
   \LaTeX: a digitação de um comando de forma errada é muito comum!
 \end{atencao}
 
-Quando escrevemos um texto, precisamos saber qual tipo de texto ele representa.
-Poderia ser um artigo; um livro; uma nota de aula; um relatório; um protocolo;
-uma revista; uma apresentação; etc.
-Cada uma dessas \textsf{classes} possui características instrínsecas: um artigo 
+Também é importante ressaltar que comandos podem vir acompanhados de 
+\textbf{\textsf{argumentos obrigatórios}}, que colocamos entre \textsf{chaves} 
+("\{ \ldots \}"); ou de \textbf{\textsf{argumentos opcionais}}, que colacamos 
+entre \textsf{colchetes} ("[\ldots]").
+
+Por exemeplo, o comando \verb|\documentclass| define a \textsf{classe} do 
+documento.
+O argumento da classe é obrigatório, ou seja, precisamos "indicar"\, ao \LaTeX{}
+se estamos usando um \textsf{artigo} (\textit{article}); um \textsf{livro} 
+(\textit{book}); um relatório (\textit{report}); uma apresentação (\textit{beamer});
+etc.
+Além disso, existem vários argumentos opcionais, dentre os quais descato: o 
+tamanho da fonte, que por padrão é \texttt{10pt}\mn{ 
+  são três opções possíveis nas classes \textit{standard}: \texttt{10pt}, 
+  \texttt{11pt} e \texttt{12pt}.
+}
+; o formato do papel, por exemplo, \texttt{A4}; e a opção de \textit{layout} para
+estruturar as margens à impressão em frente e verso: \texttt{twoside}.
+Veja como ficaria o comando para a classe \texttt{article}; com tamanho da fonte 
+de \texttt{12pt}; definida para um formato de paper \texttt{A4}; e, com a opção 
+de imprimir em frente e verso:\mn{
+  Note que o comando opcional \texttt{twoside} não "diz"\, para a sua impressora 
+  imprimir em "frente e verso".
+  Apenas configura as margens das páginas para essa opção.
+}
+
+\tcboxC{
+  \ttfamily \textbackslash documentclass[12pt, a4paper, twoside]\{article\}
+}
+
+Notem que uma \textsf{classe} possui características instrínsecas: um artigo 
 não possui capítulos, mas seções; o que é diferente de um livro, que possui 
-essas duas estruturas.
+essas duas estruturas, por exemplo.
+Existem \textsf{classes} que já vem, por padrão, nas distribuições \TeX{} que 
+conhecemos e inúmeras outras implementadas pela comunidade de usuários do \LaTeX.
+
+A Tabela~\ref{tab:classes-nativas}, mostra algumas dessas \textsf{classes} 
+\textsf{nativas} (também chamadas de \textsf{padrão} ou \textit{standard}):
+
+\begin{table}[!htbp]
+  \centering
+  \caption{Algumas das \textsf{classes} \textit{standard} do \LaTeX}
+  \label{tab:classes-nativas}
+  \begin{tabular}{lcl}
+    \toprule
+      \textbs{Classe}  && \textbs{Finalidade de Uso} \\
+    \midrule
+      \textit{article} && artigo     \\
+      \textit{book}    && livros     \\
+      \textit{report}  && relatórios \\
+      \textit{letter}  && carta      \\
+    \bottomrule  
+  \end{tabular}  
+\end{table}
+
 
 
 
