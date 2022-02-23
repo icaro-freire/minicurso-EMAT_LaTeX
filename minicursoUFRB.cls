@@ -18,7 +18,6 @@
     Extension   = .ttf,
     UprightFont = *-Regular
   ]
-
 \RequirePackage{mathtools}
 \RequirePackage{amsthm, amssymb, amscd}
 \RequirePackage{bm}  
@@ -374,6 +373,7 @@
 \newcommand{\hrefB}[2]{\href{#1}{\bfseries #2}}
 \newcommand{\hrefA}[2]{\href{#1}{\bfseries \textcolor{azulUFRB}{#2}}}
 \newcommand{\textbs}[1]{\sffamily \bfseries #1}
+\newcommand{\textas}[1]{\textcolor{azulUFRB}{\textsf{#1}}}
 
 % Page layout
 \renewcommand{\baselinestretch}{1.15}\normalsize

@@ -18,14 +18,16 @@
 % \begin{codeLaTeX} ...
 % \begin{atencao}{titulo}{\exclamacao} ...
 % \tcboxC{}
-% \nota{}{}
+% \nota{}
 % \lualatex
 % \pdflatex
 % \Overleaf
 % \mn{} ou \sidenote{} --> texto normal
 % \en{} --> pequeno
 % \sn{} --> pequeno e itálico
-% \textBS{} --> texto em negrito e sem serifa 
+% \textbs{} ---> texto em negrito e sem serifa 
+% \hrefB{}{} --> negrito (com dourado)
+% \hrefA{}{} --> negrito com azulUFRB
 %==============================================================================
 % Início do Documento 
 %------------------------------------------------------------------------------
@@ -36,31 +38,31 @@
   \thispagestyle{empty}
   \tableofcontents
 %
-	\flushbottom
-	\newpage
+  \flushbottom
+  \newpage
 %
-	\input{tex/bate-papo.tex}
+  \input{tex/bate-papo.tex}
 %
   \pagestyle{fancynotes}
 %
-	\part{A Arte de Nomear as Coisas}	
+%  \part{A Arte de Nomear as Coisas}	
 %
-  \input{tex/01_nomes.tex}
+%    \input{tex/01_nomes.tex}
 %
   \part{Aprendendo a Linguagem LaTeX}
 %
-  \input{tex/02_linguagem.tex}
+    \input{tex/02_linguagem.tex}
 %
 % referências bibliográficas ----------
   \clearpage
-	\thispagestyle{empty}
+  \thispagestyle{empty}
   \nocite{*}
   \printbibliography
 %
 % apêndices ---------------------------
-  \clearpage
-  \appendix
-  \input{tex/apend-A_arara.tex}
+%  \clearpage
+%  \appendix
+%  \input{tex/apend-A_arara.tex}
 %------------------------------------------------------------------------------
 \end{document}
 %==============================================================================

@@ -20,7 +20,7 @@ primeira vista, demanda um "esforço técnico"\, maior no início do aprendizado
 mesmo para documentos simples.
 Mas, à medida que a complexidade do documento aumenta, o esforço empregado ao 
 usar o \LaTeX{} é menor, quando comparado à sistemas \textsf{WYSYWYG}, para 
-produzir o esse mesmo documento.
+produzir o mesmo documento.
 A Figura~\ref{fig:latex-vs-word} mostra um vislumbre dessa ideia, embora seja
 apenas hipotética.
 
@@ -47,12 +47,12 @@ apenas hipotética.
   {\textsf{\textbf{Fonte:}} \href{http://nvisnjic.com/2015/01/13/mathjax-magic.html}{The magic of LaTeX.}}
 \end{marginfigure}
 
-Além disso, é notável a beleza da composição tipográfica final, em especial -- mas
-não necessariamente, quando o documento envolve equações matemáticas.
+Além disso, é notável a beleza da composição tipográfica final, em especial (mas
+não necessariamente), quando o documento envolve equações matemáticas.
 
 \subsection{Um pouco sobre a estruturação do LaTeX} %--------------------------
 
-Antes de aprendermos os símbolos perinentes dessa linguagem, é interessante 
+Antes de aprendermos os símbolos pertinentes dessa linguagem, é interessante 
 conhecermos um pouco de sua estruturação.
 
 Um comando no \LaTeX{} sempre começa com uma barra invertida ("\textbackslash").
@@ -62,12 +62,12 @@ Tal comando pode está inserido em \textsf{modo texto} ou em \textsf{modo matem�
 }
 Por exemplo, quando escrevemos \verb|\LaTeX|, com o "L", "T"\, e "X"\, maiúsculos, 
 o resultado depois da compilação é: \LaTeX.
-Mas, se digitarmos \verb|\Latex| uma mensagem de erro será mostrada, visto que 
+Mas, se digitarmos \verb|\Latex|, uma mensagem de erro será mostrada, visto que 
 esse comando não vem por padrão definido.
 
 Tal exemplo já nos mostra uma outra característica da estruturação da linguagem 
 que estamos conhecendo: ela é \textit{case sensitive}, ou seja, é sensível à
-letras maiúsculas e menúsculas.
+letras maiúsculas e minúsculas.
 O comando \verb|\LaTeX| é difernete do comando \verb|\latex|, que é difernte do
 comando \verb|\Latex|.
 \mn{
@@ -116,15 +116,15 @@ Existem \textsf{classes} que já vem, por padrão, nas distribuições \TeX{} qu
 conhecemos e inúmeras outras implementadas pela comunidade de usuários do \LaTeX.
 
 A Tabela~\ref{tab:classes-nativas}, mostra algumas dessas \textsf{classes} 
-\textsf{nativas} (também chamadas de \textsf{padrão} ou \textit{standard}):
+\textsf{nativas} (também chamadas de \textsf{padrão} ou \textit{standard}).
 
-\begin{table}[!htbp]
+\begin{margintable}
   \centering
   \caption{Algumas das \textsf{classes} \textit{standard} do \LaTeX}
   \label{tab:classes-nativas}
   \begin{tabular}{lcl}
     \toprule
-      \textbs{Classe}  && \textbs{Finalidade de Uso} \\
+      \textbs{Classe}  && \textbs{Finalidade} \\
     \midrule
       \textit{article} && artigo     \\
       \textit{book}    && livros     \\
@@ -132,8 +132,103 @@ A Tabela~\ref{tab:classes-nativas}, mostra algumas dessas \textsf{classes}
       \textit{letter}  && carta      \\
     \bottomrule  
   \end{tabular}  
-\end{table}
+\end{margintable}
 
+\begin{atencao}{Atenção!}{\exclamacao}
+  Por conta da limitação de nosso tempo, vamos tangenciar alguns aspectos da 
+  linguagem \hologo{LaTeX}, usando apenas a classe \textit{article}.
+\end{atencao}
+
+Você já deve ter imaginado que existe uma infinidade de \textsf{classes} para o
+\LaTeX, além das nativas.
+De fato, há uma comunidade ativa que contribui com seus talentos e disponibilizam,
+em sua grande maioria, de forma gratuita muitas funcionalidades/ferramentas que 
+facilitam a vida de usuários do \LaTeX.
+Dentre essas funcionalidades/ferramentas, estão as \textsf{classes}.
+Mas, existem \textbf{pacotes}; aplicativos em java (como o \textsf{arara}); etc.
+Geralmente, as \textsf{classes} modificam a estrutura geral de um documento.
+Como vimos, um \textsf{artigo} possui uma estrutura diferente de um \textsf{livro},
+por exemplo.
+O que define essas estruturas são as \textsf{classes}.\en{%
+  A extensão do arquivo para uma classe é \texttt{.cls}
+}
+
+\begin{atencao}{Atenção!}{\exclamacao}
+  Cada classe possui sua sintaxe específica para alguns comandos, porém alguns 
+  outros comandos são gerais e servem para a maior parte das classes. 
+  Estudaremos apenas esses últimos.
+  Caso você queira trabalhar com uma classe diferente da “nativa”, deve 
+  verificar o manual para os detalhes.
+\end{atencao}
+
+Dentre as classes que não são nativas ao \hologo{LaTeX}, gostaria de destacar:
+\nota{
+  É bem engraçada, e realista, a descrição do nome abn\TeX:\\ 
+  {
+    \centering \textit{ABsurd Norms for TeX}.\\
+  }
+  Por que será, né? \emoji{hand-over-mouth}
+}
+
+\begin{description}
+  \item[\textas{abn\TeX 2}] Se você pensa em escrever seu Trabalho de Conslusão 
+                   de Curso, usandoo \LaTeX, você precisa ler a documentação e 
+                   conhecer bem essa classe.
+                   Ela, basicamente, fornece um modelo canônico (\textit{template})
+                   para várias estruturas de cunho científico, dentro do padrão 
+                   da \textsc{abnt} (Associação Brasileira de Normas Técnicas).
+                   Você não precisará se preocupar com as configurações de todas
+                   aquelas normas em seu texto!
+                   Conhecendo os comandos da classe, você só se preocupará com 
+                   o \textsf{conteúdo}, não com a \textsf{estrutura}.
+                   Inclusive, estou desenvolvendo uma clase para monografia do 
+                   curso de Licenciatura em Matemática da UFRB, baseada na classe
+                   abn\TeX 2.
+                   Ela está disponível lo \textit{link}: 
+                   \hrefB{https://github.com/icaro-freire/tccUFRB}{\textsf{tccUFRB.cls}}
+  \item[\textas{beamer}] Esta é uma classe para apresentações em \textit{slides} 
+                   (chamado também de \textit{frame}, pelos usuários).
+                   A qualidade das apresentações é surpreendente. 
+                   Principalmente quando a apresentação envolve fórmulas 
+                   matemáticas (não distorce como acontece por aí \ldots)!
+                   Existem uma infinidade de \textit{templates} (oficiais ou não) 
+                   disponíveis que você, certamente, encontrará um que atenda às 
+                   suas necessidades.
+                   O manual do \textsf{beamer} pode ser visto no \textit{link}:
+                   \hrefB
+                   {
+                     http://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf
+                   }
+                   {
+                     The \textsc{beamer} \textit{class}
+                   }
+                   \newline
+                   Um \textit{template} de tema claro, extra oficial, que 
+                   recomendo para \textsf{beamer} é o 
+                   \hrefB{https://github.com/matze/mtheme}{Metropolis};
+                   e, um escuro (\textit{dark}): 
+                   \hrefB{https://github.com/junwei-wang/beamerthemeNord}{The Nord Beamer Theme.} \\
+                   Um pequeno manual, em espanhol, que considero muito prático e 
+                   eficiente (principalmente se você não quiser ler as 234~p do 
+                   manual oficial) é: 
+                   \hrefB{http://metodos.fam.cie.uva.es/~latex/apuntes/apuntes13.pdf}{Presentaciones en \LaTeX\ con Beamer.}
+  \item[\textas{exam}] Essa é uma classe para confecção de listas de atividade.
+                   Possui um ambiente para soluções; comandos para pontuação nas
+                   questões; cria cabeçalhos e rodapés estilizados; etc.
+                   Se você é professor e usa fórmulas em suas listas de 
+                   atividades, recomendo fortemente ler a documentação dessa 
+                   classe \textsf{exam.cls}.
+                   Você encontrará o manual nesse \textit{link}:
+                   \hrefB{https://ctan.dcc.uchile.cl/macros/latex/contrib/exam/examdoc.pdf}{Using the exam document class}.
+                   \newline
+                   Baseada nessa classe, desenvolvi (e estou no processo de 
+                   atualização) a classe \hrefB{https://github.com/icaro-freire/ativmatUFRB}{ativmatUFRB.cls}.
+                   Ela é uma classe não oficial para listas de atividades do 
+                   curso de Licenciatura em Matemática, da UFRB.
+                   Possui um cabeçalho estilizado com o logo da universidade, bem
+                   como comandos e informações que considero úteis num documento
+                   desse tipo.
+\end{description}
 
 
 
