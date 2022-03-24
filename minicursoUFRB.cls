@@ -51,7 +51,7 @@
 \newenvironment{cita}{
   \begin{quoting}[rightmargin=0cm,leftmargin=0.4\linewidth]
   \begin{singlespace}
-    \small
+  \footnotesize
 }{
   \end{singlespace}
   \end{quoting}

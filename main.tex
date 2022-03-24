@@ -1,12 +1,13 @@
 %% arara: lualatex: {draft: yes}
 
-% arara: lualatex
-% arara: lualatex
+%% arara: lualatex
+%% arara: lualatex
 
-%% arara: lualatex
-%% arara: biber
-%% arara: lualatex
-%% arara: lualatex
+% arara: lualatex
+% arara: biber
+% arara: lualatex
+% arara: lualatex
+% arara: lualatex if found('log', 'undefined references')
 %% arara: clean: { extensions: [ aux, log, bbl, bcf, blg, listing, out, run.xml, toc, upa, upb ] }
 
 % classe com as customizações -------------------------------------------------
@@ -26,8 +27,10 @@
 % \en{} --> pequeno
 % \sn{} --> pequeno e itálico
 % \textbs{} ---> texto em negrito e sem serifa 
+% \textas{} ---. texto em azulUFRB sem serifa
 % \hrefB{}{} --> negrito (com dourado)
 % \hrefA{}{} --> negrito com azulUFRB
+
 %==============================================================================
 % Início do Documento 
 %------------------------------------------------------------------------------
@@ -45,9 +48,9 @@
 %
   \pagestyle{fancynotes}
 %
-%  \part{A Arte de Nomear as Coisas}	
+  \part{A Arte de Nomear as Coisas}	
 %
-%    \input{tex/01_nomes.tex}
+    \input{tex/01_nomes.tex}
 %
   \part{Aprendendo a Linguagem LaTeX}
 %
