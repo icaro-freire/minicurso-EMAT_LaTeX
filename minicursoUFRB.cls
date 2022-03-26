@@ -11,19 +11,17 @@
 
 % Pacotes carregados ==========================================================
 \RequirePackage{Alegreya, AlegreyaSans}
-\RequirePackage{fontspec}
-  \setmonofont{UbuntuMono}
-  [
-    Path        = fonts/ubuntu-mono/,
-    Extension   = .ttf,
-    UprightFont = *-Regular
-  ]
+
+\RequirePackage[brazil]{babel}
+  \babelfont[greek]{rm}{FreeSerif}
+
 \RequirePackage{mathtools}
 \RequirePackage{amsthm, amssymb, amscd}
 \RequirePackage{bm}  
 \RequirePackage[mdput, ttscaled = true, sfscaled = true]{mathdesign}
 
-\RequirePackage[brazil]{babel}
+\RequirePackage{fontspec}
+  \setmonofont{Ubuntu Mono}
 
 \RequirePackage{marginnote}
 \RequirePackage{sidenotes}
