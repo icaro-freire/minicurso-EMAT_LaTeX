@@ -68,7 +68,6 @@
 
 \RequirePackage{wrapfig}
 \RequirePackage{float}
-\RequirePackage{caption}
 \RequirePackage{graphicx}
   \graphicspath{{./figs/}}
 
@@ -453,8 +452,8 @@
                                    {\sffamily\normalsize\bfseries}}
 
 %Caption of figure and table
-\def\fnum@figure{\textbf{\figurename\nobreakspace\thefigure}}
-\def\fnum@table{\textbf{\tablename\nobreakspace\thetable}}
+\def\fnum@figure{\bfseries {\sffamily\figurename\nobreakspace\thefigure}}
+\def\fnum@table{\bfseries {\sffamily\tablename \nobreakspace\thetable}}
 
 %redefining \@makecaption, to have captions with \small font size
 %taken from article.cls l.489--498
