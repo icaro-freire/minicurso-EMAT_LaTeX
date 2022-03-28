@@ -14,14 +14,13 @@
 
 \RequirePackage[brazil]{babel}
   \babelfont[greek]{rm}{FreeSerif}
+\RequirePackage{fontspec}
+  \setmonofont{Ubuntu Mono}
 
 \RequirePackage{mathtools}
 \RequirePackage{amsthm, amssymb, amscd}
 \RequirePackage{bm}  
 \RequirePackage[mdput, ttscaled = true, sfscaled = true]{mathdesign}
-
-\RequirePackage{fontspec}
-  \setmonofont{Ubuntu Mono}
 
 \RequirePackage{marginnote}
 \RequirePackage{sidenotes}
