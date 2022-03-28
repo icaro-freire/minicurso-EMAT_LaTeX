@@ -452,8 +452,8 @@
                                    {\sffamily\normalsize\bfseries}}
 
 %Caption of figure and table
-\def\fnum@figure{\bfseries {\sffamily\figurename\nobreakspace\thefigure}}
-\def\fnum@table{\bfseries {\sffamily\tablename \nobreakspace\thetable}}
+\def\fnum@figure{\textbf{\textsf{\figurename}} \nobreakspace \textbf{\textsf{\thefigure}} \rmfamily}
+\def\fnum@table{\textbf{\textsf{\tablename}} \nobreakspace \textbf{\textsf{\thetable}} \rmfamily}
 
 %redefining \@makecaption, to have captions with \small font size
 %taken from article.cls l.489--498

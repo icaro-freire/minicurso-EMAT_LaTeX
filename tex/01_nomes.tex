@@ -50,7 +50,7 @@ Então, vamos deixar as coisas claras: não estamos falando de látex, mas de \L
     \includegraphics[width = 0.75\linewidth]{seringueira.jpg}
   }
 
-  {\small \sffamily \textbf{Fonte:} Globo Rural}
+  {\small \sffamily Fonte: Globo Rural}
 \end{marginfigure}
 
 Falando nisso, essa palavra \TeX{} não está destacada de forma aleatória! 
@@ -301,9 +301,9 @@ As principais são:
     \toprule
       \textbs{Distribuições} & \textbs{Sistema} & \textbs{\textit{Download}/Instalação}\\
     \midrule
-      \hologo{MiKTeX}   & Windows ou GNU/Linux ou Mac OS & \href{https://miktex.org/download}{https://miktex.org/download} \\ 
-      \TeX{} Live       & GNU/Linux ou Windows           & \href{https://www.tug.org/texlive/acquire-netinstall.html}{https://www.tug.org/texlive/acquire-netinstall.html}\\
-      Mac\TeX           & Mac OS                         & \href{https://www.tug.org/mactex/}{https://www.tug.org/mactex/}  \\
+      \hologo{MiKTeX}   & \textrm{Windows ou GNU/Linux ou Mac OS} & \href{https://miktex.org/download}{https://miktex.org/download} \\ 
+      \TeX{} Live       & \textrm{GNU/Linux ou Windows}           & \href{https://www.tug.org/texlive/acquire-netinstall.html}{https://www.tug.org/texlive/acquire-netinstall.html}\\
+      Mac\TeX           & \textrm{Mac OS}                         & \href{https://www.tug.org/mactex/}{https://www.tug.org/mactex/}  \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -443,7 +443,7 @@ Apenas deve-se lembrar em salvar o arquivo com extensão \texttt{.tex}.
 Também é aconselhável manter o arquivo \texttt{main.tex} em algum diretório (pasta) 
 nomeado adequadamente.
 Isso se deve ao fato de que, ao compilarmos, arquivos secundários são gerados (
-.aux, .log, etc.), o qu epode gerar certa ``bagunça''.
+.aux, .log, etc.), o que pode gerar certa ``bagunça''.
 
 Então, suponha que você tenha escrito um belo texto, cheio de equações matemáticas,
 num arquivo denominado \texttt{main.tex}, salvo em um diretório por nome 
@@ -460,14 +460,14 @@ dentro do diretório ``\texttt{artigo\_tcc/}'' e digite o seguinte comando:
   lualatex main.tex
 \end{codigo}
 
-Pelo menos três arquivos serão produzidos: um arquivo em \texttt[.pdf], que é a 
+Pelo menos três arquivos serão produzidos: um arquivo em \texttt{.pdf}, que é a 
 saída desejada; um arquivo \texttt{.aux}, essencial em referências cruzadas, por 
 exemplo; e, um arquivo \texttt{.log}, o qual é um registro detalhado de tudo o que
 ocorreu na compilação, inclusive possíveis erros.
 Pode aparecer mais arquivos durante a compilação!
 Tudo dependerá de quão complexo é seu texto (se possui sumário; index; lista de tabela;
 lista de figura; glossário; etc).
-A Tabela\ref{tab:aux} nos mostra alguns desses arquivos:
+A Tabela~\ref{tab:aux} nos mostra alguns desses arquivos:
 
 \begin{table}[!htbp]
   \centering
@@ -477,11 +477,11 @@ A Tabela\ref{tab:aux} nos mostra alguns desses arquivos:
     \toprule
     \textbs{Extensão} & \textbs{Descrição}\\
     \midrule
-    \texttt{.log} & registro detalhado sobre a compilação, inclusive erros \\
-    \texttt{.aux} & registra processos intermediários, como referências cruzadas \\
-    \texttt{.toc} & serve para produção do índice\\
-    \texttt{.lof} & serve para produção da lista de figuras\\
-    \texttt{.lot} & serve para produção da lista de tabelas\\
+    \texttt{.log} & \textrm{registro detalhado sobre a compilação, inclusive erros} \\
+    \texttt{.aux} & \textrm{registra processos intermediários, como referências cruzadas} \\
+    \texttt{.toc} & \textrm{serve para produção do índice} \\
+    \texttt{.lof} & \textrm{serve para produção da lista de figuras} \\
+    \texttt{.lot} & \textrm{serve para produção da lista de tabelas} \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -553,49 +553,57 @@ Você pode olhar uma comparação entre eles nesse link:
   }
 \end{center}
 
-Podemos usar editores \textbf{dedicados} ao \hologo{LaTeX} ou editores mais 
-\textbf{genéricos}.
+Podemos usar editores mais \textbf{genéricos} ao \hologo{LaTeX} ou editores 
+\textbf{dedicados}.
 
-No que se refere aos editores dedicados, listamos:
+No que se refere aos editores mais genéricos, ou seja, que podem ser usados para 
+outras linguagens de marcação (ou programação), podemos usar \textit{plugins}
+para usarmos o \hologo{LaTeX} essa realidade muda. 
+Veja a Tabela~\ref{tab:editores-genericos} para algumas sugestões.
+
+\begin{margintable}
+  \centering
+  \caption{Editores Genéricos}
+  \label{tab:editores-genericos}
+  \medskip
+  \begin{tabular}{ll}
+    \toprule
+      \textbs{Editor} & \textbs{\textit{Plugin}} \\
+    \midrule
+      \hrefA{https://www.gnu.org/software/emacs/emacs.html}{\sffamily GNU Emacs} & \href{https://www.gnu.org/software/auctex/}{\sffamily AUC \TeX}  \\                                       
+      \hrefA{https://atom.io/}{\sffamily Atom}                                   & \href{https://atom.io/packages/atom-latex}{\sffamily atom-latex} \\
+      \hrefA{https://neovim.io/}{\sffamily Neovim}                               & \href{https://github.com/lervag/vimtex}{\sffamily VimTeX}        \\
+      \hrefA{https://code.visualstudio.com/}{\sffamily VSCode}                   & \href{https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop}{\sffamily \LaTeX\ Workshop}  \\  
+    \bottomrule
+  \end{tabular}  
+\end{margintable}
+
+Agora, no que se refere aos editores dedicados, a Tabela~\ref{tab:editores-dedicados} 
+exibe algumas possibilidades.
 
 \begin{table}[!h]
   \centering
+  \caption{Alguns Editores Dedicados ao \LaTeX}
+  \label{tab:editores-dedicados}
+  \medskip
   \begin{tabular}{ll}
     \toprule
     \multicolumn{1}{p{2cm}}{\centering\textbs{Editor}}      & \multicolumn{1}{p{9.5cm}}{\centering\textbs{Algumas características}}\\
     \midrule
-      \hrefB{https://www.texstudio.org/}{\TeX studio}       & \multicolumn{1}{p{9.5cm}}{Destaca-se por ser multiplataforma e com muitos recursos.}\\
-      \hrefB{https://www.texniccenter.org/}{\TeX nicCenter} & \multicolumn{1}{p{9.5cm}}{É voltado para usuários de Windows. Integra-se muito naturalmente ao sistema (e ainda indica o Sumatra para visualização do PDF).}\\
-      \hrefB{https://www.lyx.org/}{LyX}                     & \multicolumn{1}{p{9.5cm}}{Esse é um editor diferente dos citados anteriormente; pois renderiza as equações e estruturas do texto de forma quase imediata. É o mais próximo, para \LaTeX, de editores WYSIWYG.}\\
+      \hrefB{https://www.texstudio.org/}{\textbs{\TeX studio}}       & \multicolumn{1}{p{9.5cm}}{\textrm{Destaca-se por ser multiplataforma e com muitos recursos.}}\\
+      \hrefB{https://www.texniccenter.org/}{\textbs{\TeX nicCenter}} & \multicolumn{1}{p{9.5cm}}{\textrm{É voltado para usuários de Windows. Integra-se muito naturalmente ao sistema (e ainda indica o Sumatra para visualização do PDF).}}\\
+      \hrefB{https://www.lyx.org/}{\textbs{LyX}}                     & \multicolumn{1}{p{9.5cm}}{\textrm{Esse é um editor diferente dos citados anteriormente; pois renderiza as equações e estruturas do texto de forma quase imediata. É o mais próximo, para \LaTeX, de editores WYSIWYG.}}\\
     \bottomrule
   \end{tabular}
 \end{table}
 
-Agora, no que se refere aos editores mais genéricos, ou seja, não dedicados ao 
-\LaTeX, mas que com o uso de \textit{plugins} essa realidade muda, destacam-se:
-
-\begin{table}[!h]
-  \centering
-  \begin{tabular}{lcl}
-    \toprule
-      \textbs{Editor} && \textbs{\textit{Plugin}} \\
-    \midrule
-      \hrefA{https://www.gnu.org/software/emacs/emacs.html}{\sffamily GNU Emacs} && \href{https://www.gnu.org/software/auctex/}{\sffamily AUC \TeX}  \\                                       
-      \hrefA{https://atom.io/}{\sffamily Atom}                                   && \href{https://atom.io/packages/atom-latex}{\sffamily atom-latex} \\
-      \hrefA{https://neovim.io/}{\sffamily Neovim}                               && \href{https://github.com/lervag/vimtex}{\sffamily VimTeX}        \\
-      \hrefA{https://code.visualstudio.com/}{\sffamily VSCode}                   && \href{https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop}{\sffamily \LaTeX\ Workshop}  \\  
-    \bottomrule
-  \end{tabular}  
-\end{table}
 
 Obviamente, para o iniciante, é indicado um editor dedicado ao \hologo{LaTeX}.
-\mn{
-  Particularmente, uso o VSCode com o \textit{plugin} do \LaTeX{} Workshop.
-}
 
-O \textit{plugin}  do \hologo{LaTeX} Workshop faz o processo de compilação de uma
-forma um pouco diferente: ele usa uma ferramenta chamada \textbf{latexmk} que 
-nada mais é que um \textit{script} que automatiza muitos processos.
+Particularmente, uso o VSCode com o \textit{plugin} do \LaTeX{}~\textit{Workshop}.
+Esse \textit{plugin} faz o processo de compilação de uma forma um pouco 
+diferente: ele usa uma ferramenta chamada \textbf{latexmk} que nada mais é do que 
+um \textit{script} que automatiza muitos processos.
 Por exemplo, quando o documento é complexo; com referências cruzadas; sumário; 
 glossário; lista de tabelas; lista de figuras; etc. é necessário mais de um processo
 de compilação. 
@@ -641,7 +649,7 @@ aquisição da linguagem \hologo{LaTeX}.
 
 O primeiro passo é acessar o \textit{link} e fazer um registro (\textit{Register}) 
 de uma conta (é possível fazer o \textit{login} com uma conta Google), logando na
-plataforma \textit{online} (Veja Figura~\ref{fig:overleaf_inicio}):
+plataforma \textit{online} (Veja Figura~\ref{fig:overleaf_inicio}).
 
 \begin{figure}[!htbp]
   \centering
@@ -656,7 +664,7 @@ plataforma \textit{online} (Veja Figura~\ref{fig:overleaf_inicio}):
   \label{fig:overleaf_inicio}
 \end{figure}
 
-Ao entrar no \Overleaf, aparecrá uma tela como é mostrado na Figura~\ref{fig:overleaf_panorama-EN}
+Ao entrar no \Overleaf, aparecrá uma tela como é mostrado na Figura~\ref{fig:overleaf_panorama-EN}.
 
 \begin{figure}[!h]
   \centering
