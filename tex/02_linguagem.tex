@@ -9,9 +9,11 @@
   \end{tabularx}
 \end{margintable}
 
-A aquisição de uma linguagem não é algo imediato, para a maioria das pessoas; e,
-o \LaTeX{} é uma linguagem (de marcação).
-Isso implica que há uma \textsf{estrutura} e \textsf{simbologia} características.
+A aquisição de uma linguagem não é algo imediato (para a maioria das pessoas); e,
+o \LaTeX{} é uma linguagem, conhecida como \textit{linguagem de marcação}.
+Isso implica que há uma \textsf{estrutura} e \textsf{simbologia} características, 
+ou seja, é necessário um investimento em tempo e esforço para uma certa fluidez 
+na comunicação ou escrita.
 
 Vimos na Subseção~\ref{subsec:latex-word} que o \hologo{LaTeX} é uma linguagem 
 que envolve \textit{códigos} e \textit{texto}.
@@ -48,13 +50,18 @@ apenas hipotética.
 \end{marginfigure}
 
 Além disso, é notável a beleza da composição tipográfica final, em especial (mas
-não necessariamente), quando o documento envolve equações matemáticas.
+não necessariamente) quando o documento envolve equações matemáticas.
+Como vimos, essa \textsf{beleza} é fruto das mais sofisticadas técnicas empregadas 
+nos algorítimos que produzem a saída \texttt{0} ou \texttt{1}, representando, 
+respectivamente, ``sem tinta'' ou ``com tinta''.
 
 \subsection{Um pouco sobre a estruturação do LaTeX} %--------------------------
 
 Antes de aprendermos os símbolos pertinentes dessa linguagem, é interessante 
 conhecermos um pouco de sua estruturação.
-
+% 
+  \subsubsection{Comandos}
+% 
 Um comando no \LaTeX{} sempre começa com uma barra invertida (``\textbackslash'').
 Tal comando pode está inserido em \textsf{modo texto} ou em \textsf{modo matemático}.\mn{
   Existe toda uma sintaxe para o \textsf{modo matemático}, que vamos deixar para
@@ -108,7 +115,9 @@ de imprimir em frente e verso:\mn{
 \tcboxC{
   \ttfamily \textbackslash documentclass[12pt, a4paper, twoside]\{article\}
 }
-
+% 
+  \subsubsection{Classe do Documento}
+% 
 Notem que uma \textsf{classe} possui características instrínsecas: um artigo 
 não possui capítulos, mas seções; o que é diferente de um livro, que possui 
 essas duas estruturas, por exemplo.
@@ -229,6 +238,91 @@ Dentre as classes que não são nativas ao \hologo{LaTeX}, gostaria de destacar:
                    como comandos e informações que considero úteis num documento
                    desse tipo.
 \end{description}
+
+% 
+  \subsubsection{Mais sobre Comandos}
+% 
+
+Uma pergunta que talvez possa surgir nesse momento: 
+\textit{
+  se cada comando começa com a ``barra invertida'', qual o comando para 
+  representar a própria barra invertida? 
+}
+  \emoji{thinking}\\
+É natural pensarmos em ``\textbackslash\textbackslash'', mas a pergunta surgiria 
+novamente: 
+\textit{ 
+  como representar ``\textbackslash\textbackslash''?
+} \emoji{exploding-head}\\
+E seguiria uma sequência infinita de pergutas, não?!
+
+Bom, para que essas questões possam ser resolvidas, você deve ter em mente que 
+alguns símbolos são \textsf{reservados}, ou seja, há um conjunto de definições 
+internas ao próprio \LaTeX. 
+Inclusive, símbolos usados em estruturas internas de comandos. 
+É o caso de ``\textbackslash'': ele é usado para iniciar qualquer comando no \LaTeX. 
+Se você quiser representá-lo textualmente, pode usar \texttt{\textbackslash textbackslash}.
+\en{ 
+  Veremos que, no modo Matemático, esse mesmo comando pode ser representado 
+  simplesmente por \texttt{\textbackslash backslash}.
+}
+
+A Tabela~\ref{tab:especial} mostra alguns desses caracteres especiais. 
+\begin{table}[!htbp]
+  \caption{Caracteres Especiais no \LaTeX}
+  \label{tab:especial}
+  \centering
+  \begin{tabular}{ccl}
+    \toprule
+      \textbs{Caractere}      && \textbs{Descrição} \\
+    \midrule
+     \texttt{\textbackslash}  && inicia um comando                                  \\
+      \texttt{\%}             && para comentar código                               \\ 
+      \texttt{\~{}}           && evita separação de palavras                        \\
+      \texttt{\{\;\}}         && delimita códigos                                   \\
+      \texttt{\&}             && separa colunas numa tabela                         \\
+      \texttt{\#}             && exibe $\textrm{n}^\circ$ de parâmetros num comando \\
+      \texttt{\$}             && usado no modo matemático                           \\
+      \texttt{\^{}}           && usado para potências                               \\ 
+      \texttt{\_{}}           && usado para subíndices                              \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Se você quiser exibir qualquer um deles, (excetuando a \textit{barra invertida},
+claro) basta colocar a barra invertida antes dos símbolos!
+Por exemplo, se deseja exibir ``10\%'', deve digitar: \texttt{10\textbackslash \%}.
+
+Ainda falando sobre comandos \ldots\ se você for utilizar algum comando interno, 
+ou mesmo algum criado por você (sim isso é possível, mas não veremos nesse 
+microcurso \emoji{confused-face}), deve ter um cuidado especial com o espaçamento 
+de alguma palavra depois do referido comando.
+Por exemplo, se formos escrever 
+\tcboxC{O \LaTeX\ é sensacional!}
+\textbf{não} devemos fazer ``\texttt{O \LaTeX\ é sensacional!}'', visto que a 
+saída produzida por esse último comando é:
+\tcboxC{O \LaTeX é sensacional!}
+Devemos, portanto, colcar ``\texttt{\{\}}'' ou ``\texttt{\textbackslash}'' 
+ao final do comando. 
+Isso faz com que haja um pequeno espaço entre ele e a próxima palavra. 
+Em resumo, você deve fazer alguma das seguintes maneiras:
+\begin{enumerate}
+  \item[(i)] \texttt{O \textbackslash LaTeX\{\} é sensacional!}
+  \item[(ii)] \texttt{O \textbackslash LaTeX\textbackslash\ é sensacional!} 
+\end{enumerate}
+
+% 
+  \subsubsection{Ambientes}
+% 
+
+Um agrupamento de comandos peculiar são os \textsf{ambientes} (\textit{environments}). 
+Pode ser uma tabela; um ambiente matemático; um ambiente para texto; etc. 
+Sempre começará com algum \texttt{\textbackslash begin{algum-nome}} e, 
+\textbf{obrigatoriamente}, termiar com seu respectivo \texttt{\textbackslash end{algum-nome}}. 
+
+\begin{atencao}{Atenção!}{\exclamacao}
+\end{atencao}
+
 
 
 
