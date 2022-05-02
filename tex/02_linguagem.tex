@@ -311,18 +311,59 @@ Em resumo, você deve fazer alguma das seguintes maneiras:
   \item[(ii)] \texttt{O \textbackslash LaTeX\textbackslash\ é sensacional!} 
 \end{enumerate}
 
+Gostaria de destacar o uso do comando \texttt{\%} para comentários de código! 
+Use-o sempre para lembrar-se de algo ou para organização. 
+Ao longo desse texto, esse comando será usado constantemente.
+
 % 
   \subsubsection{Ambientes}
 % 
 
 Um agrupamento de comandos peculiar são os \textsf{ambientes} (\textit{environments}). 
 Pode ser uma tabela; um ambiente matemático; um ambiente para texto; etc. 
-Sempre começará com algum \texttt{\textbackslash begin{algum-nome}} e, 
-\textbf{obrigatoriamente}, termiar com seu respectivo \texttt{\textbackslash end{algum-nome}}. 
+Sempre começará com algum \texttt{\textbackslash begin\{algum-nome\}} e, 
+\textbf{obrigatoriamente}, termiar com seu respectivo \texttt{\textbackslash end\{algum-nome\}}. 
 
 \begin{atencao}{Atenção!}{\exclamacao}
+  Pode haver a necessidade de ambientes aninhados!
+  Por isso, tome cuidado para não esquecer de ``fechar'' um ambiente (com 
+  \texttt{\textbackslash end}), inclusive na ordem correta!
+  Uma dica é você dar pelo menos dois espaços no início do ambiente interno ao 
+  principal.
 \end{atencao}
 
+Por exemplo, suponha que você queira escrever o ambiente \texttt{nome-2}, dentro
+do ambiente \texttt{nome-1}. 
+Então, poderia organizar assim: 
 
+\begin{codigo}{Organizando os ambientes}{\lapis}
+\begin{nome-1}
+  \begin{nome-2}
+    Escreva aqui ...
+  \end{nome-2}
+\end{nome-1}
+\end{codigo}
+
+Um ambiente notável é o \texttt{document}. 
+Sem ele não podemos escrever nossos documentos. 
+Escrevemos logo depois do comando \Verb|\documentclass|. 
+O código abaixo mostra uma estrutura mínima de um texto em \LaTeX. 
+Note que usei o comando \texttt{\%} para delimitar partes importantes da 
+estrutura no \LaTeX.
+Isso é opcional, entretanto, deixa seu código mais arrumado para futuras consultas. 
+
+\begin{codigo}{Estrutura mínima para escrever um texto}{\lapis} 
+% classe do documento ================================
+\documentclass{article}
+
+% início do documento ================================
+\begin{document}
+% 
+
+Olá! Esse é um pequeno texto em \LaTeX.
+
+% fim do documento ----------------------------------- 
+\end{document}
+\end{codigo}
 
 
