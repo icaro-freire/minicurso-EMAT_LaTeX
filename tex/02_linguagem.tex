@@ -532,6 +532,16 @@ Falaremos sobre eles ao longo desse texto, mas gostaria de descrever parte deles
     \begin{center}
       \Verb|\graphicspath{{./figs/}}|
     \end{center}
+  \item[\hrefB{https://github.com/abntex/biblatex-abnt}{biblatex-abnt}] É um 
+    pacote que usa o estilo BibLaTeX (estilo amplo e moderno para compor as 
+    bibliografias) para produzir Bibliografia, compatível com as normas da ABNT.
+    Usamos o comando \Verb|\usepackage[style=abnt]{biblatex}| para carregarmos 
+    o pacote com as normas da ABNT.
+    Mas, escrevemos a bibliografia (com comando específicos dessa classe, portanto
+    é importantíssimo ler o manual da mesma) num arquivo separado, de extensão 
+    \texttt{.bib}, adicionando-o com o comando 
+    \Verb|\addbibresource{referencias.bib}| (por nome \textit{referencias}, por 
+    exemplo) e exibindo-a com \Verb|\printbibliography| (no arquivo principal).
 \end{description}
 
 Agora que comentamos sobre alguns pacotes, vamos organizá-los em nosso arquivo 
@@ -569,6 +579,8 @@ Um arquivo básico seria:
 
 \usepackage{microtype}
 
+\usepackage[style=abnt]{biblatex}
+  \addbibresource{referencias.bib}
 % configurações --------------------------------------
 
 % início do documento ================================
@@ -582,8 +594,11 @@ Olá! Esse é um pequeno texto em \LaTeX.
 \end{codigo}
 
 Não coloquei as configurações ainda, pois faremos isso ao longo do texto.
+Da mesma forma, ainda não foi colocado o comando para exibir a bibliografia, pois 
+falaremos em uma seção específica para ela.
 Note, também, que selecionei o tamanho de papel \textsf{A5} para o texto, deixando
-as margens no padrão nativo do \LaTeX\ (não estou usando ABNT).
+as margens no padrão nativo do \LaTeX\ (fica melhor para visualização na tela, 
+por estarmos num minicurso online).
 
 \subsection{Arrumando as coisas} %----------------------------------------------
 
@@ -617,7 +632,8 @@ documento; \texttt{tex/}, nele colocaremos os arquivos \texttt{.tex} que
 incluiremos no arquivo principal.
 
 Inicialmente, vamos criar dois arquivos: \texttt{pacotes.tex} e \texttt{intro.tex}; 
-e, à medida que nosso texto for aumentando, criaremos os outros.
+e, à medida que nosso texto for aumentando, criaremos os outros, inclusive o da 
+bibliografia (que colocaremos no diretório \texttt{bib/}).
 
 No arquivo \texttt{pacotes.tex}, simplesmente, colocamos os pacotes que desejamos 
 carregar (não colocamos \Verb|\documentclass| ou \Verb|\begin{document}|):
@@ -635,6 +651,9 @@ carregar (não colocamos \Verb|\documentclass| ou \Verb|\begin{document}|):
   \graphicspath{{./fig/}} %-------------------> local onde ficarão as figuras
 
 \usepackage{microtype} %------------------------> para protusão de caracteres
+
+\usepackage[style=abnt]{biblatex} %---> estilo para BibLaTeX para normas ABNT
+  \addbibresource{referencias.bib} % adiciona o arquivo .bib
 \end{codigo}
 
 Já no arquivo \texttt{intro.tex}, colocaremos nosso texto introdutório:
@@ -643,9 +662,12 @@ Já no arquivo \texttt{intro.tex}, colocaremos nosso texto introdutório:
 Olá! Esse é um pequeno texto em \LaTeX.
 \end{codigo}
 
-
 Agora, no arquivo principal, onde fazemos a composição tipográfica, devemos incluir 
-os arquivos que estão em suas respectivas pastas.
+os arquivos que estão em suas respectivas pastas.\mn{
+  No \Overleaf{} a compilação no arquivo \texttt{main.tex}, independentemente do 
+  arquivo que você estiver editando.
+  Basta, apenas, salvar (\texttt{Ctrl + s}).
+}
 Para carregálos corretamente, usamos os {\textbs{caminhos relativos}}.
 Por exemplo, para incluir o arquivo \texttt{pacotes.tex}, que se encontra na pasta 
 \texttt{tex/}, devemos usar o comando (note que não precisa escrever a extensão 
@@ -655,7 +677,11 @@ do arquivo):\\
   \texttt{\textbackslash input\{tex/pacotes\}}
 }
 
-Assim, nosso arquivo principal ficaria:
+Assim, nosso arquivo principal ficaria:\mn{
+  Notem que deixei comantado o comando para exibir a bibliografia. 
+  Depois de aprendermos a adicionar os comandos no arquivo \texttt{.bib}, 
+  desmarcaremos o comentário.
+}
 
 \begin{codigo}{\texttt{main.tex}}{\lapis}
 % classe do documento ================================
@@ -672,6 +698,9 @@ Assim, nosso arquivo principal ficaria:
 % 
   \input{tex/intro} %-------------> texto introdutório
 %
+%
+  %\printbibliography
+%
 % fim do documento ----------------------------------- 
 \end{document}
 \end{codigo}
@@ -682,7 +711,7 @@ E a organização visua seria algo como a Figura~\ref{fig:diretorios}
   \centering
   \includegraphics[width=0.45\linewidth]{diretorios}
   \caption{Visualização dos diretórios}
-  \label{fig:diretorios}
+  \label{fig:diretorios}  
 \end{figure}
 
 Agora sim, estamos aptos para escrever nosso texto!
