@@ -12,6 +12,8 @@
 % Pacotes carregados ==========================================================
 \RequirePackage{Alegreya, AlegreyaSans}
 
+\RequirePackage{eulervm}
+
 \RequirePackage[brazil]{babel}
   \babelfont[greek]{rm}{FreeSerif}
 \RequirePackage{fontspec}
@@ -20,7 +22,7 @@
 \RequirePackage{mathtools}
 \RequirePackage{amsthm, amssymb, amscd}
 \RequirePackage{bm}  
-\RequirePackage[mdput, ttscaled = true, sfscaled = true]{mathdesign}
+%\RequirePackage[mdput, ttscaled = true, sfscaled = true]{mathdesign}
 
 \RequirePackage{marginnote}
 \RequirePackage{sidenotes}

@@ -46,13 +46,13 @@ apenas hipotética.
     (Tradução livre e suavizada \emoji{grinning-face-with-sweat})
   }
   
-  {\textsf{\textbf{Fonte:}} \href{http://nvisnjic.com/2015/01/13/mathjax-magic.html}{The magic of LaTeX.}}
+  {\textsf{\textbf{Fonte:}} \hrefB{http://nvisnjic.com/2015/01/13/mathjax-magic.html}{The magic of LaTeX.}}
 \end{marginfigure}
 
 Além disso, é notável a beleza da composição tipográfica final, em especial (mas
 não necessariamente) quando o documento envolve equações matemáticas.
 Como vimos, essa \textsf{beleza} é fruto das mais sofisticadas técnicas empregadas 
-nos algorítimos que produzem a saída \texttt{0} ou \texttt{1}, representando, 
+nos algorítimos que produzem a saída \textsf{0} ou \textsf{1}, representando, 
 respectivamente, ``sem tinta'' ou ``com tinta''.
 
 \subsection{Um pouco sobre a estruturação do LaTeX} %--------------------------
@@ -78,7 +78,7 @@ letras maiúsculas e minúsculas.
 O comando \verb|\LaTeX| é difernete do comando \verb|\latex|, que é diferente do
 comando \verb|\Latex|.
 \mn{
-  \texttt{\textbackslash LaTeX} $\neq$ \texttt{\textbackslash Latex} $\neq$ \texttt{\textbackslash latex}
+  \textsf{\textbackslash LaTeX} $\neq$ \textsf{\textbackslash Latex} $\neq$ \textsf{\textbackslash latex}
 }
 
 \begin{atencao}{Atenção!}{\exclamacao}
@@ -88,8 +88,8 @@ comando \verb|\Latex|.
 
 Também é importante ressaltar que comandos podem vir acompanhados de 
 \textbf{\textsf{argumentos obrigatórios}}, que colocamos entre \textsf{chaves} 
-(``\texttt{\{\ldots\}}''); ou de \textbf{\textsf{argumentos opcionais}}, que colacamos 
-entre \textsf{colchetes} (``\texttt{[\ldots]}'').
+(``\textsf{\{\ldots\}}''); ou de \textbf{\textsf{argumentos opcionais}}, que colacamos 
+entre \textsf{colchetes} (``\textsf{[\ldots]}'').
 
 Por exemeplo, o comando \verb|\documentclass| define a \textsf{classe} do 
 documento.
@@ -98,16 +98,16 @@ se estamos usando um \textsf{artigo} (\textit{article}); um \textsf{livro}
 (\textit{book}); um relatório (\textit{report}); uma apresentação (\textit{beamer});
 etc.
 Além disso, existem vários argumentos opcionais, dentre os quais descato: o 
-tamanho da fonte, que por padrão é \texttt{10pt}\mn{ 
-  são três opções possíveis nas classes \textit{standard}: \texttt{10pt}, 
-  \texttt{11pt} e \texttt{12pt}.
+tamanho da fonte, que por padrão é \textsf{10pt}\mn{ 
+  são três opções possíveis nas classes \textit{standard}: \textsf{10pt}, 
+  \textsf{11pt} e \textsf{12pt}.
 }
-; o formato do papel, por exemplo, \texttt{A4}; e a opção de \textit{layout} para
-estruturar as margens à impressão em frente e verso: \texttt{twoside}.
-Veja como ficaria o comando para a classe \texttt{article}; com tamanho da fonte 
-de \texttt{12pt}; definida para um formato de paper \texttt{A4}; e, com a opção 
+; o formato do papel, por exemplo, \textsf{A4}; e a opção de \textit{layout} para
+estruturar as margens à impressão em frente e verso: \textsf{twoside}.
+Veja como ficaria o comando para a classe \textsf{article}; com tamanho da fonte 
+de \textsf{12pt}; definida para um formato de paper \textsf{A4}; e, com a opção 
 de imprimir em frente e verso:\mn{
-  Note que o comando opcional \texttt{twoside} não ``diz'' para a sua impressora 
+  Note que o comando opcional \textsf{twoside} não ``diz'' para a sua impressora 
   imprimir em ``frente e verso''.
   Apenas configura as margens das páginas para essa opção.
 }
@@ -159,7 +159,7 @@ Geralmente, as \textsf{classes} modificam a estrutura geral de um documento.
 Como vimos, um \textsf{artigo} possui uma estrutura diferente de um \textsf{livro},
 por exemplo.
 O que define essas estruturas são as \textsf{classes}.\en{%
-  A extensão do arquivo para uma classe é \texttt{.cls}
+  A extensão do arquivo para uma classe é \textsf{.cls}
 }
 
 \begin{atencao}{Atenção!}{\exclamacao}
@@ -261,10 +261,10 @@ alguns símbolos são \textsf{reservados}, ou seja, há um conjunto de definiç�
 internas ao próprio \LaTeX. 
 Inclusive, símbolos usados em estruturas internas de comandos. 
 É o caso de ``\textbackslash'': ele é usado para iniciar qualquer comando no \LaTeX. 
-Se você quiser representá-lo textualmente, pode usar \texttt{\textbackslash textbackslash}.
+Se você quiser representá-lo textualmente, pode usar \textsf{\textbackslash textbackslash}.
 \en{ 
   Veremos que, no modo Matemático, esse mesmo comando pode ser representado 
-  simplesmente por \texttt{\textbackslash backslash}.
+  simplesmente por \textsf{\textbackslash backslash}.
 }
 
 A Tabela~\ref{tab:especial} mostra alguns desses caracteres especiais. 
@@ -276,22 +276,22 @@ A Tabela~\ref{tab:especial} mostra alguns desses caracteres especiais.
     \toprule
       \textbs{Caractere}      && \textbs{Descrição} \\
     \midrule
-     \texttt{\textbackslash}  && inicia um comando                                  \\
-      \texttt{\%}             && para comentar código                               \\ 
-      \texttt{\~{}}           && evita separação de palavras                        \\
-      \texttt{\{\;\}}         && delimita códigos                                   \\
-      \texttt{\&}             && separa colunas numa tabela                         \\
-      \texttt{\#}             && exibe $\textrm{n}^\circ$ de parâmetros num comando \\
-      \texttt{\$}             && usado no modo matemático                           \\
-      \texttt{\^{}}           && usado para potências                               \\ 
-      \texttt{\_{}}           && usado para subíndices                              \\
+     \textsf{\textbackslash}  && inicia um comando                                  \\
+      \textsf{\%}             && para comentar código                               \\ 
+      \textsf{\~{}}           && evita separação de palavras                        \\
+      \textsf{\{\;\}}         && delimita códigos                                   \\
+      \textsf{\&}             && separa colunas numa tabela                         \\
+      \textsf{\#}             && exibe $\textrm{n}^\circ$ de parâmetros num comando \\
+      \textsf{\$}             && usado no modo matemático                           \\
+      \textsf{\^{}}           && usado para potências                               \\ 
+      \textsf{\_{}}           && usado para subíndices                              \\
     \bottomrule
   \end{tabular}
 \end{table}
 
 Se você quiser exibir qualquer um deles, (excetuando a \textit{barra invertida},
 claro) basta colocar a barra invertida antes dos símbolos!
-Por exemplo, se deseja exibir ``10\%'', deve digitar: \texttt{10\textbackslash \%}.
+Por exemplo, se deseja exibir ``10\%'', deve digitar: \textsf{10\textbackslash \%}.
 
 Ainda falando sobre comandos \ldots\ se você for utilizar algum comando interno, 
 ou mesmo algum criado por você (sim isso é possível, mas não veremos nesse 
@@ -299,19 +299,19 @@ microcurso \emoji{confused-face}), deve ter um cuidado especial com o espaçamen
 de alguma palavra depois do referido comando.
 Por exemplo, se formos escrever 
 \tcboxC{O \LaTeX\ é sensacional!}
-\textbf{não} devemos fazer ``\texttt{O \LaTeX\ é sensacional!}'', visto que a 
+\textbf{não} devemos fazer ``\textsf{O \LaTeX\ é sensacional!}'', visto que a 
 saída produzida por esse último comando é:
 \tcboxC{O \LaTeX é sensacional!}
-Devemos, portanto, colcar ``\texttt{\{\}}'' ou ``\texttt{\textbackslash}'' 
+Devemos, portanto, colcar ``\textsf{\{\}}'' ou ``\textsf{\textbackslash}'' 
 ao final do comando. 
 Isso faz com que haja um pequeno espaço entre ele e a próxima palavra. 
 Em resumo, você deve fazer alguma das seguintes maneiras:
 \begin{enumerate}
-  \item[(i)] \texttt{O \textbackslash LaTeX\{\} é sensacional!}
-  \item[(ii)] \texttt{O \textbackslash LaTeX\textbackslash\ é sensacional!} 
+  \item[(i)] \textsf{O \textbackslash LaTeX\{\} é sensacional!}
+  \item[(ii)] \textsf{O \textbackslash LaTeX\textbackslash\ é sensacional!} 
 \end{enumerate}
 
-Gostaria de destacar o uso do comando \texttt{\%} para comentários de código! 
+Gostaria de destacar o uso do comando \textsf{\%} para comentários de código! 
 Use-o sempre para lembrar-se de algo ou para organização. 
 Ao longo desse texto, esse comando será usado constantemente.
 
@@ -321,19 +321,19 @@ Ao longo desse texto, esse comando será usado constantemente.
 
 Um agrupamento de comandos peculiar são os \textsf{ambientes} (\textit{environments}). 
 Pode ser uma tabela; um ambiente matemático; um ambiente para texto; etc. 
-Sempre começará com algum \texttt{\textbackslash begin\{algum-nome\}} e, 
-\textbf{obrigatoriamente}, termiar com seu respectivo \texttt{\textbackslash end\{algum-nome\}}. 
+Sempre começará com algum \textsf{\textbackslash begin\{algum-nome\}} e, 
+\textbf{obrigatoriamente}, termiar com seu respectivo \textsf{\textbackslash end\{algum-nome\}}. 
 
 \begin{atencao}{Atenção!}{\exclamacao}
   Pode haver a necessidade de ambientes aninhados!
   Por isso, tome cuidado para não esquecer de ``fechar'' um ambiente (com 
-  \texttt{\textbackslash end}), inclusive na ordem correta!
+  \textsf{\textbackslash end}), inclusive na ordem correta!
   Uma dica é você dar pelo menos dois espaços no início do ambiente interno ao 
   principal.
 \end{atencao}
 
-Por exemplo, suponha que você queira escrever o ambiente \texttt{nome-2}, dentro
-do ambiente \texttt{nome-1}. 
+Por exemplo, suponha que você queira escrever o ambiente \textsf{nome-2}, dentro
+do ambiente \textsf{nome-1}. 
 Então, poderia organizar assim: 
 
 \begin{codigo}{Organizando os ambientes}{\lapis}
@@ -344,13 +344,14 @@ Então, poderia organizar assim:
 \end{nome-1}
 \end{codigo}
 
-Um ambiente notável é o \texttt{document}. 
+Um ambiente notável é o \textsf{document}. 
 Sem ele não podemos escrever nossos documentos. 
 Escrevemos logo depois do comando \Verb|\documentclass|. 
 O código abaixo mostra uma estrutura mínima de um texto em \LaTeX. 
-Note que usei o comando \texttt{\%} para delimitar partes importantes da 
+Note que usei o comando \textsf{\%} para delimitar partes importantes da 
 estrutura no \LaTeX.
-Isso é opcional, entretanto, deixa seu código mais arrumado para futuras consultas. 
+Isso é opcional; entretanto, deixa seu código mais arrumado para futuras consultas.
+\emoji{wink}
 
 \begin{codigo}{Estrutura mínima para escrever um texto}{\lapis} 
 % classe do documento ================================
@@ -365,5 +366,157 @@ Olá! Esse é um pequeno texto em \LaTeX.
 % fim do documento ----------------------------------- 
 \end{document}
 \end{codigo}
+
+%
+  \subsubsection{Pacotes}
+%
+Obviamente, você não precisa ``inventar a roda'' para desenvolver implementações 
+no \hologo{LaTeX}.
+Muito do que precisamos numa escrita de um artigo que envolva expressões matemáticas, 
+já foi pensado e desenvolvido por alguém. 
+Essas pessoas, empenharam tempo e dedicação para usar os comandos primitivos do 
+\hologo{TeX} ou \hologo{LaTeX} e escreverem seus \textsf{pacotes}.
+\nota{
+  A sigla \textsf{AmS} vem de \textit{American Mathematical Society}, ou seja, 
+  ``Sociedade Americana de Matemética''.
+}
+
+Por exemplo, suponha que desejamos escrever expressões matemáticas que envolvam 
+\textsf{Matrizes}; \textsf{Integrais}; símbolos da \textsf{Teoria dos Conjuntos};
+\textsf{Álgebra}; etc.
+Não seria conveniente que a escrita desses comandos seja não conflituosa; 
+integrativa e mantenha uma certa harmonia entre eles?
+Bom, a \hologo{AmSLaTeX} desenvolveu um conjunto de pacotes essenciais para isso.
+
+\begin{atencao}{Atenção!}{\exclamacao}
+  Nessa pseudo-introdução ao \hologo{LaTeX}, os ambientes, fontes e expressões 
+  matemáticas serão compostas por meio desses pacotes.
+\end{atencao}
+
+Gostaria de destacar, dentre os pacotes da \hologo{AmSLaTeX}, os seguintes:
+
+\begin{description}
+  \item[\textsf{amsmath}.] É o principal pacote para expressões e ambientes para 
+    escrita matemática.
+    Nele podemos enumerar equações; construir matrizes; funções; etc. 
+    Realmente é bem vasto e essencial para escrever qualquer texto sério em 
+    Matemática.
+    Você pode saber mais sobre ele no \text{link}: 
+    \hrefB{https://ctan.org/pkg/amsmath}{https://ctan.org/pkg/amsmath}.
+  \item[\textsf{amssymb}.] Esse pacote carrega outro muito importante, \textsf{amsfonts}; 
+    e, juntos, disponibilizam um conjunto de símbolos e fontes para escrita em 
+    Matemática. 
+    Dá para escrever $\subset, \varnothing, \triangle, \mathbb{N}, \mathcal{F}$, etc. 
+    Você pode saber mais sobre ele no \text{link}: 
+    \hrefB{https://ctan.org/pkg/amsfonts}{https://ctan.org/pkg/amsfonts}
+  \item[\textsf{amsthm}.] Esse pacote fornece comandos para formatar o estilo, 
+    numeração, etc., das Definições, Lemas, Teoremas; Observações, etc.
+    Você pode saber mais sobre ele no \text{link}: 
+    \hrefB{https://ctan.org/pkg/amsthm}{https://ctan.org/pkg/amsthm}
+  \item[\textsf{amscd}.] Pacote com uma linguagem muito simples para escrever 
+    \textsf{diagramas comutativos}. \mn{ Um exemplo de diagrama comutativo:\\
+      \[
+        \begin{CD}
+          H   @<f<< H\\
+          @V{\psi}VV    @VV{\psi}V\\
+          H_1 @<{\psi^\ast (f)}<< H_1
+        \end{CD}
+      \]
+    }
+    Você pode saber mais sobre ele no \text{link}: 
+    \hrefB{https://ctan.org/pkg/amscd}{https://ctan.org/pkg/amscd}
+\end{description}
+
+Falaremos mais sobre esses pacotes de axílio matemático mais à frente; porém, 
+é importante destacar que ao longo do tempo, outros pacotes surgiram para complementá-los.
+É o caso, por exemplo, do \hrefB{https://ctan.org/pkg/mathtools}{\textsf{mathtool}} 
+que, além de carregar o \textsf{amsmath}, ainda disponibiliza correções e novas 
+implementações para o mesmo.
+
+Para carregar um pacote ao nosso documento, usamos o comando (Note que alguns 
+pacotes podem oferecer opções para configurações.): 
+
+\tcboxC{
+  \ttfamily  \textbackslash usepackage[opções]\{nome-do-pacote\}
+}
+
+Além disso, também podemos agrupar pacotes. 
+Por exemplo, os pacotes citados, da \hologo{AmSLaTeX}, podem ser agrupados assim:
+
+\tcboxC{
+  \ttfamily \textbackslash usepackage\{amsmath, amssymb, amsthm\}
+}
+
+Certamente você deve imaginar a quantidade exorbitante que exite de pacotes, 
+disponíveis para as mais variadas situações no \hologo{LaTeX}: 
+desde cifras, tablaturas ou partituras (\hrefB{https://ctan.org/pkg/latex4musicians}{\sffamily \hologo{LaTeX} for Musicians});
+songbook (\hrefB{https://ctan.org/pkg/leadsheets}{\sffamily leadsheets}); 
+xadrez (\hrefB{https://ctan.org/pkg/texmate}{\sffamily \hologo{TeX}mate}); 
+sudoku (\hrefB{https://ctan.org/pkg/sudokubundle}{\sffamily sudokubundle});
+labirintos (\hrefB{https://ctan.org/pkg/labyrinth}{labyrinth}); 
+etc. (Veja a página sobre  \hrefB{https://ctan.org/topic/games}{\textsf{games}}); até 
+construção de gráficos (\hrefB{https://ctan.org/pkg/pgfplots}{\sffamily pgfplots}); 
+objetos em 3D (\hrefB{https://texample.net/tikz/examples/tag/3d/}{tikz});
+etc. (\hrefB{https://texample.net}{https://texample.net}).
+
+Você pode ver a lista de pocotes disponíveis no \textit{link}:
+\nota{
+  O \textit{The Comprehensive TeX Archive Network} (CTAN) é um verdadeiro 
+  repositório para todo tipo de material em \hologo{TeX}.\\
+  Atualmente possui \textsf{6220} pacotes!
+}
+
+\tcboxC{
+  \hrefB{https://ctan.org/pkg}{https://ctan.org/pkg}
+}
+
+Certamente, não precisamos de todos eles num texto!
+Tudo dependerá da necessidade e, com o tempo, saberemos selecionar os mais 
+adequados aos nossos objetivos.
+Todavia, alguns são notáveis, quer por sua simplicidade, quer por suas funcionalidades.
+Falaremos sobre eles ao longo desse texto, mas gostaria de descrever parte deles:
+
+\begin{description}
+  \item[\hrefB{https://ctan.org/pkg/fontspec}{\sffamily fontspec}] É um pacote 
+    essencial para quem usa \hologo{LuaLaTeX} ou \hologo{XeLaTeX}.
+    Com ele podemos selecionar as fontes instaladas em nosso sistema operacional, 
+    bem como oferece uma codificação adequada à saída das mesmas.\mn{
+      Se fôssemos usar o \hologo{pdfLaTeX}, precisaríamos do pacote \textsf{fontenc},
+      com codificação \texttt{T1}; além do empacotamento das fontes que desejássemos 
+      usar!
+    }
+  \item[\hrefB{https://ctan.org/pkg/babel}{\sffamily babel}] Ele gerencia as regras 
+    tipográficas de mais de 250 idiomas! 
+    Quando selecionamos a opção para nosso idioma, esse pacote faz, quando 
+    necessário, a hifenação correta das palavras, bem como traduz as estruturas 
+    tipográficas características do texto em inglês, na maioria das classes 
+    disponíveis.
+    Carregamos esse pacote assim:
+    \begin{center}
+      \Verb|\usepackage[brazil]{babel}|
+    \end{center}
+  \item[\hrefB{https://ctan.org/pkg/microtype}{\sffamily microtype}] Pacote bem
+    sutil que ativa protusão de caracteres e expansão da fonte, além do ajuste 
+    entre as palavras, melhorando o espaçamento entre as mesmas.
+    Em outras palavras, esse pacote organiza as palavras nos parágrafos de forma 
+    harmoniosa, evitanto desalinhamento de texto.
+  \item[\hrefB{https://ctan.org/pkg/geometry}{\sffamily geometry}] Fenomenal 
+    pacote para ajuste de margens ou papel!
+    Apenas como exemplo, para ajustar as margens no padão da ABNT, de um papel 
+    A4, podemos fazer:\\
+    {\small \Verb|\usepackage[a4paper,top=3cm,left=3cm,bottom=2cm,right=2cm]{geometry}|}
+  \item[\hrefB{https://ctan.org/pkg/booktabs}{\sffamily booktabs}] Estilo muito 
+   elegante para formatação de tabelas.
+  \item[\hrefB{https://ctan.org/pkg/graphicx}{graphicx}] Essencial para inserção
+    das figuras no texto.
+    Nativamente suporta as extensões \texttt{pdf, png} e \texttt{jpg}.
+    Também podemos configurar para que o \LaTeX\ insira apenas as figuras 
+    contidas numa pasta, de nome, \texttt{figs}, por exemplo. 
+    O carregamento, do pacote é feito como: \Verb|\usepackage{graphicx}|; e a 
+    configuração para inserir figuras do diretório \texttt{/figs} como:
+    \begin{center}
+      \Verb|\graphicspath{{./figs/}}|
+    \end{center}
+\end{description}
 
 
