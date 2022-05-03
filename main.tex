@@ -1,12 +1,13 @@
 %% arara: lualatex: {draft: yes}
 
 %% arara: lualatex
+%% arara: lualatex
 
 % arara: lualatex
 % arara: biber
 % arara: lualatex
 % arara: lualatex
-% arara: clean: { extensions: [ aux, log, bbl, bcf, blg, listing, out, run.xml, toc, upa, upb ] }
+%% arara: clean: { extensions: [ aux, log, bbl, bcf, blg, listing, out, run.xml, toc, upa, upb, pdf ] }
 
 % classe com as customizações -------------------------------------------------
 \documentclass{minicursoUFRB}
@@ -17,13 +18,18 @@
 % \begin{codeLaTeX} ...
 % \begin{atencao}{titulo}{\exclamacao} ...
 % \tcboxC{}
-% \nota{}{}
+% \nota{}
 % \lualatex
 % \pdflatex
 % \Overleaf
-% \mn{} --> texto normal
-% \em{} --> pequeno
+% \mn{} ou \sidenote{} --> texto normal
+% \en{} --> pequeno
 % \sn{} --> pequeno e itálico
+% \textbs{} ---> texto em negrito e sem serifa 
+% \textas{} ---. texto em azulUFRB sem serifa
+% \hrefB{}{} --> negrito (com dourado)
+% \hrefA{}{} --> negrito com azulUFRB
+
 %==============================================================================
 % Início do Documento 
 %------------------------------------------------------------------------------
@@ -34,28 +40,31 @@
   \thispagestyle{empty}
   \tableofcontents
 %
-	\flushbottom
-	\newpage
+  \flushbottom
+  \newpage
 %
-	\input{tex/bate-papo.tex}
+  \input{tex/bate-papo.tex}
 %
   \pagestyle{fancynotes}
 %
-	\part{A Arte de Nomear as Coisas}	
+  \part{A Arte de Nomear as Coisas}	
 %
-  \input{tex/01_nomes.tex}
-	%
-	%\part{Modifications}\label{Part:Modification}
-  %\input{tex/02_mod.tex}
-
+    \input{tex/01_nomes.tex}
+%
+  \part{Aprendendo a Linguagem LaTeX}
+%
+    \input{tex/02_linguagem.tex}
+%
+% referências bibliográficas ----------
   \clearpage
-	\thispagestyle{empty}
+  \thispagestyle{empty}
   \nocite{*}
   \printbibliography
-
-  \clearpage
-  \appendix
-  \input{tex/apend-A_arara.tex}
+%
+% apêndices ---------------------------
+%  \clearpage
+%  \appendix
+%  \input{tex/apend-A_arara.tex}
 %------------------------------------------------------------------------------
 \end{document}
 %==============================================================================

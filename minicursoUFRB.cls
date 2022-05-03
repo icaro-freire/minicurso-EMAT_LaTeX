@@ -11,20 +11,18 @@
 
 % Pacotes carregados ==========================================================
 \RequirePackage{Alegreya, AlegreyaSans}
+
+\RequirePackage{eulervm}
+
+\RequirePackage[brazil]{babel}
+  \babelfont[greek]{rm}{FreeSerif}
 \RequirePackage{fontspec}
-  \setmonofont{UbuntuMono}
-  [
-    Path        = fonts/ubuntu-mono/,
-    Extension   = .ttf,
-    UprightFont = *-Regular
-  ]
+  \setmonofont{Ubuntu Mono}
 
 \RequirePackage{mathtools}
 \RequirePackage{amsthm, amssymb, amscd}
 \RequirePackage{bm}  
-\RequirePackage[mdput, ttscaled = true, sfscaled = true]{mathdesign}
-
-\RequirePackage[brazil]{babel}
+%\RequirePackage[mdput, ttscaled = true, sfscaled = true]{mathdesign}
 
 \RequirePackage{marginnote}
 \RequirePackage{sidenotes}
@@ -52,7 +50,7 @@
 \newenvironment{cita}{
   \begin{quoting}[rightmargin=0cm,leftmargin=0.4\linewidth]
   \begin{singlespace}
-    \small
+  \footnotesize
 }{
   \end{singlespace}
   \end{quoting}
@@ -72,7 +70,6 @@
 
 \RequirePackage{wrapfig}
 \RequirePackage{float}
-\RequirePackage{caption}
 \RequirePackage{graphicx}
   \graphicspath{{./figs/}}
 
@@ -141,7 +138,7 @@
     {\textwidth+\marginparwidth+\marginparsep}\hrule\smallskip\smallskip}
     {\hrule\end{minipage}\vspace{.1in}}
 
-\newcommand{\mn}[1]{\textsuperscript{\thesidenote}{}\marginnote{\textsuperscript{\thesidenote}{}~\itshape\footnotesize #1}\refstepcounter{sidenote}}
+\newcommand{\mn}[1]{\textsuperscript{\thesidenote}{}\marginnote{\textsuperscript{\thesidenote}{}~\footnotesize #1}\refstepcounter{sidenote}}
 \newcommand{\en}[1]{\marginnote{\footnotesize #1}}
 \newcommand{\sn}[1]{\sidenote{\itshape\footnotesize #1}}
 
@@ -373,6 +370,8 @@
 \newcommand{\Overleaf}{\textcolor{darkgreen}{\bfseries \sffamily Overleaf}}
 \newcommand{\hrefB}[2]{\href{#1}{\bfseries #2}}
 \newcommand{\hrefA}[2]{\href{#1}{\bfseries \textcolor{azulUFRB}{#2}}}
+\newcommand{\textbs}[1]{\sffamily \bfseries #1}
+\newcommand{\textas}[1]{\textcolor{azulUFRB}{\textsf{#1}}}
 
 % Page layout
 \renewcommand{\baselinestretch}{1.15}\normalsize
@@ -455,8 +454,8 @@
                                    {\sffamily\normalsize\bfseries}}
 
 %Caption of figure and table
-\def\fnum@figure{\textbf{\figurename\nobreakspace\thefigure}}
-\def\fnum@table{\textbf{\tablename\nobreakspace\thetable}}
+\def\fnum@figure{\textbf{\textsf{\figurename}} \nobreakspace \textbf{\textsf{\thefigure}} \rmfamily}
+\def\fnum@table{\textbf{\textsf{\tablename}} \nobreakspace \textbf{\textsf{\thetable}} \rmfamily}
 
 %redefining \@makecaption, to have captions with \small font size
 %taken from article.cls l.489--498
