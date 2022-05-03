@@ -432,6 +432,9 @@ Falaremos mais sobre esses pacotes de axílio matemático mais à frente; porém
 É o caso, por exemplo, do \hrefB{https://ctan.org/pkg/mathtools}{\textsf{mathtool}} 
 que, além de carregar o \textsf{amsmath}, ainda disponibiliza correções e novas 
 implementações para o mesmo.
+Também é notável o pacote \hrefB{https://www.ctan.org/pkg/tikz-cd}{tikz-cd} para 
+os diagramas comutativos: simplifica e expande (em muito) o pacote da 
+\textsf{amscd}.
 
 Para carregar um pacote ao nosso documento, usamos o comando (Note que alguns 
 pacotes podem oferecer opções para configurações.): 
@@ -447,7 +450,7 @@ Por exemplo, os pacotes citados, da \hologo{AmSLaTeX}, podem ser agrupados assim
   \ttfamily \textbackslash usepackage\{amsmath, amssymb, amsthm\}
 }
 
-Certamente você deve imaginar a quantidade exorbitante que exite de pacotes, 
+Você deve imaginar a quantidade exorbitante que exite de pacotes, 
 disponíveis para as mais variadas situações no \hologo{LaTeX}: 
 desde cifras, tablaturas ou partituras (\hrefB{https://ctan.org/pkg/latex4musicians}{\sffamily \hologo{LaTeX} for Musicians});
 songbook (\hrefB{https://ctan.org/pkg/leadsheets}{\sffamily leadsheets}); 
@@ -491,7 +494,19 @@ Falaremos sobre eles ao longo desse texto, mas gostaria de descrever parte deles
     necessário, a hifenação correta das palavras, bem como traduz as estruturas 
     tipográficas características do texto em inglês, na maioria das classes 
     disponíveis.
-    Carregamos esse pacote assim:
+    Carregamos esse pacote assim:\nota{
+      Os caras são realmente criativos! 
+      A palavra babel significa ``confundir'' (a tradução vem do hebraico). 
+      Há um relato na Bíblia, no Capítulo 11 do livro de Gênesis, sobre a 
+      história de uma torre que seria construída pelos seres humanos, quando 
+      todos falavam a mesma língua: a chamada \textsf{Torre de Babel}. 
+      Se observarmos o contexto do livro, os seres humanos haviam se rebelado 
+      contra Deus e, juntos, construiriam essa torre que ``tornaria célebre'' o 
+      nome da raça humana corrompida. 
+      Deus, então, dispersa esses homens ``confundindo'' (babel) suas linguagens!
+      Aí o pessoal do pacote denomina-o por  \textsf{babel}, para retornar à 
+      linguagem materna de cada indivíduo. \emoji{upside-down-face}
+    }
     \begin{center}
       \Verb|\usepackage[brazil]{babel}|
     \end{center}
@@ -519,4 +534,155 @@ Falaremos sobre eles ao longo desse texto, mas gostaria de descrever parte deles
     \end{center}
 \end{description}
 
+Agora que comentamos sobre alguns pacotes, vamos organizá-los em nosso arquivo 
+\texttt{main.tex}.
+Onde colocamos esse comando?
 
+O espaço entre o comando \Verb|\documentclass[]{}| e \Verb|\begin{document}| é 
+denominado de \textsf{\textbf{preâmbulo}}.
+Nele colocamos as configurações prévias que desejamos fazer em nosso texto (
+escolha de fontes; informações sobre título, autor e data; comandos criados por 
+você; etc.) e os pacotes que usaremos. \mn{
+  Dependendo da distribuição do \TeX\ que você possua em seu computador (caso não 
+  use o Overleaf, nem todos os pacotes estão instalados).
+  Entretanto, ao carregá-los, geralmente, a instalação é automática.
+}
+
+Um arquivo básico seria: 
+
+\begin{codigo}{\texttt{main.tex} (estilizado)}{\lapis}
+% classe do documento ================================
+\documentclass[12pt]{article}
+
+% preâmbulo ==========================================
+% pacotes carregados ---------------------------------
+\usepackage{fontspec}
+\usepackage[brazil]{babel}
+
+\usepackage[a5paper]{geometry}
+
+\usepackage{mathtools, amsthm, amssymb}
+\usepackage{booktabs}
+
+\usepackage{graphicx}
+  \graphicspath{{./fig/}}
+
+\usepackage{microtype}
+
+% configurações --------------------------------------
+
+% início do documento ================================
+\begin{document}
+% 
+
+Olá! Esse é um pequeno texto em \LaTeX.
+
+% fim do documento ----------------------------------- 
+\end{document}
+\end{codigo}
+
+Não coloquei as configurações ainda, pois faremos isso ao longo do texto.
+Note, também, que selecionei o tamanho de papel \textsf{A5} para o texto, deixando
+as margens no padrão nativo do \LaTeX\ (não estou usando ABNT).
+
+\subsection{Arrumando as coisas} %----------------------------------------------
+
+Bom, a proposta é deixar o arquivo principal, \texttt{main.tex}, o mais ``limpo''
+possível.
+
+Com efeito, se escrevermos todo o texto, mais as configurações e mais os pacotes;
+tudo isso no mesmo arquivo, é possível que haja uma certa desorganização.
+Ou, por uma desventura da vida, você apagar de forma descuidada o arquivo, perdendo 
+tudo o que escreveu!
+
+Para que situações como a descrita sejam minimizadas, o ideal (no meu entendimento)
+é separarmos o conteúdo e incluir essas partes no arquivo principal.
+Fazemos essa inclusão por meio do comando:\\
+
+\tcboxC{
+  \texttt{\textbackslash input\{nome-do-arquivo.tex\}}
+}
+
+Assim, vamos criar, para cada parte de nosso documento, um arquivo de extensão 
+\texttt{.tex} e incluí-lo no \texttt{main.tex} por meio do comando \Verb|\input{}|.\mn{
+  Futuramente, você pode desenvolver um pacote e salvá-lo numa extensão própria: 
+  \texttt{.sty}, que evida possíveis arquivos auxiliares na ``compilação''.
+}
+
+Lembrem-se que estamos dentro de um diretório/pasta de nome, por exemplo, 
+\texttt{microcurso-EMAT\_LaTeX}.
+Então, para orgaizar mais as coisas, vamos criar alguns subdiretórios:
+\texttt{figs/}, nele colocaremos \textsc{todas} as \textsf{figuras} utilizadas no 
+documento; \texttt{tex/}, nele colocaremos os arquivos \texttt{.tex} que 
+incluiremos no arquivo principal.
+
+Inicialmente, vamos criar dois arquivos: \texttt{pacotes.tex} e \texttt{intro.tex}; 
+e, à medida que nosso texto for aumentando, criaremos os outros.
+
+No arquivo \texttt{pacotes.tex}, simplesmente, colocamos os pacotes que desejamos 
+carregar (não colocamos \Verb|\documentclass| ou \Verb|\begin{document}|):
+
+\begin{codigo}{\texttt{pacotes.tex}}{\lapis}
+\usepackage{fontspec} %-----------> para codificação saída e escolha de fonte
+\usepackage[brazil]{babel} %-----------------> suporte para idioma Brasileiro
+
+\usepackage[a5paper]{geometry} %-------------------> configurações de margens
+ 
+\usepackage{mathtools, amsthm, amssymb} %-> para expressões matemáticas e Cia
+\usepackage{booktabs} %------------------------> estilo elegante para tabelas
+ 
+\usepackage{graphicx} %---------------------------> para inclusão de gráficos
+  \graphicspath{{./fig/}} %-------------------> local onde ficarão as figuras
+
+\usepackage{microtype} %------------------------> para protusão de caracteres
+\end{codigo}
+
+Já no arquivo \texttt{intro.tex}, colocaremos nosso texto introdutório:
+
+\begin{codigo}{\texttt{intro.tex}}{\lapis}
+Olá! Esse é um pequeno texto em \LaTeX.
+\end{codigo}
+
+
+Agora, no arquivo principal, onde fazemos a composição tipográfica, devemos incluir 
+os arquivos que estão em suas respectivas pastas.
+Para carregálos corretamente, usamos os {\textbs{caminhos relativos}}.
+Por exemplo, para incluir o arquivo \texttt{pacotes.tex}, que se encontra na pasta 
+\texttt{tex/}, devemos usar o comando (note que não precisa escrever a extensão 
+do arquivo):\\
+
+\tcboxC{
+  \texttt{\textbackslash input\{tex/pacotes\}}
+}
+
+Assim, nosso arquivo principal ficaria:
+
+\begin{codigo}{\texttt{main.tex}}{\lapis}
+% classe do documento ================================
+\documentclass[12pt]{article}
+
+% preâmbulo ==========================================
+% pacotes carregados ---------------------------------
+\input{tex/pacotes}
+
+% configurações --------------------------------------
+
+% início do documento ================================
+\begin{document}
+% 
+  \input{tex/intro} %-------------> texto introdutório
+%
+% fim do documento ----------------------------------- 
+\end{document}
+\end{codigo}
+
+E a organização visua seria algo como a Figura~\ref{fig:diretorios}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.45\linewidth]{diretorios}
+  \caption{Visualização dos diretórios}
+  \label{fig:diretorios}
+\end{figure}
+
+Agora sim, estamos aptos para escrever nosso texto!
