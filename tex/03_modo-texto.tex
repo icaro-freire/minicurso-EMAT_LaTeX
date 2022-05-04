@@ -45,7 +45,12 @@ palavras!
 Um novo parágrafo só é formado de você deixar uma linha em branco entre ele e o
 anterior.
 
-Por exemplo:
+Por exemplo:\mn{
+  Vejam a forma como colocamos aspas na palavra ``Enter''!
+  No início da palavra, dois acentos graves (crases); e, ao final da palavra, 
+  dois apóstrofos.\\
+  Além disso, para os ``\ldots'', usamos \texttt{\textbackslash ldots}.
+}
 
 \begin{tcblisting}{title= Espaçamento entre palavras}
   Note         que, mesmo        eu    escrevendo
@@ -58,16 +63,20 @@ Por exemplo:
 
 Os espaçamentos \textsf{horizontais} podem ser obtidos com o comando 
 \Verb|\hspace{x cm}|, onde $x$ representa o comprimento desejado.\mn{
-  Merece destaque o comando \Verb|\hfill|. 
+  Merece destaque o comando {\sffamily \textbackslash hfill}. 
   Ele espaça, horizontalmente, duas palavras até o final da linha em curso.
 }
 Os \textsf{verticais} seguem a mesma ideia: \Verb|\vspace{}|.
 É interessante notar que, se for usado números negativos, é feita uma contração 
 no espaçamento. 
 
-\begin{tcblisting}{title= Espaçamentos, listing side text}
+\begin{tcblisting}{title= Espaçamentos horizontais e verticais, listing side text}
 Meu \hspace{2cm} Deus!\\
 Meu \hspace{-0.5cm} Deus!\\
+Primeira \hfill Segunda\\
 \vspace*{0.7cm}\\
 Teste para vertical
 \end{tcblisting}  
+
+Notem que, para a ``quebra de linha'', ou seja, escrever na linha subsequênte sem
+iniciar outro parágrafo, usamos ``\Verb|\\ |''.
