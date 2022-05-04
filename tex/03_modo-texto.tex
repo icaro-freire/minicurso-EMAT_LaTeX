@@ -1,0 +1,73 @@
+\section{Texto e Código} %------------------------------------------------------
+\label{sec:textoCodigo}
+
+\begin{margintable}\vspace{.8in}\footnotesize
+  \caption{Sumário da \textsc{part III}}
+  \medskip
+  \begin{tabularx}{\marginparwidth}{|X}
+    \textbf{\sffamily \textcolor{azulUFRB}{Seção}~\ref{sec:textoCodigo}}.    {\sffamily Texto e Código} \\
+  \end{tabularx}
+\end{margintable}
+
+A escrita do código em \LaTeX\ possui algumas peculiaridades.
+Muitas delas, dependem de subjetividade e, portanto, fica à critério de cada um.
+Vou falar apenas a minha experiência.
+
+Quando iniciei no \LaTeX\ fazia códigos na mesma linha, aglutinando comandos.
+Não me preocupava se num futuro eu teria dificuldade em entender o que escrevi, 
+nem do trabalho que é encontrar um erro num código bagunçado!
+Existem boas práticas e, desde cedo, aconselho vocês seguirem.\nota{
+  Complementando essa ideia de \textsf{boas práticas} na escrita do código, o 
+  texto 
+  \hrefA
+  {
+    https://ctan.dcc.uchile.cl/info/l2tabu/english/l2tabuen.pdf
+  }
+  {
+    \itshape An essential guide to \hologo{LaTeX2e} usage,
+  }
+  traz uma boa noção de comandos e pacotes obsoletos.
+  É uma boa prática, sempre que possível, usar comandos mais novos e que, muitas 
+  vezes, foram criados para resolver problemas de anteriores!
+}
+
+Na realidade, já estamos fazendo isso!
+De fato, definimos uma estrutura de diretórios e organização dos arquivos 
+\texttt{.tex}; indicamos como nomear arquivos; usamos comentários para separar 
+partes do código; etc. 
+Mas, a escrita, em si, deve comtemplar alguns aspectos também!
+Ao meu ver, pense que todo o seu texto seja um código!
+Uma boa prática, então, é manter cada linha de seu texto com, no máximo, 80 
+caracteres.
+Além disso, eu costumo colocar cada parágrafo em uma linha de código.
+Isso é possível, pois o \LaTeX\ não considera mais de um espaçamento entre 
+palavras!
+Um novo parágrafo só é formado de você deixar uma linha em branco entre ele e o
+anterior.
+
+Por exemplo:
+
+\begin{tcblisting}{title= Espaçamento entre palavras}
+  Note         que, mesmo        eu    escrevendo
+  espaçadamente, isso não    influencia no
+  resultado!
+  Mesmo dando ``Enter'' \ldots
+  
+  Parágrafo? Só se houver uma linha em branco entre eles!
+\end{tcblisting}
+
+Os espaçamentos \textsf{horizontais} podem ser obtidos com o comando 
+\Verb|\hspace{x cm}|, onde $x$ representa o comprimento desejado.\mn{
+  Merece destaque o comando \Verb|\hfill|. 
+  Ele espaça, horizontalmente, duas palavras até o final da linha em curso.
+}
+Os \textsf{verticais} seguem a mesma ideia: \Verb|\vspace{}|.
+É interessante notar que, se for usado números negativos, é feita uma contração 
+no espaçamento. 
+
+\begin{tcblisting}{title= Espaçamentos, listing side text}
+Meu \hspace{2cm} Deus!\\
+Meu \hspace{-0.5cm} Deus!\\
+\vspace*{0.7cm}\\
+Teste para vertical
+\end{tcblisting}  
