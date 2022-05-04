@@ -86,6 +86,7 @@
 \RequirePackage{cancel}
 \RequirePackage{ulem}
 \RequirePackage{hologo}
+\RequirePackage{enumitem}
 
 \RequirePackage{emoji}
 \RequirePackage{pifont}
