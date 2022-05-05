@@ -883,12 +883,33 @@ centro ou no final desse ambiente.
 Certamente você pode trocar o comando \Verb|\hfill| por algum espaçamento que 
 achar conveniente.
 
-Para exemplificar, vamos colocar figura ao lado de figura.
+Para exemplificar, vamos colocar figura ao lado de figura, como as Figuras~\ref{fig:praca} e
+a Figura~\ref{fig:bosque}.
+
+\begin{figure}[!htbp]
+	\begin{minipage}[b]{0.45\linewidth}
+	\centering
+	\includegraphics[width=5cm]{praca}
+	\caption{Jardim de Amargosa}
+	\label{fig:praca}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{0.45\linewidth}
+	\centering
+	\includegraphics[width=5cm]{bosque}
+	\caption{Bosque de Amargosa}
+	\label{fig:bosque}
+	\end{minipage}
+\end{figure}
+
 Perceba nos comandos abaixo, a localização do \textit{minipage}: dentro do 
 ambiente \textit{figure}!
 Além disso, note onde os comandos de centralização estão localizados também.
 
-Veja os comandos:
+Veja os comandos\nota{ 
+  Como você faria um cabeçalho básico para sua escola usando combinações de 
+  elementos que aprendemos até aqui?
+}:
 
 \begin{codigo}{Figura ao lado de figura com \texttt{minipage}}{\lapis}
 \begin{figure}[!htbp]
@@ -908,24 +929,5 @@ Veja os comandos:
 \end{figure}
 \end{codigo}
 
-Produzindo como resultado:\nota{ 
-  Como você faria um cabeçalho básico para sua escola usando combinações de 
-  elementos que aprendemos até aqui?
-}
-
-\begin{figure}[!htbp]
-	\begin{minipage}[b]{0.45\linewidth}
-	\centering
-	\includegraphics[width=3cm]{praca}
-	\caption{Jardim de Amargosa}
-	\label{fig:praca}
-	\end{minipage}
-	\hfill
-	\begin{minipage}[b]{0.45\linewidth}
-	\centering
-	\includegraphics[width=3cm]{bosque}
-	\caption{Bosque de Amargosa}
-	\label{fig:bosque}
-	\end{minipage}
-\end{figure}
-
+%-------------------------------------------------------------------------------
+\newpage
