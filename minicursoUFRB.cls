@@ -21,7 +21,7 @@
 
 \RequirePackage{mathtools}
 \RequirePackage{amsthm, amssymb, amscd}
-\RequirePackage{bm}  
+\RequirePackage{bm}
 %\RequirePackage[mdput, ttscaled = true, sfscaled = true]{mathdesign}
 
 \RequirePackage{marginnote}
@@ -86,6 +86,7 @@
 \RequirePackage{cancel}
 \RequirePackage{ulem}
 \RequirePackage{hologo}
+\RequirePackage{enumitem}
 
 \RequirePackage{emoji}
 \RequirePackage{pifont}
@@ -333,7 +334,7 @@
   colframe  = azulUFRB,
   colback   = white,
   colupper  = black, 
-  fonttitle = \bfseries,
+  fonttitle = \bfseries\sffamily,
   center title
 }
 
@@ -370,7 +371,7 @@
 \newcommand{\Overleaf}{\textcolor{darkgreen}{\bfseries \sffamily Overleaf}}
 \newcommand{\hrefB}[2]{\href{#1}{\bfseries #2}}
 \newcommand{\hrefA}[2]{\href{#1}{\bfseries \textcolor{azulUFRB}{#2}}}
-\newcommand{\textbs}[1]{\sffamily \bfseries #1}
+\newcommand{\textbs}[1]{{\sffamily \bfseries #1}}
 \newcommand{\textas}[1]{\textcolor{azulUFRB}{\textsf{#1}}}
 
 % Page layout

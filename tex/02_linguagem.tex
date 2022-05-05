@@ -1,5 +1,5 @@
 \section{Uma Linguagem} %------------------------------------------------------
-\label{sec:aprendendo}
+\label{sec:aprendendo} 
 
 \begin{margintable}\vspace{.8in}\footnotesize
   \caption{Sumário da \textsc{Part II}}
@@ -535,8 +535,8 @@ Falaremos sobre eles ao longo desse texto, mas gostaria de descrever parte deles
   \item[\hrefB{https://github.com/abntex/biblatex-abnt}{biblatex-abnt}] É um 
     pacote que usa o estilo BibLaTeX (estilo amplo e moderno para compor as 
     bibliografias) para produzir Bibliografia, compatível com as normas da ABNT.
-    Usamos o comando \Verb|\usepackage[style=abnt]{biblatex}| para carregarmos 
-    o pacote com as normas da ABNT.
+    Usamos o comando \Verb|\usepackage[style=abnt, justify]{biblatex}| para 
+    carregarmos o pacote com as normas da ABNT.
     Mas, escrevemos a bibliografia (com comando específicos dessa classe, portanto
     é importantíssimo ler o manual da mesma) num arquivo separado, de extensão 
     \texttt{.bib}, adicionando-o com o comando 
@@ -579,7 +579,7 @@ Um arquivo básico seria:
 
 \usepackage{microtype}
 
-\usepackage[style=abnt]{biblatex}
+\usepackage[style=abnt, justify]{biblatex}
   \addbibresource{referencias.bib}
 % configurações --------------------------------------
 
@@ -652,7 +652,7 @@ carregar (não colocamos \Verb|\documentclass| ou \Verb|\begin{document}|):
 
 \usepackage{microtype} %------------------------> para protusão de caracteres
 
-\usepackage[style=abnt]{biblatex} %---> estilo para BibLaTeX para normas ABNT
+\usepackage[style=abnt, justify]{biblatex} %---> estilo para BibLaTeX para normas ABNT
   \addbibresource{referencias.bib} % adiciona o arquivo .bib
 \end{codigo}
 
@@ -715,3 +715,6 @@ E a organização visua seria algo como a Figura~\ref{fig:diretorios}
 \end{figure}
 
 Agora sim, estamos aptos para escrever nosso texto!
+
+%-------------------------------------------------------------------------------
+\newpage
