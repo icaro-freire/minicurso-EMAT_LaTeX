@@ -5,8 +5,12 @@
   \caption{Sumário da \textsc{part III}}
   \medskip
   \begin{tabularx}{\marginparwidth}{|X}
-    \textbf{\sffamily \textcolor{azulUFRB}{Seção}~\ref{sec:textoCodigo}}.    {\sffamily Texto e Código} \\
-    \textbf{\sffamily \textcolor{azulUFRB}{Seção}~\ref{sec:fontes}}.    {\sffamily Algo sobre Fontes} \\
+    \textbf{\sffamily \textcolor{azulUFRB}{Seção}~\ref{sec:textoCodigo}}. {\sffamily Texto e Código} \\
+    \textbf{\sffamily \textcolor{azulUFRB}{Seção}~\ref{sec:fontes}}.      {\sffamily Algo sobre Fontes} \\
+    \textbf{\sffamily \textcolor{azulUFRB}{Seção}~\ref{sec:alinhamento}}. {\sffamily Alinhamento} \\
+    \textbf{\sffamily \textcolor{azulUFRB}{Seção}~\ref{sec:listas}}.      {\sffamily Algo sobre Listas} \\
+    \textbf{\sffamily \textcolor{azulUFRB}{Seção}~\ref{sec:figTab}}.      {\sffamily Figuras e Tabelas: uma noçãozinha de nada} \\
+    \textbf{\sffamily \textcolor{azulUFRB}{Seção}~\ref{sec:pemini}}.      {\sffamily Rodapé e Minipage} \\
   \end{tabularx}
 \end{margintable}
 
@@ -559,9 +563,7 @@ Para isso vamos inserir o ambiente \textit{tabular} dentro do ambiente
 
 Queremos produzir algo como a Tabela~\ref{tab:raizq}.
 
-\newpage
-
-\begin{table}[!htbp]
+\begin{margintable}
   \centering
   \caption{Raíz Quadrada de \textit{n}}
   \label{tab:raizq}
@@ -574,12 +576,12 @@ Queremos produzir algo como a Tabela~\ref{tab:raizq}.
     100 && 10\\
     603729 && 777\\
    \bottomrule
-  \end{tabular}
-\end{table}
+  \end{tabular}  
+\end{margintable}
 
-Os comandos ficam assim\mn{
-  Mesmo colocando três colunas, deixamos uma sem usar.\\ 
-  Isso serve para dar um maior espaço entre as colunas que contém o texto.\\ 
+Os comandos ficam assim\footnote{
+  Mesmo colocando três colunas, deixamos uma sem usar.
+  Isso serve para dar um maior espaço entre as colunas que contém o texto.
   Tudo dependerá da necessidade!
 }:
 
@@ -628,7 +630,11 @@ Assim, para citarmos a tabela do exemplo em questão fazemos: \Verb|\ref{tab:rai
 
 O ambiente apropriado para incluir uma figura é o \textit{figure}.
 É muito semelhante a estrutura do ambiente \textit{figure} com relação ao 
-ambiente \textit{table}.
+ambiente \textit{table}. \nota{ 
+  Lembre-se que os formatos são \textsc{jpeg}, \textsc{png} ou \textsc{pdf}.\\ 
+  Prefira o \textsc{pdf}; pois, por ser um formato vetorial, não há distorção ao 
+  ampliar a imagem, por exemplo.
+}
 São os mesmos parâmetros descritos na Tabela~\ref{tab:opfig}.
 
 Todavia, para inserir uma figura no texto, usamos a sintaxe:
@@ -636,11 +642,7 @@ Todavia, para inserir uma figura no texto, usamos a sintaxe:
   \texttt{\textbackslash includegraphics[opções]\{nome\}}
 }
 
-Em \texttt{nome} devemos inserir, exatamente, o nome que salvamos a figura. \nota{ 
-  Lembre-se que os formatos são \textsc{jpeg}, \textsc{png} ou \textsc{pdf}.\\ 
-  Prefira o \textsc{pdf}; pois, por ser um formato vetorial, não há distorção ao 
-  ampliar a imagem, por exemplo.
-}
+Em \texttt{nome} devemos inserir, exatamente, o nome que salvamos a figura. 
 Já em \texttt{opções}, temos os parâmetros descritos na Tabela~\ref{tab:fig}
 
 \begin{table}[!h]
@@ -753,7 +755,6 @@ margem em uso.
 \label{fig:amargosa2}
 \end{figure}
 
-\newpage 
 
 Os respectivos comandos são:
 
@@ -915,14 +916,14 @@ Veja os comandos\nota{
 \begin{figure}[!htbp]
 	\begin{minipage}[b]{0.45\linewidth}
 	\centering
-	\includegraphics[width=5cm]{praca}
+	\includegraphics[width=6cm]{praca}
 	\caption{Jardim de Amargosa}
 	\label{fig:praca}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[b]{0.45\linewidth}
 	\centering
-	\includegraphics[width=5cm]{bosque}
+	\includegraphics[width=6cm]{bosque}
 	\caption{Bosque de Amargosa}
 	\label{fig:bosque}
 	\end{minipage}
